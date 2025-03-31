@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=UTF-8 />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+
+  <header id="header">
+    <div id="logo">
+         <a href="interact.html"><img src="img/breadin_logo.png" alt="Hier kommst du zur Hauptseite" width="15%" height="15%"></a>
+    </div>
+    <nav id="head-center">
+        <ul>
+          <li class="menu" ><a href="works.html"><span>/works/</span></a> </li>
+          <li class="menu" ><a href="cv.html"><span>/about(cv)/</span></a> </li>
+          <li class="menu" ><a href="contact.html"><span>/contact/</span></a> </li>
+    
+    
+        </ul>
+    </nav>
+  </header>
+
+
+
+  <body>
+    <script src='https://cdn.jsdelivr.net/npm/three@0.121.1/build/three.min.js'></script>
+    <script type ="module">
+    import * as THREE from './three.module.js';
+    import { OrbitControls } from './OrbitControls.js';
+    import { GLTFLoader } from './GLTFLoader.js';
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+    
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0xffffff);
+
+    const camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight,1,10000);
+   // camera.rotation.x = 50/180*Math.PI;
+     //camera.position.x = 1000;
+    //camera.position.y = 1000;
+     //camera.position.z = 1000;
+     camera.position.set(50,10,10);
+     
+
+
+     const dirLight = new THREE.DirectionalLight(0xffffff, 3);
+    dirLight.position.set(200, 200, 1000);
+    scene.add(dirLight);
+    const dirLight2 = new THREE.DirectionalLight(0xffffff, 1.5);
+    dirLight2.position.set(-200, 100, -500);
+    scene.add(dirLight2);
+    
+    
+    const ambient = new THREE.AmbientLight(0xffffff, 0.3);
+    scene.add(ambient);
+
+    const material = new THREE.MeshPhongMaterial({color: '#7d7d7d', shininess: 5});
+
+    
+
+    const controls = new OrbitControls(camera, renderer.domElement); 
+    controls.addEventListener('change',() =>{renderer.render(scene,amera)});
+    controls.target.set(0,0,0);
+    controls.update();
+    controls.enableDamping = true;
+    
+    let rotatingModel;
+
+   const loader = new GLTFLoader();
+    loader.load('scene.gltf', function (gltf) {
+      rotatingModel = gltf.scene;
+      rotatingModel.position.set(0,0,0);
+      rotatingModel.scale.set(20,20,20);
+        scene.add(rotatingModel);
+      
+    }); undefined, function(error){
+        console.error(error);
+
+        
+    }
+    
+    
+    
+    const animate = function () {
+      renderer.render(scene, camera);
+      requestAnimationFrame(animate);
+
+  if (rotatingModel) {
+    rotatingModel.rotation.y += 0.003; 
+  }
+
+  controls.update();
+    }
+
+
+    animate();
+    </script>
+  </body>
+</html>

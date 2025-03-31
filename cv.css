@@ -1,0 +1,45 @@
+
+
+
+
+
+main {
+    font-family: 'Space Grotesk', sans-serif;
+    margin-left: 40px;
+    margin-right: 40px;
+
+}
+  
+  section {
+    margin: 120px 0;
+  }
+  
+  h2 {
+    font-size: 15px;
+    text-transform: lowercase;
+    margin-bottom: 20px;
+  }
+  
+  pre {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .item {
+    margin: 15px 0;
+    cursor: pointer;
+    position: relative;
+    font-size: 16px;
+  }
+  
+  #tooltip {
+    position: absolute;
+    background: #000;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    display: none;
+    pointer-events: none;
+    z-index: 1000;
+  }

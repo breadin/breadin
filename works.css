@@ -1,0 +1,62 @@
+
+.project-section {
+  position: relative;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+  
+  
+  
+  
+  .project-section:hover .overlay {
+    opacity: 1;
+  }
+  
+  .overlay h1 {
+    font-size: 48px;
+    margin: 0 0 10px;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    transform: scale(1.5);
+    opacity: 0;
+    color: white;
+  }
+  
+  .overlay p {
+    font-size: 18px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+    color: white;
+  }
+  
+  /* 텍스트 등장 애니메이션 */
+  .project-section:hover .overlay h1,
+  .project-section:hover .overlay p {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .project-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }

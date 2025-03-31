@@ -1,0 +1,81 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin-bottom: 5px;
+  margin-top:2px;
+  padding: 0;
+  border: 0;
+  font-size: 115%;
+  font-family: 'Space Grotesk', sans-serif;
+  vertical-align: baseline;
+  color : black;
+  text-decoration: none;
+  
+}
+
+.menu a {
+  text-decoration: none;
+  color: black;
+  padding: 8px 16px;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 4px;
+}
+
+.menu a:hover {
+  background-color: black;
+  color: white;
+}
+
+.menu a:hover span {
+  color: white;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+img {
+  margin-left: 30px;
+  margin-top: 15px;
+}
+
+ol, ul {
+  list-style: none;
+  font-size: 50%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right : 50px;
+  margin-bottom: 10px;
+  margin-top: -50px;
+}
+  
+
+  nav {
+    display: block;
+  }
+
+  * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  li.active .pill, nav li.active span:last-child, li.active aside ul li, aside ul li.active li, li.active details summary, details li.active summary {
+    background: #3D0B76;
+  }
+  li.active .pill, nav li.active span:last-child, li.active aside ul li, aside ul li.active li, li.active details summary, details li.active summary, li.active .pill *, nav li.active span:last-child *, li.active aside ul li *, aside ul li.active li *, li.active details summary *, details li.active summary * {
+    color: #D12828;
+  }
+  

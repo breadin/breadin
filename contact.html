@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact — you kim</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+
+
+    .overlay {
+      position: relative;
+      background: url('img/breadin_background.png') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+      opacity: 0;
+      transform: translateY(200px);
+      animation: fadeUp 1.0s ease-out forwards;
+      animation-delay: 0.3s;
+    }
+
+    .overlay h1 {
+        color: white;
+      font-size: 25px;
+      font-weight: 100;
+      letter-spacing: 0.5px;
+      margin-bottom: 80px;
+      text-transform:lowercase;
+    }
+
+    .overlay p {
+      font-size: 16px;
+      margin: 10px 0;
+      opacity: 4;
+      color: white;
+    }
+
+    .overlay a {
+      color: white;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+      transition: border-color 0.3s, opacity 0.3s;
+    }
+
+    .overlay a:hover {
+      border-color: white;
+      opacity: 1;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+  </style>
+</head>
+<body>
+ 
+    <header id="header">
+        <div id="logo">
+             <a href="interact.html"><img src="img/breadin_logo.png" alt="Hier kommst du zur Hauptseite" width="15%" height="15%"></a>
+        </div>
+        <nav id="head-center">
+            <ul>
+              <li class="menu" ><a href="works.html"><span>/works/</span></a> </li>
+              <li class="menu" ><a href="cv.html"><span>/about(cv)/</span></a> </li>
+              <li class="menu" ><a href="contact.html"><span>/contact/</span></a> </li>
+        
+        
+            </ul>
+        </nav>
+
+
+        <div class="overlay">
+            <h1>/ contact /</h1>
+            <p><a href="mailto:breadin9@icloud.com">breadin9@icloud.com</a></p>
+            <p><a href="https://instagram.com/bybreadin" target="_blank">@bybreadin</a></p>
+            <p>based in germany / south korea</p>
+            <p style="margin-top: 40px; font-size: 14px; opacity: 0.5;">always available for collaboration</p>
+          </div>
+        
+        </body>
+        </html>
