@@ -28,6 +28,15 @@
 
 
   <body>
+    <script>
+      const toggle = document.getElementById("mobile-menu");
+      const nav = document.getElementById("head-center");
+    
+      toggle.addEventListener("click", () => {
+        nav.classList.toggle("active");
+      });
+    </script>
+    
     <script src='https://cdn.jsdelivr.net/npm/three@0.121.1/build/three.min.js'></script>
     <script type ="module">
     import * as THREE from './three.module.js';
@@ -103,14 +112,6 @@
     animate();
     </script>
 
-<script>
-  const toggle = document.getElementById("mobile-menu");
-  const nav = document.getElementById("head-center");
-
-  toggle.addEventListener("click", () => {
-    nav.classList.toggle("active");
-  });
-</script>
 
   </body>
 </html>
