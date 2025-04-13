@@ -59,48 +59,53 @@ ol, ul {
   }
 
   /* 기본 PC용 스타일 */
+  /* 햄버거 아이콘 기본은 숨김 */
+.menu-toggle {
+  display: none;
+}
 
-/* 모바일 화면용 스타일 (최대 768px) */
+/* 모바일에서 햄버거 아이콘 보이게 + 메뉴 숨기기 */
 @media (max-width: 768px) {
-  /* 예: 메뉴 작게, 글자 줄이기, 레이아웃 쌓기 */
-  ul {
+  .menu-toggle {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    z-index: 1000;
+  }
+
+  #head-center {
+    display: none;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    z-index: 999;
+  }
+
+  #head-center.active {
+    display: block;
+  }
+
+  #head-center ul {
     flex-direction: column;
-    align-items: flex-end;
-    margin-top: 10px;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+    gap: 10px;
   }
 
   .menu a {
-    padding: 6px 10px;
-    font-size: 14px;
+    font-size: 16px;
+    padding: 6px 0;
   }
 
-  img {
-    margin-left: 10px;
-    margin-top: 10px;
-    max-width: 90%;
-  }
-
-  .project-section {
-    height: 70vh;
-    background-position: center;
-  }
-
-  .overlay h1 {
-    font-size: 24px;
-  }
-
-  .overlay p {
-    font-size: 14px;
-  }
-
-  .project-detail {
-    padding: 20px 10px;
-  }
-
-  .back {
-    position: static;
-    display: block;
-    margin: 20px 0;
-    text-align: left;
+  .site-logo {
+    width: 150px; /* 로고 모바일에서 더 크게 */
+    margin-left: 20px;
   }
 }

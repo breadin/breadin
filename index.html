@@ -11,7 +11,10 @@
     <div id="logo">
          <a href="index.html"><img src="img/breadin_logo.png" alt="Hier kommst du zur Hauptseite" width="15%" height="15%"></a>
     </div>
-    <nav id="head-center">
+
+    <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+
+    <nav id="head-center" class="nav-links">
         <ul>
           <li class="menu" ><a href="works.html"><span>/works/</span></a> </li>
           <li class="menu" ><a href="cv.html"><span>/about(cv)/</span></a> </li>
@@ -99,5 +102,15 @@
 
     animate();
     </script>
+
+<script>
+  const toggle = document.getElementById("mobile-menu");
+  const nav = document.getElementById("head-center");
+
+  toggle.addEventListener("click", () => {
+    nav.classList.toggle("active");
+  });
+</script>
+
   </body>
 </html>
