@@ -104,13 +104,18 @@ ol, ul {
     gap: 10px;
   }
 
-  .menu a {
-    font-size: 16px;
-    padding: 6px 0;
+  .menu {
+    width: 100%;
   }
 
-  .site-logo {
-    width: 150px; /* 로고 모바일에서 더 크게 */
-    margin-left: 20px;
+  .menu a {
+    font-size: 16px;
+    display: block;
+    width: 100%;
   }
+  .site-logo {
+    width: 40vw; /* 모바일에서 더 크고 안정적으로 보이게 */
+    height: auto;
+    margin-left: 20px;
+}
 }
