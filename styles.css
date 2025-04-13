@@ -12,6 +12,11 @@ h1, p,a, img, header, nav, section {
   
 }
 
+.site-logo {
+  width: 15%;
+  height: auto; /* 비율 맞춰서 자동 조정 */
+}
+
 .menu a {
   text-decoration: none;
   color: black;
