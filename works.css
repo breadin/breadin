@@ -83,10 +83,10 @@
     max-width: 90%;
   }
 
-  .project-section {
-    height: 70vh;
-    background-position: center;
-  }
+   .project-section {
+      background-size: contain;
+      background-position: top center;
+    }
 
   .overlay h1 {
     font-size: 24px;
