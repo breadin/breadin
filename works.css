@@ -90,24 +90,15 @@
     .overlay {
       position: static; 
       background-color: rgba(0, 0, 0, 0.5);
-      padding: 20px;
       text-align: center;
     }
 
   .overlay h1 {
     transform: none;
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .overlay p {
     font-size: 14px;
-  }
-
-
-  .back {
-    position: static;
-    display: block;
-    margin: 20px 0;
-    text-align: left;
   }
 }
