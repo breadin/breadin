@@ -87,6 +87,7 @@
    .project-section {
       background-size: contain;
       background-position: top center;
+      background-repeat: no-repeat;
     }
 
   .overlay h1 {
