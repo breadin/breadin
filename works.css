@@ -101,4 +101,12 @@
   .overlay p {
     font-size: 14px;
   }
+
+
+  .back {
+    position: static;
+    display: block;
+    margin: 20px 0;
+    text-align: left;
+  }
 }
