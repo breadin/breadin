@@ -1,5 +1,6 @@
 
 .project-section {
+  background-image: url(img/divergital_thumbnail.png);
   position: relative;
   height: 100vh;
   background-size: cover;
@@ -9,6 +10,11 @@
   margin: 0;
   padding: 0;
 }
+
+.mobile-image {
+  display: none;
+}
+
 
 .overlay {
   position: absolute;
@@ -83,10 +89,18 @@
       position: relative;
       width: 100%;
       height: auto;
-    
-      background-size: contain;
-      background-position: top center;
-      background-repeat: no-repeat;
+      background:none;
+      padding-bottom: 10px;
+    }
+
+    .mobile-image {
+      display: block;
+    }
+  
+    .mobile-image img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     .overlay {
