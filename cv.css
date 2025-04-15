@@ -69,11 +69,12 @@ main {
 
   .intro pre {
     white-space: pre-wrap;       
-         /* ✅ 단어도 줄바꿈 허용 */
-    text-align: center;          /* ✅ 텍스트 중앙 정렬 */
-    padding: 0 10px;             /* ✅ 좌우 여백 추가로 잘림 방지 */
-    box-sizing: border-box;      /* ✅ padding 포함 너비 계산 */
-    font-size: 12px;
+    text-align: center;         
+    padding: 0 5vw;             
+    max-width: 90vw;
+    box-sizing: border-box;     
+    font-size: 13px;
+    margin: 0 auto;
   }
 
   .overlay h1 {
