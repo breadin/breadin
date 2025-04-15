@@ -116,6 +116,6 @@ ol, ul {
   .site-logo {
     width: 40vw; /* 모바일에서 더 크고 안정적으로 보이게 */
     height: auto;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 }
