@@ -86,18 +86,24 @@
 
 
    .project-section {
+      position: relative;
       height: auto;
       background:none;
-      padding-bottom: 30px;
+      margin-bottom: 20px;
+      padding: 0;
     }
 
     .mobile-image {
       display: block;
+      position: relative;
+      aspect-ratio: 16/9;
+      overflow: hidden;
     }
   
     .mobile-image img {
       width: 100%;
       height: auto;
+      object-fit: cover;
       display: block;
     }
 
