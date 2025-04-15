@@ -17,10 +17,10 @@ main {
   }
   
   pre {
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 15px;
+    line-height: 2;
   }
-  
+
   .item {
     margin: 15px 0;
     cursor: pointer;
@@ -69,10 +69,10 @@ main {
 
   .intro pre {
     white-space: pre-wrap;       
-    word-break: break-word;     
-    text-align: center;         
-    padding: 0 10px;            
-    box-sizing: border-box;     
+    word-break: break-word;      /* ✅ 단어도 줄바꿈 허용 */
+    text-align: center;          /* ✅ 텍스트 중앙 정렬 */
+            /* ✅ 좌우 여백 추가로 잘림 방지 */
+    box-sizing: border-box;      /* ✅ padding 포함 너비 계산 */
   }
 
   .overlay h1 {
