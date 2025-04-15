@@ -8,12 +8,15 @@
   <link rel="stylesheet" href="works.css" />
   <script defer data-domain="breadin.github.io/breadin" src="https://plausible.io/js/script.js"></script>
 </head>
-<body>
+
   <header id="header">
     <div id="logo">
       <a href="index.html"><img src="img/breadin_logo.png" class="site-logo">
       </a>
     </div>
+
+    <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+
     <nav id="head-center">
       <ul>
         <li class="menu"><a href="works.html"><span>/works/</span></a></li>
@@ -22,6 +25,16 @@
       </ul>
     </nav>
   </header>
+  <body>
+    
+    <script>
+      const toggle = document.getElementById("mobile-menu");
+      const nav = document.getElementById("head-center");
+        
+      toggle.addEventListener("click", () => {
+        nav.classList.toggle("active");
+      });
+    </script>
 
   <!-- 각 프로젝트를 풀스크린 섹션으로 -->
   <a href="project1.html" class="project-link">
