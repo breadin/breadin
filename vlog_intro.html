@@ -10,10 +10,9 @@
 
 <script defer data-domain="breadin.github.io/breadin" src="https://plausible.io/js/script.js"></script>
 </head>
-<body>
     <header id="header">
         <div id="logo">
-            <a href="index.html"><img src="img/breadin_logo.png"  width="15%" height="15%"></a>
+            <a href="index.html"><img src="img/breadin_logo.png" class="site-logo">
           </a>
         </div>
         <nav id="head-center">
@@ -24,6 +23,17 @@
           </ul>
         </nav>
       </header>
+
+      <body>
+        <script>
+          const toggle = document.getElementById("mobile-menu");
+          const nav = document.getElementById("head-center");
+            
+          toggle.addEventListener("click", () => {
+            nav.classList.toggle("active");
+          });
+        </script>
+
   <!-- 뒤로 가기 -->
   <a class="back" href="works.html">&lt; back</a>
 
