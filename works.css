@@ -124,6 +124,7 @@
     .overlay h1, .overlay p {
       opacity: 1; /* ✅ 추가 */
       transform: none;
+      font-size: 10px;
     }
 
     .project-section:hover .overlay h1,
