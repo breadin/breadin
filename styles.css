@@ -63,9 +63,11 @@ ol, ul {
     text-rendering: optimizeLegibility;
   }
 
-  /* 기본 PC용 스타일 */
-  /* 햄버거 아이콘 기본은 숨김 */
+
 .menu-toggle {
+  display: none;
+}
+#mobile-menu-overlay {
   display: none;
 }
 
@@ -80,7 +82,7 @@ ol, ul {
     right: 20px;
     z-index: 1000;
   }
-  
+
   #logo img,
   .site-logo {
     display: block;
@@ -133,5 +135,49 @@ ol, ul {
     width: 40vw; /* 모바일에서 더 크고 안정적으로 보이게 */
     height: auto;
     margin-left: 10px;
+}
+
+#mobile-menu-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.95);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: opacity 0.4s ease;
+}
+
+#mobile-menu-overlay.active {
+  display: flex;
+}
+
+#mobile-menu-overlay ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+#mobile-menu-overlay li {
+  margin: 20px 0;
+}
+
+#mobile-menu-overlay a {
+  text-decoration: none;
+  font-size: 24px;
+  color: black;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+#mobile-menu-close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 30px;
+  cursor: pointer;
 }
 }
