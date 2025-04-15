@@ -98,21 +98,15 @@ img {
   text-align: center;
 }
 
+.project-detail p {
+  text-align: center;
+}
+
 .project-detail img {
-    display: block !important;
-    margin: 20px auto !important;
-    max-width: 90% !important;
-    height: auto !important;
-  }
-
-  .project-detail p {
-    font-size: 14px;
-    text-align: center;
-  }
-
-  .project-detail h1 {
-    font-size: 22px;
-  }
+  display: block;
+  margin: 20px auto; 
+  max-width: 90%;
+}
 
 
 
