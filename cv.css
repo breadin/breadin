@@ -74,7 +74,6 @@ main {
     max-width: 90vw;
     box-sizing: border-box;     
     font-size: 13px;
-    margin: 0 auto;
   }
 
   .overlay h1 {
