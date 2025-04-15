@@ -69,8 +69,8 @@ main {
 
   .intro pre {
     white-space: pre-wrap;       
-          
-    padding: 0 5vw;             
+    text-align: center;         
+    padding: -10px 5vw;             
     max-width: 90vw;
     box-sizing: border-box;     
     font-size: 13px;
