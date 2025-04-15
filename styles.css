@@ -80,6 +80,22 @@ ol, ul {
     right: 20px;
     z-index: 1000;
   }
+  
+  #logo img,
+  .site-logo {
+    display: block;
+    width: 40vw;         /* or a fixed px like 150px */
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;     /* 적절히 조정 */
+    margin-bottom: 10px;
+  }
+
+  #header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 
   #head-center {
     display: none;
