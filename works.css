@@ -86,11 +86,9 @@
 
 
    .project-section {
-      position: relative;
-      width: 100%;
       height: auto;
       background:none;
-      padding-bottom: 10px;
+      padding-bottom: 30px;
     }
 
     .mobile-image {
@@ -105,19 +103,21 @@
 
     .overlay {
       position: static; 
+      opacity: 1;
       background-color: rgba(0, 0, 0, 0.5);
       padding: 20px;
       text-align: center;
     }
 
-  .overlay h1 {
-    transform: none;
-    font-size: 24px;
-  }
+    .overlay h1, .overlay p {
+      opacity: 1; /* ✅ 추가 */
+      transform: none;
+    }
 
-  .overlay p {
-    font-size: 14px;
+    .project-section:hover .overlay h1,
+  .project-section:hover .overlay p {
+    transform: scale(1);
+    opacity: 1;
   }
-
 
 }
