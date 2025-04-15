@@ -112,19 +112,30 @@
       padding: 0;
       border: 0;
     }
-
     .overlay {
-      position: static; 
-      opacity: 1;
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 10px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.4); /* 어둡게 덮기 */
+      padding: 20px;
+      color: white;
       text-align: center;
     }
 
-    .overlay h1, .overlay p {
-      opacity: 1; /* ✅ 추가 */
-      transform: none;
-      font-size: 10px;
+    .overlay h1 {
+      font-size: 20px;
+      margin: 0 0 10px
+    }
+  
+    .overlay p {
+      font-size: 13px;
+      margin: 0;
     }
 
     .project-section:hover .overlay h1,
