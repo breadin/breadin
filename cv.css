@@ -41,6 +41,7 @@ main {
   }
 
   .intro {
+    padding-top: 20px;
     text-align: center;
     padding: 20px;
     font-family: 'Space Grotesk', monospace;
@@ -96,7 +97,7 @@ main {
   .label, .value {
     display: block;
   }
-}
+
 
   .overlay h1 {
     font-size: 24px;
