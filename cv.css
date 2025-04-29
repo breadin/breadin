@@ -41,20 +41,24 @@ main {
   }
 
   .intro {
-    margin-top: 40px;
-    margin-bottom: 40px;
     text-align: center;
+    padding: 20px;
+    font-family: 'Space Grotesk', monospace;
   }
   
-  .info-row {
+  .info-line {
+    margin-bottom: 8px;
+    font-size: 1rem;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
-    font-family: monospace;
-    font-size: 16px;
-    margin-bottom: 10px;
   }
+  
+  .label, .value {
+    white-space: nowrap;
+  }
+  
 
   /* 기본 PC용 스타일 */
 
@@ -83,12 +87,16 @@ main {
     background-position: center;
   }
              
-  .info-row {
-    font-size: 13px;
+  .info-line {
     flex-direction: column;
     align-items: center;
-    gap: 4px;
+    font-size: 0.95rem;
   }
+
+  .label, .value {
+    display: block;
+  }
+}
 
   .overlay h1 {
     font-size: 24px;
