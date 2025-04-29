@@ -71,6 +71,14 @@
         </div>
 
         <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+        <div id="mobile-menu-overlay">
+          <div id="mobile-menu-close">&times;</div>
+          <ul>
+            <li><a href="works.html">/works/</a></li>
+            <li><a href="cv.html">/about(cv)/</a></li>
+            <li><a href="contact.html">/contact/</a></li>
+          </ul>
+        </div>
 
         <nav id="head-center">
             <ul>
@@ -84,12 +92,15 @@
         <body>
 
         <script>
-          const toggle = document.getElementById("mobile-menu");
-          const nav = document.getElementById("head-center");
-        
-          toggle.addEventListener("click", () => {
-            nav.classList.toggle("active");
-          });
+           const menuToggle = document.getElementById("mobile-menu");
+ const menuOverlay = document.getElementById("mobile-menu-overlay");
+ const menuClose = document.getElementById("mobile-menu-close");
+ menuToggle.addEventListener("click", () => {
+   menuOverlay.classList.add("active");
+ });
+ menuClose.addEventListener("click", () => {
+   menuOverlay.classList.remove("active");
+ });
         </script>
 
         <div class="overlay">
