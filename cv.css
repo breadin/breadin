@@ -41,19 +41,20 @@ main {
   }
 
   .intro {
-    padding-top: 20px;
     text-align: center;
     padding: 20px;
     font-family: 'Space Grotesk', monospace;
   }
   
   .info-line {
+    margin-top: 10px;
     margin-bottom: 8px;
-    font-size: 1rem;
+    font-size: 15px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
+    line-height: 2;
   }
   
   .label, .value {
@@ -111,10 +112,4 @@ main {
     padding: 20px 10px;
   }
 
-  .back {
-    position: static;
-    display: block;
-    margin: 20px 0;
-    text-align: left;
-  }
 }
