@@ -12,6 +12,12 @@ h1, p,a, img, header, nav, section {
   
 }
 
+body {
+  margin: 0 !important;
+  padding: 0;
+  overflow: hidden; /* 3D 화면이 넘쳐서 생기는 스크롤바 제거 */
+}
+
 .site-logo {
   width: 15%;
   height: auto; /* 비율 맞춰서 자동 조정 */
