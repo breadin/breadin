@@ -1,3 +1,19 @@
+/* 헤더 상단 고정 및 투명화 */
+#header {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent !important;
+  z-index: 9999; /* 본문 이미지보다 항상 위에 오도록 설정 */
+  margin: 0 !important;
+}
+
+/* 전체 화면 여백 완전 제거 (본문이 화면 꽉 차게) */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
 
 .project-section {
   position: relative;
