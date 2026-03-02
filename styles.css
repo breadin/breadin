@@ -12,6 +12,14 @@ h1, p,a, img, header, nav, section {
   
 }
 
+canvas {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1; /* 메뉴보다 뒤로 가도록 z-index를 음수로 설정 */
+}
+
 body {
   margin: 0 !important;
   padding: 0;
