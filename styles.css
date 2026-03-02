@@ -97,8 +97,12 @@ ol, ul {
   }
 
   #header {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    position: absolute; /* 화면의 절대 위치에 고정 (스크롤 시 따라오게 하려면 fixed 사용) */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent; /* 배경을 투명하게 설정 */
+    z-index: 100; /* 3D 캔버스(본문)보다 메뉴가 항상 위로 올라오게 설정 */
   }
 
   #head-center {
