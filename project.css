@@ -6,6 +6,10 @@
 
   .project-detail h1 {
     font-size: 32px;
+    margin-bottom: 15px;
+  }
+  .project-detail h2 {
+    font-size: 16px;
     margin-bottom: 20px;
   }
 
@@ -45,11 +49,11 @@
   .vimeo-wrapper {
 position: relative;
 padding-bottom: 56.25%;
-height: 0;
 overflow: hidden;
 border-radius: 6px;
 margin-bottom: 30px;
 }
+
 .vimeo-wrapper iframe {
 position: absolute;
 top: 0; left: 0;
@@ -57,6 +61,27 @@ width: 100%;
 height: 100%;
 border: 0;
 border-radius: 6px;
+}
+
+/* --- 비디오 가로 배치 레이아웃 --- */
+.video-row {
+  display: flex;
+  justify-content: center;
+  margin: 10px auto; /* 위아래 여백 */
+  width: 90%;
+}
+
+.video-row .vimeo-wrapper {
+  flex: 1; /* 두 비디오가 동일한 비율로 공간을 나누어 가집니다 */
+}
+
+
+/* 📱 모바일 화면에서는 다시 위아래로 자연스럽게 쌓이게 만들기 */
+@media (max-width: 768px) {
+  .video-row {
+    flex-direction: column; /* 가로(row)에서 세로(column)로 변경 */
+    gap: 30px;
+  }
 }
 /* 기본 PC용 스타일 */
 
