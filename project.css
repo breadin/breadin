@@ -106,16 +106,20 @@ ul {
 
 #header {
   padding-top: 20px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 .menu a {
   padding: 6px 10px;
   font-size: 14px;
 }
 
-img .vimeo-wrapper .video-row{
+img {
   margin-left: 10px;
   margin-top: 10px;
+  max-width: 90%;
+}
+.vimeo-wrapper .video-row {
+  position: relative;
   max-width: 90%;
 }
 
@@ -125,6 +129,7 @@ img .vimeo-wrapper .video-row{
 }
 
 .overlay h1 {
+  margin-top: 20px;
   font-size: 24px;
 }
 
@@ -149,8 +154,10 @@ img .vimeo-wrapper .video-row{
 
 
 .back {
+  position: fixed;
   display: block;
   margin: 20px 0;
-  text-align: bottom left;
+  text-align: center;
+  margin-top: 20px;
 }
 }
