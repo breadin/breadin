@@ -113,7 +113,7 @@ ul {
   font-size: 14px;
 }
 
-img {
+img .vimeo-wrapper{
   margin-left: 10px;
   margin-top: 10px;
   max-width: 90%;
@@ -148,9 +148,7 @@ img {
 }
 
 
-
 .back {
-  position: static;
   display: block;
   margin: 20px 0;
   text-align: left;
