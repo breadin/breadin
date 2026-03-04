@@ -156,7 +156,7 @@ img {
 
 
 .back {
-  position: absolute; /* 기존 relative나 fixed 대신 absolute를 사용해 위치를 고정합니다 */
+  position: fixed; /* 기존 relative나 fixed 대신 absolute를 사용해 위치를 고정합니다 */
   top: 100px; /* 화면 맨 위에서부터 100px 아래로 내립니다 (로고 바로 밑) */
   left: 20px; /* 화면 왼쪽에서 20px 살짝 띄워줍니다 */
   margin: 0; /* 불필요한 마진(여백)은 싹 지워줍니다 */
