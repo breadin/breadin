@@ -105,7 +105,7 @@ ul {
 }
 
 #header {
-  padding-top: 10px;
+  padding-top: 20px;
   padding-bottom: 10px;
 }
 .menu a {
@@ -113,7 +113,7 @@ ul {
   font-size: 14px;
 }
 
-img .vimeo-wrapper{
+img .vimeo-wrapper .video-row{
   margin-left: 10px;
   margin-top: 10px;
   max-width: 90%;
@@ -151,6 +151,6 @@ img .vimeo-wrapper{
 .back {
   display: block;
   margin: 20px 0;
-  text-align: left;
+  text-align: bottom left;
 }
 }
