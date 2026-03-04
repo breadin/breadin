@@ -46,13 +46,15 @@
     background: black;
     color: white;
   }
+
   .vimeo-wrapper {
-position: relative;
-padding-bottom: 56.25%;
-overflow: hidden;
-border-radius: 6px;
-margin-bottom: 30px;
-}
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4; /* 세로형 3:4 비율을 강제로 맞춰줍니다 */
+    overflow: hidden;
+    border-radius: 6px;
+    margin-bottom: 30px;
+  }
 
 .vimeo-wrapper iframe {
 position: absolute;
@@ -118,8 +120,7 @@ img {
   margin-top: 10px;
   max-width: 90%;
 }
-.vimeo-wrapper .video-row {
-  position: relative;
+.video-row {
   max-width: 90%;
 }
 
@@ -139,6 +140,7 @@ img {
 
 .project-detail {
   padding: 20px 10px;
+  padding-top: 130px;
   text-align: center;
 }
 
@@ -154,10 +156,11 @@ img {
 
 
 .back {
-  position: fixed;
-  display: block;
-  margin: 20px 0;
+  position: relative; /* fixed를 지우고 relative로 바꿔서 로고와 겹치지 않게 함 */
+  display: inline-block;
+  margin-top: -30px; /* 위치를 제목 위쪽으로 자연스럽게 당겨줌 */
+  margin-bottom: 20px;
   text-align: center;
-  margin-top: 20px;
+  z-index: 100; /* 확실하게 눌릴 수 있도록 최상단 배치 */
 }
 }
