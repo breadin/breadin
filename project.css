@@ -140,7 +140,7 @@ img {
 
 .project-detail {
   padding: 20px 10px;
-  padding-top: 100px;
+  padding-top: 110px;
   text-align: center;
 }
 
@@ -157,7 +157,8 @@ img {
 
 .back {
   position: fixed; /* 기존 relative나 fixed 대신 absolute를 사용해 위치를 고정합니다 */
-  top: 100px; /* 화면 맨 위에서부터 100px 아래로 내립니다 (로고 바로 밑) */
+  display: inline-block;
+  top: 80px; /* 화면 맨 위에서부터 100px 아래로 내립니다 (로고 바로 밑) */
   left: 20px; /* 화면 왼쪽에서 20px 살짝 띄워줍니다 */
   margin: 0; /* 불필요한 마진(여백)은 싹 지워줍니다 */
   z-index: 100; /* 다른 요소에 가려지지 않고 잘 눌리도록 최상단 배치 */
