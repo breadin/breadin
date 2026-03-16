@@ -38,7 +38,7 @@ h1, p,a, img, header, nav, section {
   0% { opacity: 0; }
   4% { opacity: 1; } /* 숫자를 키우면 더 진해지고, 줄이면 더 희미해집니다 */
   13% { opacity: 1; }
-  183% { opacity: 0; }
+  18% { opacity: 0; }
   100% { opacity: 0; }
 }
 
