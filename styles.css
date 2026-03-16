@@ -43,13 +43,17 @@ h1, p,a, img, header, nav, section {
 }
 
 /* 각 이미지마다 시작 시간을 다르게 설정하여 순서대로 나오게 함 */
-.bg-image:nth-child(1) { animation-delay: 0s; }
-.bg-image:nth-child(2) { animation-delay: 5s; }
-.bg-image:nth-child(3) { animation-delay: 10s; }
-.bg-image:nth-child(4) { animation-delay: 15s; }
-.bg-image:nth-child(5) { animation-delay: 20s; }
-.bg-image:nth-child(6) { animation-delay: 25s; }
-.bg-image:nth-child(7) { animation-delay: 30s; }
+.bg-image:nth-child(1)  { animation-delay: 0s; }
+.bg-image:nth-child(2)  { animation-delay: 5s; }
+.bg-image:nth-child(3)  { animation-delay: 10s; }
+.bg-image:nth-child(4)  { animation-delay: 15s; }
+.bg-image:nth-child(5)  { animation-delay: 20s; }
+.bg-image:nth-child(6)  { animation-delay: 25s; }
+.bg-image:nth-child(7)  { animation-delay: 30s; }
+.bg-image:nth-child(8)  { animation-delay: 35s; }
+.bg-image:nth-child(9)  { animation-delay: 40s; }
+.bg-image:nth-child(10) { animation-delay: 45s; }
+.bg-image:nth-child(11) { animation-delay: 50s; }
 
 canvas {
   display: block;
