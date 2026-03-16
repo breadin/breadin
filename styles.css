@@ -30,15 +30,15 @@ h1, p,a, img, header, nav, section {
   background-size: cover;
   background-position: center;
   opacity: 0; /* 처음에는 안 보이게 시작 */
-  animation: fadeSlide 30s infinite; /* 15초 주기로 무한 반복 */
+  animation: fadeSlide 55s infinite; /* 15초 주기로 무한 반복 */
 }
 
 /* 애니메이션: 투명도가 0에서 0.15(희미하게)로 변했다가 다시 0으로 */
 @keyframes fadeSlide {
   0% { opacity: 0; }
-  10% { opacity: 1; } /* 숫자를 키우면 더 진해지고, 줄이면 더 희미해집니다 */
-  33% { opacity: 1; }
-  43% { opacity: 0; }
+  4% { opacity: 1; } /* 숫자를 키우면 더 진해지고, 줄이면 더 희미해집니다 */
+  13% { opacity: 1; }
+  183% { opacity: 0; }
   100% { opacity: 0; }
 }
 
