@@ -28,6 +28,16 @@
     vertical-align: top;
   }
 
+  .project-detail ul {
+    display: block;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  
+  .project-detail li {
+    margin-bottom: 8px;
+  }
+
   .back {
       position: fixed;
     display: inline-block;
