@@ -70,16 +70,16 @@ html, body {
 
 /* full 뷰: 콘텐츠를 toggle-bar 높이만큼 위로 당겨서 이미지가 toggle 뒤로 겹침 */
 body.mode-full #projects-container {
-  margin-top: -68px;
+  margin-top: 68px;
 }
 
 /* full view: toggle-bar도 sticky로 통일 — grid/list와 동일한 구조 */
-body.mode-full #toggle-bar {
+body.mode-full #toggle-bar #projects-container {
   position: sticky;
-  top: 60px;
+  top: 20px;
   background: transparent;
   /* 아래 콘텐츠를 toggle-bar 높이(68px)만큼 위로 당겨서 이미지가 뒤로 겹치게 */
-  margin-bottom: -68px;
+ 
 }
 
 /* full view padding-top 제거 */
@@ -91,7 +91,7 @@ body.mode-full {
 body.mode-grid #toggle-bar,
 body.mode-list #toggle-bar {
   position: sticky;
-  top: 60px;
+  top: 20px;
 }
 
 /* ===== view-full: 기존 풀스크린 스타일 ===== */
@@ -279,7 +279,7 @@ body.mode-list {
   display: flex;
   align-items: center;
   gap: 24px;
-  padding: 20px 40px;
+  padding: 10px 60px;
   height: auto;
   top: 0;
   background-image: none !important;
@@ -289,8 +289,8 @@ body.mode-list {
 
 .view-list .mobile-image {
   display: block;
-  width: 100px;
-  height: 64px;
+  width: 120px;
+  height: 80px;
   flex-shrink: 0;
   overflow: hidden;
   border-radius: 6px;
@@ -311,7 +311,7 @@ body.mode-list {
 .view-list .list-info {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 3px;
 }
 
 .view-list .list-title {
