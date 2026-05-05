@@ -1,21 +1,73 @@
-/* 헤더 상단 고정 및 투명화 */
+/* ===== HEADER ===== */
 #header {
   position: fixed !important;
   top: 0;
   left: 0;
   width: 100%;
   background-color: transparent !important;
-  z-index: 9999; /* 본문 이미지보다 항상 위에 오도록 설정 */
+  z-index: 9999;
   margin: 0 !important;
 }
 
-/* 전체 화면 여백 완전 제거 (본문이 화면 꽉 차게) */
 html, body {
   margin: 0 !important;
   padding: 0 !important;
 }
 
-.project-section {
+/* ===== VIEW TOGGLE ===== */
+#view-toggle {
+  position: fixed;
+  top: 72px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(20, 20, 20, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 5px 6px;
+}
+
+.toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.toggle-btn.active {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+/* ===== FULLSCREEN VIEW (default) ===== */
+#projects-container {
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== view-full: 기존 풀스크린 스타일 ===== */
+.view-full .project-link {
+  display: block;
+}
+
+.view-full .project-section {
   position: relative;
   top: 80px;
   width: 100%;
@@ -28,17 +80,17 @@ html, body {
   padding: 0;
 }
 
-.mobile-image {
+.view-full .mobile-image {
   display: none;
 }
 
+.view-full .list-info {
+  display: none;
+}
 
-.overlay {
+.view-full .overlay {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  top: 0; bottom: 0; left: 0; right: 0;
   background-color: rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: center;
@@ -47,49 +99,227 @@ html, body {
   opacity: 0;
   transition: opacity 0.4s ease;
 }
-  
-  
-  
-  
-  .project-section:hover .overlay {
-    opacity: 1;
-  }
-  
-  .overlay h1 {
-    font-size: 48px;
-    margin: 0 0 10px;
-    transition: transform 0.4s ease, opacity 0.4s ease;
-    transform: scale(1.5);
-    opacity: 0;
-    color: white;
-  }
-  
-  .overlay p {
-    font-size: 18px;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.4s ease;
-    color: white;
-  }
-  
-  /* 텍스트 등장 애니메이션 */
-  .project-section:hover .overlay h1,
-  .project-section:hover .overlay p {
-    transform: scale(1);
-    opacity: 1;
-  }
 
-  .project-link {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-  }
+.view-full .project-section:hover .overlay {
+  opacity: 1;
+}
 
-  /* 기본 PC용 스타일 */
+.view-full .overlay h1 {
+  font-size: 48px;
+  margin: 0 0 10px;
+  transform: scale(1.5);
+  opacity: 0;
+  color: white;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
 
-/* 모바일 화면용 스타일 (최대 768px) */
+.view-full .overlay p {
+  font-size: 18px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s ease;
+  color: white;
+}
+
+.view-full .project-section:hover .overlay h1,
+.view-full .project-section:hover .overlay p {
+  transform: scale(1);
+  opacity: 1;
+}
+
+
+/* ===== view-grid: 2열 그리드 ===== */
+.view-grid {
+  padding-top: 120px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3px;
+  background: #000;
+}
+
+.view-grid .project-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+}
+
+.view-grid .project-section {
+  position: relative;
+  width: 100%;
+  height: 50vw;
+  max-height: 56vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  transition: transform 0.3s ease;
+}
+
+.view-grid .project-link:hover .project-section {
+  transform: scale(1.02);
+}
+
+.view-grid .mobile-image {
+  display: none;
+}
+
+.view-grid .list-info {
+  display: none;
+}
+
+.view-grid .overlay {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  padding: 20px;
+  text-align: center;
+}
+
+.view-grid .project-section:hover .overlay {
+  opacity: 1;
+}
+
+.view-grid .overlay h1 {
+  font-size: 22px;
+  margin: 0 0 8px;
+  color: white;
+  transform: translateY(8px);
+  opacity: 0;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.view-grid .overlay p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.8);
+  margin: 0;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: transform 0.35s ease 0.05s, opacity 0.35s ease 0.05s;
+}
+
+.view-grid .project-section:hover .overlay h1,
+.view-grid .project-section:hover .overlay p {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+/* ===== view-list: 리스트 형태 ===== */
+.view-list {
+  padding-top: 120px;
+  background: #0a0a0a;
+}
+
+.view-list .project-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background 0.2s ease;
+}
+
+.view-list .project-link:first-child .project-section {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.view-list .project-link:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.view-list .project-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 20px 40px;
+  height: auto;
+  top: 0;
+  background-image: none !important;
+  background: transparent;
+  overflow: hidden;
+}
+
+.view-list .mobile-image {
+  display: block;
+  width: 100px;
+  height: 64px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.view-list .mobile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.view-list .overlay {
+  display: none;
+}
+
+.view-list .list-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.view-list .list-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  transition: color 0.2s ease;
+}
+
+.view-list .list-desc {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.view-list .project-link:hover .list-title {
+  color: #ffffff;
+}
+
+/* 리스트 뷰 번호 표시 */
+.view-list .project-section::before {
+  content: counter(project-counter, decimal-leading-zero);
+  counter-increment: project-counter;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.2);
+  min-width: 28px;
+  font-variant-numeric: tabular-nums;
+}
+
+.view-list {
+  counter-reset: project-counter;
+}
+
+/* ===== .project-link 공통 ===== */
+.project-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* ===== 모바일 ===== */
 @media (max-width: 768px) {
-  /* 예: 메뉴 작게, 글자 줄이기, 레이아웃 쌓기 */
+  #view-toggle {
+    top: 60px;
+  }
+
   ul {
     flex-direction: column;
     align-items: flex-end;
@@ -100,64 +330,101 @@ html, body {
     font-size: 14px;
   }
 
+  /* 모바일: full view */
+  .view-full .project-section {
+    position: relative;
+    height: auto;
+    background: none !important;
+    margin-bottom: 3px;
+    padding: 0;
+    top: 80px;
+  }
 
-   .project-section {
-      position: relative;
-      height: auto;
-      background: none !important;
-      margin-bottom: 20px;
-      padding: 0;
-    }
+  .view-full .mobile-image {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+  }
 
-    .mobile-image {
-      display: block;
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-      margin: 0;
-      padding: 0;
-    }
-  
-    .mobile-image img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      object-position: center center;
-      display: block;
-      margin: 0;
-      padding: 0;
-      border: 0;
-    }
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      background-color: rgba(0, 0, 0, 0.4); /* 어둡게 덮기 */
-      padding: 20px;
-      color: white;
-      text-align: center;
-    }
+  .view-full .mobile-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
 
-    .overlay h1 {
-      font-size: 25px;
-      margin: 0 0 10px
-    }
-  
-    .overlay p {
-      font-size: 13px;
-      margin: 0;
-    }
+  .view-full .overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    text-align: center;
+  }
 
-    .project-section:hover .overlay h1,
-  .project-section:hover .overlay p {
+  .view-full .overlay h1 {
+    font-size: 22px;
     transform: scale(1);
+    opacity: 1;
+    margin: 0 0 6px;
+  }
+
+  .view-full .overlay p {
+    font-size: 13px;
+    opacity: 1;
+    transform: none;
+  }
+
+  /* 모바일: grid view */
+  .view-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    padding-top: 110px;
+  }
+
+  .view-grid .project-section {
+    height: 48vw;
+    max-height: none;
+  }
+
+  .view-grid .overlay {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .view-grid .overlay h1 {
+    font-size: 13px;
+    transform: none;
     opacity: 1;
   }
 
+  .view-grid .overlay p {
+    font-size: 11px;
+    opacity: 1;
+    transform: none;
+  }
+
+  /* 모바일: list view */
+  .view-list .project-section {
+    padding: 14px 16px;
+    gap: 14px;
+  }
+
+  .view-list .mobile-image {
+    width: 72px;
+    height: 50px;
+  }
+
+  .view-list .list-title {
+    font-size: 15px;
+  }
+
+  .view-list .list-desc {
+    font-size: 12px;
+  }
+
+  .view-list .project-section::before {
+    min-width: 20px;
+    font-size: 11px;
+  }
 }

@@ -11,19 +11,18 @@
 <body>
   <header id="header">
     <div id="logo">
-      <a href="index.html"><img src="img/breadin_logo.png" class="site-logo">
-      </a>
+      <a href="index.html"><img src="img/breadin_logo.png" class="site-logo"></a>
     </div>
 
     <div class="menu-toggle" id="mobile-menu">&#9776;</div>
-<div id="mobile-menu-overlay">
-  <div id="mobile-menu-close">&times;</div>
-  <ul>
-    <li><a href="works.html">/works/</a></li>
-    <li><a href="cv.html">/about(cv)/</a></li>
-    <li><a href="contact.html">/contact/</a></li>
-  </ul>
-</div>
+    <div id="mobile-menu-overlay">
+      <div id="mobile-menu-close">&times;</div>
+      <ul>
+        <li><a href="works.html">/works/</a></li>
+        <li><a href="cv.html">/about(cv)/</a></li>
+        <li><a href="contact.html">/contact/</a></li>
+      </ul>
+    </div>
 
     <nav id="head-center">
       <ul>
@@ -34,129 +33,225 @@
     </nav>
   </header>
 
-    <script>
-        const menuToggle = document.getElementById("mobile-menu");
-  const menuOverlay = document.getElementById("mobile-menu-overlay");
-  const menuClose = document.getElementById("mobile-menu-close");
-    
-  menuToggle.addEventListener("click", () => {
-    menuOverlay.classList.add("active");
-  });
-    
-  menuClose.addEventListener("click", () => {
-    menuOverlay.classList.remove("active");
-  });
-    </script>
+  <script>
+    const menuToggle = document.getElementById("mobile-menu");
+    const menuOverlay = document.getElementById("mobile-menu-overlay");
+    const menuClose = document.getElementById("mobile-menu-close");
 
-  <!-- 각 프로젝트를 풀스크린 섹션으로 -->
+    menuToggle.addEventListener("click", () => {
+      menuOverlay.classList.add("active");
+    });
 
-  <a href="project6.html" class="project-link">
-    <section class="project-section" style="background-image: url('img/IOA_00.png');">
-      <div class="mobile-image">
-        <img src="img/IOA_0.png" alt="Project image" loading="lazy">
-      </div>
-      <div class="overlay">
-        <h1>Intervals of Awareness</h1>
-        <p>Interactive data based Installation + AI video</p>
-      </div>
-    </section>
-  </a>
+    menuClose.addEventListener("click", () => {
+      menuOverlay.classList.remove("active");
+    });
+  </script>
 
+  <!-- View Mode Toggle -->
+  <div id="view-toggle">
+    <button class="toggle-btn" id="btn-grid" title="Grid view" onclick="setView('grid')">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+        <rect x="10" y="1" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+        <rect x="1" y="10" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+        <rect x="10" y="10" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+      </svg>
+    </button>
+    <button class="toggle-btn active" id="btn-full" title="Fullscreen view" onclick="setView('full')">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="4" cy="9" r="1.5" fill="currentColor"/>
+        <circle cx="9" cy="9" r="1.5" fill="currentColor"/>
+        <circle cx="14" cy="9" r="1.5" fill="currentColor"/>
+        <rect x="1" y="5" width="16" height="8" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+      </svg>
+    </button>
+    <button class="toggle-btn" id="btn-list" title="List view" onclick="setView('list')">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="7" height="16" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+        <rect x="10" y="1" width="7" height="16" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+      </svg>
+    </button>
+  </div>
 
-  <a href="project1.html" class="project-link">
-    <section class="project-section" style="background-image: url('img/divergital_thumbnail.png'); ">
-      <div class="mobile-image">
-        <img src="img/divergital_thumbnail.png" alt="Project image" loading="lazy">
-      </div>
-      <div class="overlay">
-        <h1>Divergital</h1>
-        <p>experimental AI music video</p>
-      </div>
-    </section>
-  </a>
+  <!-- Projects Container -->
+  <div id="projects-container" class="view-full">
 
-  <a href="project2.html" class="project-link">
-  <section class="project-section" style="background-image: url('img/noise_2.png');" >
-    <div class="mobile-image">
-      <img src="img/noise_2.png" alt="Project image" loading="lazy">
-    </div>
-    <div class="overlay">
-      <h1>Rhythm Perception</h1>
-      <p>Data based audiovisual Installation</p>
-    </div>
-  </section>
-</a>
+    <a href="project6.html" class="project-link">
+      <section class="project-section" style="background-image: url('img/IOA_00.png');">
+        <div class="mobile-image">
+          <img src="img/IOA_0.png" alt="Project image" loading="lazy">
+        </div>
+        <div class="overlay">
+          <h1>Intervals of Awareness</h1>
+          <p>Interactive data based Installation + AI video</p>
+        </div>
+        <div class="list-info">
+          <span class="list-title">Intervals of Awareness</span>
+          <span class="list-desc">Interactive data based Installation + AI video</span>
+        </div>
+      </section>
+    </a>
 
-  <section class="project-section" style="background-image: url('img/re_life_1.png');" onclick="location.href='project3.html'">
-    <div class="mobile-image">
-      <img src="img/re_life_1.png" alt="Project image" loading="lazy">
-    </div>
-    <div class="overlay">
-      <h1>(re)generative life</h1>
-      <p>Data based AI visualization</p>
-    </div>
-  </section>
+    <a href="project1.html" class="project-link">
+      <section class="project-section" style="background-image: url('img/divergital_thumbnail.png');">
+        <div class="mobile-image">
+          <img src="img/divergital_thumbnail.png" alt="Project image" loading="lazy">
+        </div>
+        <div class="overlay">
+          <h1>Divergital</h1>
+          <p>experimental AI music video</p>
+        </div>
+        <div class="list-info">
+          <span class="list-title">Divergital</span>
+          <span class="list-desc">experimental AI music video</span>
+        </div>
+      </section>
+    </a>
 
-  <section class="project-section" style="background-image: url('img/pottery_2.png');" onclick="location.href='project5.html'">
-    <div class="mobile-image">
-      <img src="img/pottery_2.png" alt="Project image" loading="lazy">
-    </div>
-    <div class="overlay">
-      <h1>Blockware</h1>
-      <p>A traditional pottery form reimagined with digital blocks</p>
-    </div>
-  </section>
+    <a href="project2.html" class="project-link">
+      <section class="project-section" style="background-image: url('img/noise_2.png');">
+        <div class="mobile-image">
+          <img src="img/noise_2.png" alt="Project image" loading="lazy">
+        </div>
+        <div class="overlay">
+          <h1>Rhythm Perception</h1>
+          <p>Data based audiovisual Installation</p>
+        </div>
+        <div class="list-info">
+          <span class="list-title">Rhythm Perception</span>
+          <span class="list-desc">Data based audiovisual Installation</span>
+        </div>
+      </section>
+    </a>
 
-  <section class="project-section" style="background-image: url('img/itd_2.jpg');" onclick="location.href='itd.html'">
-    <div class="mobile-image">
-      <img src="img/itd_2.jpg" alt="Project image" loading="lazy">
-    </div>
-    <div class="overlay">
-      <h1>Into the dream</h1>
-      <p>Installation</p>
-    </div>
-  </section>
+    <a href="project3.html" class="project-link">
+      <section class="project-section" style="background-image: url('img/re_life_1.png');">
+        <div class="mobile-image">
+          <img src="img/re_life_1.png" alt="Project image" loading="lazy">
+        </div>
+        <div class="overlay">
+          <h1>(re)generative life</h1>
+          <p>Data based AI visualization</p>
+        </div>
+        <div class="list-info">
+          <span class="list-title">(re)generative life</span>
+          <span class="list-desc">Data based AI visualization</span>
+        </div>
+      </section>
+    </a>
 
-  <section class="project-section" style="background-image: url('img/web_1.png');" onclick="location.href='project4.html'">
-    <div class="mobile-image">
-      <img src="img/web_1.png" alt="Project image" loading="lazy">
-    </div>
-    <div class="overlay">
-      <h1>Personal website</h1>
-      <p>Custom-built portfolio site</p>
-    </div>
-  </section>
-  
-  <section class="project-section" style="background-image: url('img/pm.png');" onclick="location.href='project8.html'">
-    <div class="mobile-image">
-      <img src="img/pm.png" alt="Project image" loading="lazy">
-    </div>
-    <div class="overlay">
-      <h1>PuzzleMaster</h1>
-      <p>Interactive Web Application / Puzzle Game System</p>
-    </div>
-  </section>
+    <a href="project5.html" class="project-link">
+      <section class="project-section" style="background-image: url('img/pottery_2.png');">
+        <div class="mobile-image">
+          <img src="img/pottery_2.png" alt="Project image" loading="lazy">
+        </div>
+        <div class="overlay">
+          <h1>Blockware</h1>
+          <p>A traditional pottery form reimagined with digital blocks</p>
+        </div>
+        <div class="list-info">
+          <span class="list-title">Blockware</span>
+          <span class="list-desc">A traditional pottery form reimagined with digital blocks</span>
+        </div>
+      </section>
+    </a>
 
+    <a href="itd.html" class="project-link">
+      <section class="project-section" style="background-image: url('img/itd_2.jpg');">
+        <div class="mobile-image">
+          <img src="img/itd_2.jpg" alt="Project image" loading="lazy">
+        </div>
+        <div class="overlay">
+          <h1>Into the dream</h1>
+          <p>Installation</p>
+        </div>
+        <div class="list-info">
+          <span class="list-title">Into the dream</span>
+          <span class="list-desc">Installation</span>
+        </div>
+      </section>
+    </a>
 
-  <section class="project-section" style="background-image: url('img/intro_collection.png');" onclick="location.href='vlog_intro.html'">
-    <div class="mobile-image">
-      <img src="img/intro_collection.png" alt="Project image" loading="lazy">
-    </div>
-    <div class="overlay">
-      <h1>Vlog Intro Collection</h1>
-      <p>Motion graphic & typography experiments</p>
-    </div>
-  </section>
+    <a href="project4.html" class="project-link">
+      <section class="project-section" style="background-image: url('img/web_1.png');">
+        <div class="mobile-image">
+          <img src="img/web_1.png" alt="Project image" loading="lazy">
+        </div>
+        <div class="overlay">
+          <h1>Personal website</h1>
+          <p>Custom-built portfolio site</p>
+        </div>
+        <div class="list-info">
+          <span class="list-title">Personal website</span>
+          <span class="list-desc">Custom-built portfolio site</span>
+        </div>
+      </section>
+    </a>
 
-  <section class="project-section" style="background-image: url('img/climalender.png');" onclick="location.href='project7.html'">
-    <div class="mobile-image">
-      <img src="img/climalender.png" alt="Project image" loading="lazy">
-    </div>
-    <div class="overlay">
-      <h1>colorlender/climalender</h1>
-      <p>Data-driven Web Experience</p>
-    </div>
-  </section>
+    <a href="project8.html" class="project-link">
+      <section class="project-section" style="background-image: url('img/pm.png');">
+        <div class="mobile-image">
+          <img src="img/pm.png" alt="Project image" loading="lazy">
+        </div>
+        <div class="overlay">
+          <h1>PuzzleMaster</h1>
+          <p>Interactive Web Application / Puzzle Game System</p>
+        </div>
+        <div class="list-info">
+          <span class="list-title">PuzzleMaster</span>
+          <span class="list-desc">Interactive Web Application / Puzzle Game System</span>
+        </div>
+      </section>
+    </a>
+
+    <a href="vlog_intro.html" class="project-link">
+      <section class="project-section" style="background-image: url('img/intro_collection.png');">
+        <div class="mobile-image">
+          <img src="img/intro_collection.png" alt="Project image" loading="lazy">
+        </div>
+        <div class="overlay">
+          <h1>Vlog Intro Collection</h1>
+          <p>Motion graphic & typography experiments</p>
+        </div>
+        <div class="list-info">
+          <span class="list-title">Vlog Intro Collection</span>
+          <span class="list-desc">Motion graphic & typography experiments</span>
+        </div>
+      </section>
+    </a>
+
+    <a href="project7.html" class="project-link">
+      <section class="project-section" style="background-image: url('img/climalender.png');">
+        <div class="mobile-image">
+          <img src="img/climalender.png" alt="Project image" loading="lazy">
+        </div>
+        <div class="overlay">
+          <h1>colorlender/climalender</h1>
+          <p>Data-driven Web Experience</p>
+        </div>
+        <div class="list-info">
+          <span class="list-title">colorlender/climalender</span>
+          <span class="list-desc">Data-driven Web Experience</span>
+        </div>
+      </section>
+    </a>
+
+  </div>
+
+  <script>
+    function setView(mode) {
+      const container = document.getElementById('projects-container');
+      container.className = 'view-' + mode;
+
+      document.querySelectorAll('.toggle-btn').forEach(btn => btn.classList.remove('active'));
+      document.getElementById('btn-' + mode).classList.add('active');
+
+      localStorage.setItem('worksView', mode);
+    }
+
+    const saved = localStorage.getItem('worksView');
+    if (saved) setView(saved);
+  </script>
 
 </body>
 </html>
