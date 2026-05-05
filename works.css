@@ -14,13 +14,18 @@ html, body {
   padding: 0 !important;
 }
 
-/* ===== VIEW TOGGLE ===== */
+/* ===== VIEW TOGGLE BAR ===== */
+#toggle-bar {
+  position: sticky;
+  top: 60px;
+  z-index: 9990;
+  display: flex;
+  justify-content: center;
+  padding: 14px 0 14px;
+  pointer-events: none;
+}
+
 #view-toggle {
-  position: fixed;
-  top: 72px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 9998;
   display: flex;
   align-items: center;
   gap: 4px;
@@ -30,6 +35,7 @@ html, body {
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 12px;
   padding: 5px 6px;
+  pointer-events: all;
 }
 
 .toggle-btn {
@@ -62,6 +68,23 @@ html, body {
   padding: 0;
 }
 
+/* full view: toggle-bar는 fixed로 콘텐츠 위에 float */
+body.mode-full #toggle-bar {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  padding: 14px 0;
+  background: transparent;
+}
+
+/* grid/list: toggle-bar는 sticky, 헤더 아래에서 흐름을 따름 */
+body.mode-grid #toggle-bar,
+body.mode-list #toggle-bar {
+  position: sticky;
+  top: 60px;
+}
+
 /* ===== view-full: 기존 풀스크린 스타일 ===== */
 .view-full .project-link {
   display: block;
@@ -69,7 +92,7 @@ html, body {
 
 .view-full .project-section {
   position: relative;
-  top: 80px;
+  top: 0;
   width: 100%;
   height: 100vh;
   background-size: cover;
@@ -128,9 +151,15 @@ html, body {
 }
 
 
+/* grid/list: body에 헤더 높이만큼 패딩 */
+body.mode-grid,
+body.mode-list {
+  padding-top: 60px !important;
+}
+
 /* ===== view-grid: 2열 그리드 ===== */
 .view-grid {
-  padding-top: 120px;
+  padding-top: 20px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 3px;
@@ -216,7 +245,7 @@ html, body {
 
 /* ===== view-list: 리스트 형태 ===== */
 .view-list {
-  padding-top: 120px;
+  padding-top: 20px;
   background: #0a0a0a;
 }
 
@@ -316,8 +345,23 @@ html, body {
 
 /* ===== 모바일 ===== */
 @media (max-width: 768px) {
-  #view-toggle {
-    top: 60px;
+  #toggle-bar {
+    top: 50px;
+    padding: 10px 0;
+  }
+
+  body.mode-full #toggle-bar {
+    top: 50px;
+  }
+
+  body.mode-grid #toggle-bar,
+  body.mode-list #toggle-bar {
+    top: 50px;
+  }
+
+  body.mode-grid,
+  body.mode-list {
+    padding-top: 50px !important;
   }
 
   ul {
