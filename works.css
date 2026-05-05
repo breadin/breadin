@@ -68,19 +68,23 @@ html, body {
   padding: 0;
 }
 
-/* full view: toggle-bar는 fixed로 콘텐츠 위에 float */
-body.mode-full #toggle-bar {
-  position: fixed;
-  top: 60px;
-  left: 0;
-  right: 0;
-  padding: 14px 0;
-  background: transparent;
+/* full 뷰: 콘텐츠를 toggle-bar 높이만큼 위로 당겨서 이미지가 toggle 뒤로 겹침 */
+body.mode-full #projects-container {
+  margin-top: -68px;
 }
 
-/* full view도 헤더 + 토글 높이만큼 첫 콘텐츠 밀어내기 */
+/* full view: toggle-bar도 sticky로 통일 — grid/list와 동일한 구조 */
+body.mode-full #toggle-bar {
+  position: sticky;
+  top: 60px;
+  background: transparent;
+  /* 아래 콘텐츠를 toggle-bar 높이(68px)만큼 위로 당겨서 이미지가 뒤로 겹치게 */
+  margin-bottom: -68px;
+}
+
+/* full view padding-top 제거 */
 body.mode-full {
-  padding-top: 60px !important;
+  padding-top: 0 !important;
 }
 
 /* grid/list: toggle-bar는 sticky, 헤더 아래에서 흐름을 따름 */
@@ -386,7 +390,7 @@ body.mode-list {
     background: none !important;
     margin-bottom: 3px;
     padding: 0;
-    top: 80px;
+    top: 0;
   }
 
   .view-full .mobile-image {
@@ -428,7 +432,7 @@ body.mode-list {
   .view-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2px;
-    padding-top: 110px;
+    padding-top: 10px;
   }
 
   .view-grid .project-section {
