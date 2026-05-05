@@ -78,6 +78,11 @@ body.mode-full #toggle-bar {
   background: transparent;
 }
 
+/* full view도 헤더 + 토글 높이만큼 첫 콘텐츠 밀어내기 */
+body.mode-full {
+  padding-top: 60px !important;
+}
+
 /* grid/list: toggle-bar는 sticky, 헤더 아래에서 흐름을 따름 */
 body.mode-grid #toggle-bar,
 body.mode-list #toggle-bar {
@@ -163,7 +168,7 @@ body.mode-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 3px;
-  background: #000;
+  background: #fff;
 }
 
 .view-grid .project-link {
@@ -246,23 +251,23 @@ body.mode-list {
 /* ===== view-list: 리스트 형태 ===== */
 .view-list {
   padding-top: 20px;
-  background: #0a0a0a;
+  background: #fff;
 }
 
 .view-list .project-link {
   display: block;
   text-decoration: none;
   color: inherit;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   transition: background 0.2s ease;
 }
 
 .view-list .project-link:first-child .project-section {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .view-list .project-link:hover {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(0, 0, 0, 0.03);
 }
 
 .view-list .project-section {
@@ -308,17 +313,17 @@ body.mode-list {
 .view-list .list-title {
   font-size: 18px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 0.85);
   transition: color 0.2s ease;
 }
 
 .view-list .list-desc {
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(0, 0, 0, 0.4);
 }
 
 .view-list .project-link:hover .list-title {
-  color: #ffffff;
+  color: #000000;
 }
 
 /* 리스트 뷰 번호 표시 */
@@ -326,7 +331,7 @@ body.mode-list {
   content: counter(project-counter, decimal-leading-zero);
   counter-increment: project-counter;
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(0, 0, 0, 0.2);
   min-width: 28px;
   font-variant-numeric: tabular-nums;
 }
