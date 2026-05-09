@@ -351,39 +351,72 @@ body.mode-list {
   color: inherit;
 }
 
-
 /* ===== 모바일 ===== */
 @media (max-width: 768px) {
   #toggle-bar {
     top: 50px;
     padding: 10px 0;
   }
-
+ 
   body.mode-full #toggle-bar {
     top: 50px;
   }
-
+ 
   body.mode-grid #toggle-bar,
   body.mode-list #toggle-bar {
     top: 50px;
   }
-
+ 
   body.mode-grid,
-  body.mode-list {
+  body.mode-list,
+  body.mode-full {
     padding-top: 50px !important;
   }
-
+ 
   ul {
     flex-direction: column;
     align-items: flex-end;
   }
-
+ 
   .menu a {
     padding: 6px 15px;
     font-size: 14px;
   }
-
+ 
+  /* 모바일: grid view */
+  .view-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    padding-top: 10px;
+  }
+ 
+  .view-grid .project-section {
+    height: 48vw;
+    max-height: none;
+  }
+ 
+  .view-grid .overlay {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+ 
+  .view-grid .overlay h1 {
+    font-size: 13px;
+    transform: none;
+    opacity: 1;
+  }
+ 
+  .view-grid .overlay p {
+    font-size: 11px;
+    opacity: 1;
+    transform: none;
+  }
+ 
   /* 모바일: full view */
+  body.mode-full #projects-container {
+    margin-top: 0; /* 데스크탑의 -68px 오버라이드 — 모바일은 toggle-bar가 흐름에 있으므로 불필요 */
+  }
+ 
   .view-full .project-section {
     position: relative;
     height: auto;
@@ -392,20 +425,25 @@ body.mode-list {
     padding: 0;
     top: 0;
   }
-
+ 
   .view-full .mobile-image {
     display: block;
     width: 100%;
     overflow: hidden;
+    font-size: 0; /* inline gap 제거 */
+    line-height: 0;
   }
-
+ 
   .view-full .mobile-image img {
     width: 100%;
     height: auto;
     object-fit: cover;
     display: block;
+    margin: 0;
+    padding: 0;
+    vertical-align: bottom; /* img 하단 공백 제거 */
   }
-
+ 
   .view-full .overlay {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
@@ -414,68 +452,39 @@ body.mode-list {
     padding: 20px;
     text-align: center;
   }
-
+ 
   .view-full .overlay h1 {
     font-size: 22px;
     transform: scale(1);
     opacity: 1;
     margin: 0 0 6px;
   }
-
+ 
   .view-full .overlay p {
     font-size: 13px;
     opacity: 1;
     transform: none;
   }
-
-  /* 모바일: grid view */
-  .view-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2px;
-    padding-top: 10px;
-  }
-
-  .view-grid .project-section {
-    height: 48vw;
-    max-height: none;
-  }
-
-  .view-grid .overlay {
-    opacity: 1;
-    background-color: rgba(0, 0, 0, 0.4);
-  }
-
-  .view-grid .overlay h1 {
-    font-size: 13px;
-    transform: none;
-    opacity: 1;
-  }
-
-  .view-grid .overlay p {
-    font-size: 11px;
-    opacity: 1;
-    transform: none;
-  }
-
-  /* 모바일: list view */
+ 
+  /* 모바일: list view 이미지 크게 */
   .view-list .project-section {
     padding: 14px 16px;
     gap: 14px;
   }
-
+ 
   .view-list .mobile-image {
-    width: 72px;
-    height: 50px;
+    width: 110px;
+    height: 75px;
   }
-
+ 
   .view-list .list-title {
     font-size: 15px;
   }
-
+ 
   .view-list .list-desc {
     font-size: 12px;
   }
-
+ 
   .view-list .project-section::before {
     min-width: 20px;
     font-size: 11px;
