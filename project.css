@@ -1,22 +1,49 @@
 .project-detail {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 10px;
   }
 
   .project-detail h1 {
-    font-size: 32px;
-    margin-bottom: 15px;
+    font-size: 38px;
+    margin-bottom: 8px;
   }
   .project-detail h2 {
     font-size: 16px;
-    margin-bottom: 20px;
+    font-weight: 400;
+    margin-bottom: 48px;
+    opacity: 0.7;
   }
 
   .project-detail p {
     font-size: 16px;
     line-height: 1.6;
     margin-bottom: 30px;
+  }
+
+  .project-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 32px 0;
+    margin-bottom: 96px;
+  }
+
+  .project-info span {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+    opacity: 0.6;
+  }
+
+  .project-info p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
   }
 
   .project-detail img,
@@ -28,11 +55,39 @@
     vertical-align: top;
   }
 
+  .project-section {
+    margin-bottom: 80px;
+  }
+  
+  .project-section h3 {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 16px;
+  }
+  
+  .project-section p {
+    max-width: 1000px;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+
+  .image-grid.two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  
+  .image-grid.two img {
+    margin: 0;
+  }
+
   .project-detail ul {
     display: block;
     font-size: 16px;
     margin-top: 20px;
   }
+
   
   .project-detail li {
     margin-bottom: 8px;
@@ -50,6 +105,12 @@
     padding: 6px 12px;
     border-radius: 4px;
     transition: 0.2s;
+  }
+  .project-intro {
+    font-size: 20px;
+    line-height: 1.6;
+    max-width: 100%;
+    margin: 48px 0 80px;
   }
 
   .back:hover {
@@ -149,10 +210,6 @@ img {
   max-width: 90%;
 }
 
-.project-section {
-  height: 70vh;
-  background-position: center;
-}
 
 .overlay h1 {
   margin-top: 20px;
