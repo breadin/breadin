@@ -441,7 +441,6 @@ body.mode-list {
     display: block;
     margin: 0;
     padding: 0;
-    vertical-align: bottom; /* img 하단 공백 제거 */
   }
  
   .view-full .overlay {
