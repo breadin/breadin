@@ -118,6 +118,12 @@
     color: white;
   }
 
+  .image-medium {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
   /* 기본 공통 스타일 */
 .vimeo-wrapper {
   position: relative;
