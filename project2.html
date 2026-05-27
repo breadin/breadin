@@ -8,86 +8,167 @@
   <link rel="stylesheet" href="project.css" />
   <script defer data-domain="breadin.me" src="https://plausible.io/js/script.js"></script>
 </head>
+
 <body>
-    <header id="header">
-        <div id="logo">
-            <a href="index.html"><img src="img/breadin_logo.png" class="site-logo">
-          </a>
-        </div>
-        <div class="menu-toggle" id="mobile-menu">&#9776;</div>
-        <div id="mobile-menu-overlay">
-          <div id="mobile-menu-close">&times;</div>
-          <ul>
-            <li><a href="works.html">/works/</a></li>
-            <li><a href="cv.html">/about(cv)/</a></li>
-            <li><a href="contact.html">/contact/</a></li>
-          </ul>
-        </div>
-        <nav id="head-center">
-          <ul>
-            <li class="menu"><a href="works.html"><span>/works/</span></a></li>
-            <li class="menu"><a href="cv.html"><span>/about(cv)/</span></a></li>
-            <li class="menu"><a href="contact.html"><span>/contact/</span></a></li>
-          </ul>
-        </nav>
-      </header>
-      <body>
-      <script>
-         const menuToggle = document.getElementById("mobile-menu");
- const menuOverlay = document.getElementById("mobile-menu-overlay");
- const menuClose = document.getElementById("mobile-menu-close");
- menuToggle.addEventListener("click", () => {
-   menuOverlay.classList.add("active");
- });
- menuClose.addEventListener("click", () => {
-   menuOverlay.classList.remove("active");
- });
-      </script>
-  <!-- 뒤로 가기 -->
+  <header id="header">
+    <div id="logo">
+      <a href="index.html">
+        <img src="img/breadin_logo.png" class="site-logo" alt="breadin logo">
+      </a>
+    </div>
+
+    <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+
+    <div id="mobile-menu-overlay">
+      <div id="mobile-menu-close">&times;</div>
+      <ul>
+        <li><a href="works.html">/works/</a></li>
+        <li><a href="cv.html">/about(cv)/</a></li>
+        <li><a href="contact.html">/contact/</a></li>
+      </ul>
+    </div>
+
+    <nav id="head-center">
+      <ul>
+        <li class="menu"><a href="works.html"><span>/works/</span></a></li>
+        <li class="menu"><a href="cv.html"><span>/about(cv)/</span></a></li>
+        <li class="menu"><a href="contact.html"><span>/contact/</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <script>
+    const menuToggle = document.getElementById("mobile-menu");
+    const menuOverlay = document.getElementById("mobile-menu-overlay");
+    const menuClose = document.getElementById("mobile-menu-close");
+
+    menuToggle.addEventListener("click", () => {
+      menuOverlay.classList.add("active");
+    });
+
+    menuClose.addEventListener("click", () => {
+      menuOverlay.classList.remove("active");
+    });
+  </script>
+
   <a class="back" href="works.html">&lt; back</a>
 
   <!-- 프로젝트 상세 콘텐츠 -->
-  <div class="project-detail">
-    <h1>Rhythm Perception, 2024</h1>
-    <h2> Generative Data Visualization </h2>
-    <img src="img/RP_title.png" alt="Project image 1" oncontextmenu="return false;">
-    <p>
-        Rhythm Perception explores the process of discovering possibilities through the resonance between consciousness and unconsciousness, conveying the idea that “Can Be Anything.”
-    </p>
+  <div class="project-detail rhythm-perception">
 
-    <img src="img/noise_1.png" alt="Project image 2" oncontextmenu="return false;">
-    <img src="img/signal_1.png" alt="Project image 3" oncontextmenu="return false;">
-    <p>
-        In our lives, signal (meaningful data) and noise (natural, meaningless data) coexist, and we continuously navigate through noise to identify the signal. In this work, consciousness is represented through visuals and unconsciousness through sound, each containing both signal and noise. When the signal of consciousness and the signal of unconsciousness meet, leaving only the essential signal. This moment represents possibility and hope.
+    <!-- HERO -->
+    <section class="project-hero">
+      <h1>Rhythm Perception, 2024</h1>
+      <h2>Audiovisual Data System</h2>
 
-    </p>
+      <img src="img/RP_title.png" alt="Rhythm Perception title image" oncontextmenu="return false;">
 
-    <div class="vimeo-wrapper">
-        <iframe 
-                src="https://www.youtube.com/embed/l-FvABj_MT8"
-                frameborder="0"
-                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
+      <p class="project-intro">
+        Rhythm Perception is an audiovisual system that explores how resonance emerges between consciousness and unconsciousness through signal, noise, visual, and sound.
+      </p>
+    </section>
+
+
+    <!-- PROJECT INFO -->
+    <section class="project-info">
+      <div>
+        <span>Role</span>
+        <p>Concept / Visual System / Sound System / Data Mapping / Video Direction</p>
       </div>
-<p>
-  This project is an interactive system that explores the relationship between consciousness and unconsciousness. I used TouchDesigner for the visuals (representing consciousness) and Purr Data for the sound (representing unconsciousness).<br>
 
-  [ The Data: Signal vs. Noise ]<br>
-  Both the visuals and sound process two types of data at the same time:<br>
-  
-  Signal: My personal sleep data, which I organized into stages (1–5) and durations.<br>
-  
-  Noise: Random motion tracking data I extracted from videos of natural elements like water, clouds, and lava.<br>
-  
-  [ How it Works ]<br>
-  The visuals in TouchDesigner and the sound in Purr Data run independently at different speeds. The system is designed to look for moments when the "Signal" (sleep data) values in both parts match.<br>
-  
-  [ The Resonance ]<br>
-  When these values align, a state of "resonance" occurs. At this exact moment, the random noise fades out, leaving only the synchronized signal. This shifts the experience from a state of disorder to perfect harmony between what you see and what you hear.<br>
+      <div>
+        <span>Medium</span>
+        <p>Audiovisual System / Generative Visuals / Sound / Sleep Data / Motion Tracking</p>
+      </div>
 
-</p>
-    <img src="img/HST_1.png" alt="Project image 4">
+      <div>
+        <span>Tools</span>
+        <p>TouchDesigner / Purr Data / Motion Tracking / Video Editing</p>
+      </div>
+    </section>
 
+
+    <!-- CONCEPT -->
+    <section class="project-section">
+      <h3>Concept</h3>
+
+      <img class="image-medium" src="img/HST_1.png" alt="Rhythm Perception system or process image" oncontextmenu="return false;">
+
+
+      <p>
+        Rhythm Perception translates consciousness into visuals and unconsciousness into sound.
+        Both systems process signal and noise: personal sleep data functions as signal, while motion-tracking data from natural elements functions as noise.
+      </p>
+
+      <p>
+        The visual and sound systems run independently at different speeds. When their signal values align, noise fades out and a synchronized audiovisual moment appears — a state of resonance.
+      </p>
+    </section>
+
+
+    <!-- SIGNAL / NOISE STUDIES -->
+    <section class="project-section">
+      <h3>Signal / Noise</h3>
+
+      <p>
+        Signal refers to meaningful data, while noise refers to unstructured data that obscures the signal.
+        In this project, sleep data becomes the signal, and natural motion data from water, clouds, and lava becomes the noise.
+      </p>
+
+      <div class="image-grid two">
+        <img src="img/noise_1.png" alt="Noise visual study" oncontextmenu="return false;">
+        <img src="img/signal_1.png" alt="Signal visual study" oncontextmenu="return false;">
+      </div>
+    </section>
+
+
+    <!-- AUDIOVISUAL RESONANCE SYSTEM -->
+    <section class="project-section">
+      <h3>Audiovisual Resonance System</h3>
+
+      <p>
+        Signal and noise exist in both the visual and sound systems. When the signal values align, noise fades out and resonance appears.
+      </p>
+
+      <img src="img/rp_diagram.png" alt="Rhythm Perception audiovisual resonance system diagram" oncontextmenu="return false;">
+    </section>
+
+
+    <!-- VIDEO DOCUMENTATION -->
+    <section class="project-section">
+      <h3>Video Documentation</h3>
+
+      <p>
+        The audiovisual system moves between disorder and harmony. As the data values shift, visuals and sound remain independent until the moment their signals meet.
+      </p>
+
+      <div class="vimeo-wrapper landscape">
+        <iframe 
+          src="https://www.youtube.com/embed/l-FvABj_MT8?rel=0"
+          title="Rhythm Perception video documentation"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+
+    <!-- SYSTEM / PROCESS -->
+    <section class="project-section">
+      <h3>System / Process</h3>
+
+      <p>
+        TouchDesigner generates the visual system, representing consciousness. Purr Data generates the sound system, representing unconsciousness.
+        Both systems process sleep data and natural motion-tracking data, creating a structure where signal and noise coexist within each system.
+      </p>
+
+      <p>
+        When the signal values in both systems match, a state of resonance occurs. At that moment, random noise fades out, leaving only the synchronized signal.
+      </p>
+
+      <img src="img/rp_exhibition.png" alt="Rhythm Perception system or process image" oncontextmenu="return false;">
+    </section>
 
   </div>
 

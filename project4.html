@@ -3,64 +3,141 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>website</title>
+  <title>Personal Portfolio Website</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="project.css" />
-
-<script defer data-domain="breadin.me" src="https://plausible.io/js/script.js"></script>
+  <script defer data-domain="breadin.me" src="https://plausible.io/js/script.js"></script>
 </head>
-    <header id="header">
-        <div id="logo">
-            <a href="index.html"><img src="img/breadin_logo.png" class="site-logo">
-          </a>
-        </div>
-        <div class="menu-toggle" id="mobile-menu">&#9776;</div>
-  <div id="mobile-menu-overlay">
-    <div id="mobile-menu-close">&times;</div>
-    <ul>
-      <li><a href="works.html">/works/</a></li>
-      <li><a href="cv.html">/about(cv)/</a></li>
-      <li><a href="contact.html">/contact/</a></li>
-    </ul>
-  </div>
-        <nav id="head-center">
-          <ul>
-            <li class="menu"><a href="works.html"><span>/works/</span></a></li>
-            <li class="menu"><a href="cv.html"><span>/about(cv)/</span></a></li>
-            <li class="menu"><a href="contact.html"><span>/contact/</span></a></li>
-          </ul>
-        </nav>
-      </header>
 
-      <body>
+<body>
+  <header id="header">
+    <div id="logo">
+      <a href="index.html">
+        <img src="img/breadin_logo.png" class="site-logo" alt="breadin logo">
+      </a>
+    </div>
 
-        <script>
-           const menuToggle = document.getElementById("mobile-menu");
- const menuOverlay = document.getElementById("mobile-menu-overlay");
- const menuClose = document.getElementById("mobile-menu-close");
- menuToggle.addEventListener("click", () => {
-   menuOverlay.classList.add("active");
- });
- menuClose.addEventListener("click", () => {
-   menuOverlay.classList.remove("active");
- });
-        </script>
-  <!-- 뒤로 가기 -->
+    <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+
+    <div id="mobile-menu-overlay">
+      <div id="mobile-menu-close">&times;</div>
+      <ul>
+        <li><a href="works.html">/works/</a></li>
+        <li><a href="cv.html">/about(cv)/</a></li>
+        <li><a href="contact.html">/contact/</a></li>
+      </ul>
+    </div>
+
+    <nav id="head-center">
+      <ul>
+        <li class="menu"><a href="works.html"><span>/works/</span></a></li>
+        <li class="menu"><a href="cv.html"><span>/about(cv)/</span></a></li>
+        <li class="menu"><a href="contact.html"><span>/contact/</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <script>
+    const menuToggle = document.getElementById("mobile-menu");
+    const menuOverlay = document.getElementById("mobile-menu-overlay");
+    const menuClose = document.getElementById("mobile-menu-close");
+
+    menuToggle.addEventListener("click", () => {
+      menuOverlay.classList.add("active");
+    });
+
+    menuClose.addEventListener("click", () => {
+      menuOverlay.classList.remove("active");
+    });
+  </script>
+
   <a class="back" href="works.html">&lt; back</a>
 
   <!-- 프로젝트 상세 콘텐츠 -->
-  <div class="project-detail">
-    <h1>personal portfolio website, -ing</h1>
-    <h2> personal webstie </h2>
-    <img src="img/web_2.png" alt="Project image 1" oncontextmenu="return false;">
-    <p>
-        This website was entirely designed and developed by myself. While I consulted tools like ChatGPT for specific technical assistance (e.g., responsive layout or animation tweaks), every visual, structural, and conceptual decision was made by me.
+  <div class="project-detail personal-website">
 
-        On the homepage, there is an interactive 3D object. You can zoom in by scrolling down with the mouse wheel, and zoom out by scrolling up. Additionally, clicking and dragging allows you to rotate the object and adjust its orientation.
-        A custom mobile version was also carefully designed to ensure an optimal experience across devices, including a responsive layout, touch-based interactions, and a full-screen hamburger menu.
-    </p>
-    <img src="img/web_mobile.png" alt="Project image 2" oncontextmenu="return false;">
-    
+    <!-- HERO -->
+    <section class="project-hero">
+      <h1>Personal Portfolio Website, ongoing</h1>
+      <h2>Web Design / Front-end Development / Interaction</h2>
+
+      <img src="img/web_2.png" alt="Personal portfolio website desktop view" oncontextmenu="return false;">
+
+      <p class="project-intro">
+        A personal portfolio website designed and developed to present my work through a minimal visual system, responsive layout, and interactive 3D homepage experience.
+      </p>
+    </section>
+
+
+    <!-- PROJECT INFO -->
+    <section class="project-info">
+      <div>
+        <span>Role</span>
+        <p>Web Design / Front-end Development / Interaction Design / Responsive Layout</p>
+      </div>
+
+      <div>
+        <span>Medium</span>
+        <p>Website / Interactive 3D Object / Mobile Interface / Portfolio System</p>
+      </div>
+
+      <div>
+        <span>Tools</span>
+        <p>HTML / CSS / JavaScript / Three.js / ChatGPT-assisted Debugging</p>
+      </div>
+    </section>
+
+
+    <!-- CONCEPT -->
+    <section class="project-section">
+      <h3>Concept</h3>
+
+      <p>
+        This website was designed as a personal archive and curated portfolio, balancing experimental media work with a clear project-based structure.
+        The visual system is intentionally minimal, allowing each project to remain the main focus.
+      </p>
+    </section>
+
+
+    <!-- INTERACTION -->
+    <section class="project-section">
+      <h3>Interaction</h3>
+
+      <p>
+        The homepage features an interactive 3D object that responds to mouse input.
+        Users can scroll to zoom in and out, and click-drag to rotate the object and adjust its orientation.
+      </p>
+
+      <img src="img/web_interaction.png" alt="Interactive homepage with 3D object" oncontextmenu="return false;">
+    </section>
+
+    <!-- WORKS VIEW SYSTEM -->
+<section class="project-section">
+  <h3>Works View System</h3>
+
+  <p>
+    The works page includes multiple viewing modes, allowing users to browse projects through different levels of visual density and information.
+    Users can switch between grid, compact, and list-based views depending on how they want to explore the archive.
+  </p>
+  <div class="image-grid two">
+    <img src="img/web_view_toggle_1.png" alt="Works page view mode toggle interface 1" oncontextmenu="return false;">
+    <img src="img/web_view_toggle_2.png" alt="Works page view mode toggle interface 2" oncontextmenu="return false;">
+  </div>
+ 
+</section>
+
+
+    <!-- RESPONSIVE DESIGN -->
+    <section class="project-section">
+      <h3>Responsive Design</h3>
+
+      <p>
+        A custom mobile version was designed to ensure a smooth experience across devices, including touch-based interactions, responsive layout, and a full-screen hamburger menu.
+      </p>
+
+      <img src="img/web_mobile.png" alt="Personal portfolio website mobile view" oncontextmenu="return false;">
+    </section>
+
   </div>
 
 </body>

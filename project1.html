@@ -9,68 +9,157 @@
   <script defer src="https://cloud.umami.is/script.js" data-website-id="df811a2e-7bc7-4c27-9dee-b28f9c1caaf4"></script>
 </head>
 
-    <header id="header">
-        <div id="logo">
-          <a href="index.html"><img src="img/breadin_logo.png" class="site-logo">
-          </a>
-        </div>
-        <div class="menu-toggle" id="mobile-menu">&#9776;</div>
-        <div id="mobile-menu-overlay">
-          <div id="mobile-menu-close">&times;</div>
-          <ul>
-            <li><a href="works.html">/works/</a></li>
-            <li><a href="cv.html">/about(cv)/</a></li>
-            <li><a href="contact.html">/contact/</a></li>
-          </ul>
-        </div>
-        <nav id="head-center">
-          <ul>
-            <li class="menu"><a href="works.html"><span>/works/</span></a></li>
-            <li class="menu"><a href="cv.html"><span>/about(cv)/</span></a></li>
-            <li class="menu"><a href="contact.html"><span>/contact/</span></a></li>
-          </ul>
-        </nav>
-      </header>
-      <body>
-      <script>
-         const menuToggle = document.getElementById("mobile-menu");
- const menuOverlay = document.getElementById("mobile-menu-overlay");
- const menuClose = document.getElementById("mobile-menu-close");
- menuToggle.addEventListener("click", () => {
-   menuOverlay.classList.add("active");
- });
- menuClose.addEventListener("click", () => {
-   menuOverlay.classList.remove("active");
- });
-      </script>
+<body>
+  <header id="header">
+    <div id="logo">
+      <a href="index.html">
+        <img src="img/breadin_logo.png" class="site-logo" alt="breadin logo">
+      </a>
+    </div>
 
-  <!-- 뒤로 가기 -->
+    <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+
+    <div id="mobile-menu-overlay">
+      <div id="mobile-menu-close">&times;</div>
+      <ul>
+        <li><a href="works.html">/works/</a></li>
+        <li><a href="cv.html">/about(cv)/</a></li>
+        <li><a href="contact.html">/contact/</a></li>
+      </ul>
+    </div>
+
+    <nav id="head-center">
+      <ul>
+        <li class="menu"><a href="works.html"><span>/works/</span></a></li>
+        <li class="menu"><a href="cv.html"><span>/about(cv)/</span></a></li>
+        <li class="menu"><a href="contact.html"><span>/contact/</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <script>
+    const menuToggle = document.getElementById("mobile-menu");
+    const menuOverlay = document.getElementById("mobile-menu-overlay");
+    const menuClose = document.getElementById("mobile-menu-close");
+
+    menuToggle.addEventListener("click", () => {
+      menuOverlay.classList.add("active");
+    });
+
+    menuClose.addEventListener("click", () => {
+      menuOverlay.classList.remove("active");
+    });
+  </script>
+
   <a class="back" href="works.html">&lt; back</a>
 
-  <!-- 프로젝트 상세 콘텐츠 -->
-  <div class="project-detail">
+<!-- 프로젝트 상세 콘텐츠 -->
+<div class="project-detail divergital">
+
+  <!-- HERO -->
+  <section class="project-hero">
     <h1>Divergital, 2025</h1>
-    <h2> Hybrid 3D and AI video </h2>
-    <img src="img/divergital_3.png" alt="Project image 1" oncontextmenu="return false;">
+    <h2>3D / AI Video Art Direction</h2>
+
+    <img src="img/divergital_3.png" alt="Divergital hero image" oncontextmenu="return false;">
+
+    <p class="project-intro">
+      Divergital is a 3D and AI-generated video project exploring individuality within digital systems.
+    </p>
+  </section>
+
+
+  <!-- PROJECT INFO -->
+  <section class="project-info">
+    <div>
+      <span>Role</span>
+      <p>Concept / 3D Visual Development / AI Video Direction / Art Direction</p>
+    </div>
+
+    <div>
+      <span>Medium</span>
+      <p>3D Visuals / AI Video Generation / Large-scale Projection</p>
+    </div>
+
+    <div>
+      <span>Tools</span>
+      <p>Blender / Stable Diffusion / Video Editing</p>
+    </div>
+  </section>
+
+
+  <!-- CONCEPT -->
+  <section class="project-section">
+    <h3>Concept</h3>
+    <div class="image-grid two">
+
+      <img src="img/divergital_6.png" alt="Divergital concept detail 1" oncontextmenu="return false;">
+
+      <img src="img/divergital_7.png" alt="Divergital concept detail 2" oncontextmenu="return false;">
+
+    </div>
+
     <p>
-        As technology advances, it often amplifies our biases and reinforces stereotypes, shaping the way we see the world. In this rigid, mechanical digital landscape, a lone organic horse appears
-        —a symbol of difference within a system built on uniformity. Initially met with resistance, it begins to transform, integrating with technology. But rather than losing its essence, it evolves into something new: a cybernetic unicorn, bridging the gap between two worlds.
+      As technology advances, it can amplify biases and reinforce uniform ways of seeing the world.
+      Divergital imagines a rigid digital landscape where a lone organic horse appears as a symbol of difference within a system built on uniformity.
     </p>
 
-    <img src="img/divergital_2.png" alt="Project image 2" oncontextmenu="return false;">
     <p>
-        This project explores the tension between technology and individuality, between assimilation and diversity. True progress doesn't come from uniformity but from understanding-embracing differences to create a richer, more interconnected world. 
+      Rather than losing its essence, the horse integrates with technology and evolves into a cybernetic unicorn — a new form that bridges the organic and the technological.
+    </p>
 
+    
+  </section>
+
+
+  <!-- TRANSFORMATION NARRATIVE -->
+  <section class="project-section">
+    <h3>Transformation Narrative</h3>
+
+    <p>
+      The project follows a transformation from difference to integration and divergence.
+      The horse enters a digital system, merges with mechanical structures, and evolves into a cybernetic unicorn — a symbol of difference, transformation, and interconnected progress.
+    </p>
+
+    <img src="img/divergital_trans.png" alt="Divergital transformation sequence: difference, integration, divergence" oncontextmenu="return false;">
+  </section>
+
+
+  <!-- VIDEO -->
+  <section class="project-section">
+    <h3>Video</h3>
+
+    <p>
+      The project uses 3D modeling in Blender as a structural foundation, combined with Stable Diffusion to generate a distinct visual texture.
+      It explores the relationship between precise 3D control and the latent possibilities of generative AI.
     </p>
 
     <div class="vimeo-wrapper landscape">
-        <iframe src="https://player.vimeo.com/video/1070860292?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="1920" height="1080" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="Divergital_ AI music video"></iframe>
-      </div>
-      <p>
-        An experimental exploration of 'Divergital'. This project utilizes 3D modeling in Blender as a structural foundation, integrated with Stable Diffusion to create a unique visual texture. It focuses on the synergy between precise 3D control and generative AI's latent possibilities
+      <iframe 
+        src="https://player.vimeo.com/video/1070860292?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+        width="1920" 
+        height="1080" 
+        frameborder="0" 
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
+        title="Divergital AI video">
+      </iframe>
+    </div>
+  </section>
+
+
+  <!-- EXHIBITION VIEW -->
+  <section class="project-section">
+    <h3>Exhibition View</h3>
+
+    <p>
+      Divergital was presented as a large-scale video installation, extending the digital image into a spatial viewing experience.
     </p>
 
-  </div>
+    <img src="img/divergital_install.png" alt="Divergital large-scale video installation view" oncontextmenu="return false;">
+
+  </section>
+
+</div>
 
 </body>
 </html>

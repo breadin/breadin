@@ -8,96 +8,185 @@
   <link rel="stylesheet" href="project.css" />
   <script defer src="https://cloud.umami.is/script.js" data-website-id="df811a2e-7bc7-4c27-9dee-b28f9c1caaf4"></script>
 </head>
-    <header id="header">
-        <div id="logo">
-            <a href="index.html"><img src="img/breadin_logo.png" class="site-logo">
-          </a>
-        </div>
-        <div class="menu-toggle" id="mobile-menu">&#9776;</div>
-  <div id="mobile-menu-overlay">
-    <div id="mobile-menu-close">&times;</div>
-    <ul>
-      <li><a href="works.html">/works/</a></li>
-      <li><a href="cv.html">/about(cv)/</a></li>
-      <li><a href="contact.html">/contact/</a></li>
-    </ul>
-  </div>
-        <nav id="head-center">
-          <ul>
-            <li class="menu"><a href="works.html"><span>/works/</span></a></li>
-            <li class="menu"><a href="cv.html"><span>/about(cv)/</span></a></li>
-            <li class="menu"><a href="contact.html"><span>/contact/</span></a></li>
-          </ul>
-        </nav>
-      </header>
 
-      <body>
+<body>
+  <header id="header">
+    <div id="logo">
+      <a href="index.html">
+        <img src="img/breadin_logo.png" class="site-logo" alt="breadin logo">
+      </a>
+    </div>
 
-        <script>
-           const menuToggle = document.getElementById("mobile-menu");
- const menuOverlay = document.getElementById("mobile-menu-overlay");
- const menuClose = document.getElementById("mobile-menu-close");
- menuToggle.addEventListener("click", () => {
-   menuOverlay.classList.add("active");
- });
- menuClose.addEventListener("click", () => {
-   menuOverlay.classList.remove("active");
- });
-        </script>
-  <!-- 뒤로 가기 -->
+    <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+
+    <div id="mobile-menu-overlay">
+      <div id="mobile-menu-close">&times;</div>
+      <ul>
+        <li><a href="works.html">/works/</a></li>
+        <li><a href="cv.html">/about(cv)/</a></li>
+        <li><a href="contact.html">/contact/</a></li>
+      </ul>
+    </div>
+
+    <nav id="head-center">
+      <ul>
+        <li class="menu"><a href="works.html"><span>/works/</span></a></li>
+        <li class="menu"><a href="cv.html"><span>/about(cv)/</span></a></li>
+        <li class="menu"><a href="contact.html"><span>/contact/</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <script>
+    const menuToggle = document.getElementById("mobile-menu");
+    const menuOverlay = document.getElementById("mobile-menu-overlay");
+    const menuClose = document.getElementById("mobile-menu-close");
+
+    menuToggle.addEventListener("click", () => {
+      menuOverlay.classList.add("active");
+    });
+
+    menuClose.addEventListener("click", () => {
+      menuOverlay.classList.remove("active");
+    });
+  </script>
+
   <a class="back" href="works.html">&lt; back</a>
 
   <!-- 프로젝트 상세 콘텐츠 -->
-  <div class="project-detail">
-    <h1>Puzzlemaster, 2024</h1>
-    <h2> Interactive Web Application / Puzzle Game System </h2>
-    <img src="img/pm_index.png" alt="Project image 1" oncontextmenu="return false;">
-    <img src="img/pm_index_2.png" alt="Project image 1" oncontextmenu="return false;">
-    <p>A web-based puzzle platform that combines gameplay, user accounts, progress tracking, and administrative control within an interactive system.</p>
+  <div class="project-detail puzzlemaster">
 
-    <img src="img/pm_puzzle_1.png" alt="Project image 1" oncontextmenu="return false;">
-    <img src="img/pm_puzzle_2-1.png" alt="Project image 1" oncontextmenu="return false;">
-    <img src="img/pm_puzzle_2.png" alt="Project image 1" oncontextmenu="return false;">
-    <p>
+    <!-- HERO -->
+    <section class="project-hero">
+      <h1>Puzzlemaster, 2024</h1>
+      <h2>Interactive Web Application / Puzzle Game System</h2>
+
+      <img src="img/pm_index.png" alt="Puzzlemaster homepage interface" oncontextmenu="return false;">
+
+      <p class="project-intro">
+        Puzzlemaster is a web-based puzzle platform that combines gameplay, user accounts, progress tracking, and administrative control within an interactive system.
+      </p>
+    </section>
+
+
+    <!-- PROJECT INFO -->
+    <section class="project-info">
+      <div>
+        <span>Role</span>
+        <p>Interface Design / Game Logic / Front-end Development / Database Integration</p>
+      </div>
+
+      <div>
+        <span>Medium</span>
+        <p>Web Application / Puzzle Game / User Account System / Admin Interface</p>
+      </div>
+
+      <div>
+        <span>Tools</span>
+        <p>HTML / CSS / JavaScript / PHP / Database / Localhost</p>
+      </div>
+    </section>
+
+
+    <!-- OVERVIEW -->
+    <section class="project-section">
+      <h3>Overview</h3>
+
+      <p>
         Developed as part of a web application course, this project explores how a game can function as a structured digital system rather than a standalone visual interface.
-        Users can choose different puzzle motifs and difficulty levels (4x4, 5x5, 6x6), which are dynamically divided into draggable puzzle pieces.
-        Their progress can be saved during gameplay, resumed later, and tracked through individual user accounts.
+        Users can choose different puzzle motifs and difficulty levels, save their progress, resume gameplay later, and track their activity through individual accounts.
       </p>
 
-    <img src="img/pm_motiv.png" alt="Project image 1" oncontextmenu="return false;">
-    <img src="img/pm_mein.png" alt="Project image 1" oncontextmenu="return false;">
-    <p>
+      <img src="img/pm_index_2.png" alt="Puzzlemaster main page variation" oncontextmenu="return false;">
+    </section>
+
+
+    <!-- GAMEPLAY SYSTEM -->
+    <section class="project-section">
+      <h3>Gameplay System</h3>
+
+      <p>
+        The gameplay system dynamically divides selected images into draggable puzzle pieces.
+        Users can choose between multiple difficulty levels, including 4x4, 5x5, and 6x6 puzzle structures.
+      </p>
+
+      <div class="image-grid two">
+        <img src="img/pm_puzzle_1.png" alt="Puzzlemaster puzzle gameplay screen 1" oncontextmenu="return false;">
+        <img src="img/pm_puzzle_2-1.png" alt="Puzzlemaster puzzle gameplay screen 2" oncontextmenu="return false;">
+      </div>
+
+      <img src="img/pm_puzzle_2.png" alt="Puzzlemaster completed puzzle gameplay screen" oncontextmenu="return false;">
+    </section>
+
+
+    <!-- USER TRACKING -->
+    <section class="project-section">
+      <h3>User Tracking</h3>
+
+      <p>
         The platform connects user interaction with stored data.
         Each player can view which motif they played, how many pieces were selected, and whether the puzzle is still in progress or already completed.
-        This transforms the experience from a simple puzzle game into a system that records and reflects user activity over time.
       </p>
-    <img src="img/pm_admin.png" alt="Project image 1" oncontextmenu="return false;">
-    <img src="img/pm_admin_motiv.png" alt="Project image 1" oncontextmenu="return false;">
-    <img src="img/pm_login.png" alt="Project image 1" oncontextmenu="return false;">
-    <img src="img/pm_splele.png" alt="Project image 1" oncontextmenu="return false;">
-    <p>
-        In addition to the player side, the project also includes an admin interface.
-        The administrator can review all user activity, monitor current puzzle states, and manage puzzle motifs by adding or removing images.
-        This expanded the project from a game interface into a database-driven web application with both user-facing and administrative functions.
+
+      <div class="image-grid two">
+        <img src="img/pm_motiv.png" alt="Puzzlemaster motif selection interface" oncontextmenu="return false;">
+        <img src="img/pm_mein.png" alt="Puzzlemaster user tracking interface" oncontextmenu="return false;">
+      </div>
+    </section>
+
+
+    <!-- ADMIN SYSTEM -->
+    <section class="project-section">
+      <h3>Admin System</h3>
+
+      <p>
+        The project also includes an admin interface.
+        Administrators can review user activity, monitor current puzzle states, and manage puzzle motifs by adding or removing images.
       </p>
-    <img src="img/pm_info.png" alt="Project image 1" oncontextmenu="return false;">
-    <p>
-        <strong>My Role</strong><br><br>
-        Group Project<br><br>
-        I was primarily responsible for the core implementation of the project.
-        My work included developing most of the game system, designing the overall layout, building the draggable puzzle interaction, and contributing to the HTML structure, localhost integration, and database-connected functionality.
+
+      <div class="image-grid two">
+        <img src="img/pm_admin.png" alt="Puzzlemaster admin dashboard" oncontextmenu="return false;">
+        <img src="img/pm_admin_motiv.png" alt="Puzzlemaster admin motif management" oncontextmenu="return false;">
+      </div>
+    </section>
+
+
+    <!-- ACCOUNT & SYSTEM DETAILS -->
+    <section class="project-section">
+      <h3>Account & System Details</h3>
+
+      <p>
+        Login, gameplay status, motif selection, and puzzle progress are connected through a database-driven structure.
+        This expanded the project from a game interface into a complete user-facing and administrative web application.
       </p>
-    
-      <ul>
+
+      <div class="image-grid two">
+        <img src="img/pm_login.png" alt="Puzzlemaster login interface" oncontextmenu="return false;">
+        <img src="img/pm_splele.png" alt="Puzzlemaster gameplay status interface" oncontextmenu="return false;">
+      </div>
+
+      <img src="img/pm_info.png" alt="Puzzlemaster system information page" oncontextmenu="return false;">
+    </section>
+
+
+    <!-- CONTRIBUTION -->
+    <section class="project-section">
+      <h3>Contribution</h3>
+
+      <p>
+        This was a group project. I was primarily responsible for the core implementation, including the game system, overall layout, draggable puzzle interaction, HTML structure, localhost integration, and database-connected functionality.
+      </p>
+
+      <ul class="tools-list">
         <li>Designed the overall layout and interface structure</li>
         <li>Developed the draggable puzzle gameplay system</li>
-        <li>Implemented puzzle generation across multiple difficulty levels (4x4, 5x5, 6x6)</li>
-        <li>Built save/resume functionality for in-progress gameplay</li>
-        <li>Contributed to user account-based tracking of motif, puzzle size, and play status</li>
+        <li>Implemented puzzle generation across multiple difficulty levels: 4x4, 5x5, 6x6</li>
+        <li>Built save and resume functionality for in-progress gameplay</li>
+        <li>Contributed to account-based tracking of motif, puzzle size, and play status</li>
         <li>Worked on localhost-based integration using HTML, CSS, JavaScript, PHP, and database logic</li>
         <li>Contributed to the admin-side structure for monitoring users and managing motifs</li>
       </ul>
-
+    </section>
 
   </div>
 

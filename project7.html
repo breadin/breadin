@@ -3,103 +3,171 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>colorlender/climalender</title>
+  <title>Colorlendar / Climalendar</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="project.css" />
   <script defer src="https://cloud.umami.is/script.js" data-website-id="df811a2e-7bc7-4c27-9dee-b28f9c1caaf4"></script>
 </head>
-    <header id="header">
-        <div id="logo">
-            <a href="index.html"><img src="img/breadin_logo.png" class="site-logo">
-          </a>
-        </div>
-        <div class="menu-toggle" id="mobile-menu">&#9776;</div>
-  <div id="mobile-menu-overlay">
-    <div id="mobile-menu-close">&times;</div>
-    <ul>
-      <li><a href="works.html">/works/</a></li>
-      <li><a href="cv.html">/about(cv)/</a></li>
-      <li><a href="contact.html">/contact/</a></li>
-    </ul>
-  </div>
-        <nav id="head-center">
-          <ul>
-            <li class="menu"><a href="works.html"><span>/works/</span></a></li>
-            <li class="menu"><a href="cv.html"><span>/about(cv)/</span></a></li>
-            <li class="menu"><a href="contact.html"><span>/contact/</span></a></li>
-          </ul>
-        </nav>
-      </header>
 
-      <body>
+<body>
+  <header id="header">
+    <div id="logo">
+      <a href="index.html">
+        <img src="img/breadin_logo.png" class="site-logo" alt="breadin logo">
+      </a>
+    </div>
 
-        <script>
-           const menuToggle = document.getElementById("mobile-menu");
- const menuOverlay = document.getElementById("mobile-menu-overlay");
- const menuClose = document.getElementById("mobile-menu-close");
- menuToggle.addEventListener("click", () => {
-   menuOverlay.classList.add("active");
- });
- menuClose.addEventListener("click", () => {
-   menuOverlay.classList.remove("active");
- });
-        </script>
-  <!-- 뒤로 가기 -->
+    <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+
+    <div id="mobile-menu-overlay">
+      <div id="mobile-menu-close">&times;</div>
+      <ul>
+        <li><a href="works.html">/works/</a></li>
+        <li><a href="cv.html">/about(cv)/</a></li>
+        <li><a href="contact.html">/contact/</a></li>
+      </ul>
+    </div>
+
+    <nav id="head-center">
+      <ul>
+        <li class="menu"><a href="works.html"><span>/works/</span></a></li>
+        <li class="menu"><a href="cv.html"><span>/about(cv)/</span></a></li>
+        <li class="menu"><a href="contact.html"><span>/contact/</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <script>
+    const menuToggle = document.getElementById("mobile-menu");
+    const menuOverlay = document.getElementById("mobile-menu-overlay");
+    const menuClose = document.getElementById("mobile-menu-close");
+
+    menuToggle.addEventListener("click", () => {
+      menuOverlay.classList.add("active");
+    });
+
+    menuClose.addEventListener("click", () => {
+      menuOverlay.classList.remove("active");
+    });
+  </script>
+
   <a class="back" href="works.html">&lt; back</a>
 
   <!-- 프로젝트 상세 콘텐츠 -->
-  <div class="project-detail">
-    <h1>Colorlendar / Climalendar, 2022</h1>
-    <h2> Data-driven Experience Design </h2>
-    <img src="img/colorlendar_8.png" alt="Project image 1" oncontextmenu="return false;">
-    <p>A system that transforms climate data into personalized products and visual experiences,
-        bridging environmental awareness with emotional engagement.</p>
-    <img src="img/colorlendar_1.png" alt="Project image 2" oncontextmenu="return false;">
-    <img src="img/colorlendar_2.png" alt="Project image 3" oncontextmenu="return false;">
-    <p>
-        This project explores how climate data can become personal.<br>
+  <div class="project-detail colorlendar">
 
-        Rather than presenting information as abstract numbers,
-        it translates temperature data into color-based systems
-        that users can interact with and apply to everyday objects.<br>
-        
-        By selecting a specific moment in time,
-        users generate personalized products that carry both
-        emotional meaning and environmental context.<br>
-        
-        Alongside this, a calendar-based visualization reveals
-        long-term climate changes in Bremen, grounding the experience in data.<br>
-        
-        The project creates a shift between emotional engagement and data-driven understanding,
-        inviting users to engage with climate change not just as information,
-        but as something connected to their own memory and experience.<br>
-    </p>
-    <img src="img/colorlendar_3.png" alt="Project image 4" oncontextmenu="return false;">
-    <img src="img/colorlendar_4.png" alt="Project image 5" oncontextmenu="return false;">
-    <p>
-        The project consists of two interconnected platforms:<br>
+    <!-- HERO -->
+    <section class="project-hero">
+      <h1>Colorlendar / Climalendar, 2022</h1>
+      <h2>Data-driven Experience Design</h2>
 
-        Colorlendar<br>
-        A personalization system that converts monthly average temperatures in Bremen into color values.
-        Users can select specific dates and generate customized products (such as bags or T-shirts) based on climate data.<br>
+      <img src="img/colorlendar_8.png" alt="Colorlendar and Climalendar project overview" oncontextmenu="return false;">
 
-        Climalendar<br>
-        A data visualization interface that presents long-term temperature changes through a calendar format,
-        making climate trends more accessible and intuitive.<br>
-    </p>
-    <img src="img/colorlendar_7.png" alt="Project image 6" oncontextmenu="return false;">
-    <h3>My Role</h3>
-    <p>Group Project (4 members)</p>
-    
-    <ul>
-      <li>Developed the system that translates temperature data into RGB color values</li>
-      <li>Implemented the calendar-based visualization using climate data (1890–2022)</li>
-      <li>Designed interaction logic for exploring date-based data</li>
-      <li>Built an image export feature for generated visuals</li>
-    </ul>
-    
-    <p>I also contributed to defining the visual logic and color system.</p>
-    <img src="img/colorlendar_6.png" alt="Project image 6" oncontextmenu="return false;">
+      <p class="project-intro">
+        A data-driven experience that transforms climate data into color-based products and calendar visualizations, connecting environmental awareness with personal memory.
+      </p>
+    </section>
+
+
+    <!-- PROJECT INFO -->
+    <section class="project-info">
+      <div>
+        <span>Role</span>
+        <p>Data-to-Color System / Calendar Visualization / Interaction Logic / Export Feature</p>
+      </div>
+
+      <div>
+        <span>Medium</span>
+        <p>Interactive Web Experience / Climate Data / Color System / Product Personalization</p>
+      </div>
+
+      <div>
+        <span>Team</span>
+        <p>Group Project / 4 Members</p>
+      </div>
+    </section>
+
+
+    <!-- CONCEPT -->
+    <section class="project-section">
+      <h3>Concept</h3>
+
+      <p>
+        This project explores how climate data can become personal.
+        Rather than presenting temperature data as abstract numbers, the system translates climate information into color-based experiences that users can interact with and apply to everyday objects.
+      </p>
+
+      <p>
+        By selecting a specific moment in time, users generate personalized products that carry both emotional meaning and environmental context.
+      </p>
+    </section>
+
+
+    <!-- TWO PLATFORMS -->
+    <section class="project-section">
+      <h3>Two Platforms</h3>
+
+      <p>
+        The project consists of two interconnected platforms.
+        Colorlendar converts monthly average temperatures in Bremen into color values for personalized products, while Climalendar presents long-term climate changes through a calendar-based visualization.
+      </p>
+
+      <div class="image-grid two">
+        <img src="img/colorlendar_1.png" alt="Colorlendar interface for personalized climate-based products" oncontextmenu="return false;">
+        <img src="img/colorlendar_2.png" alt="Climalendar calendar-based climate data visualization" oncontextmenu="return false;">
+      </div>
+    </section>
+
+
+    <!-- DATA TO COLOR SYSTEM -->
+    <section class="project-section">
+      <h3>Data-to-Color System</h3>
+
+      <p>
+        Temperature data is translated into RGB color values, allowing climate information to become a visual and emotional material.
+        This system connects numeric data with color, product customization, and personal memory.
+      </p>
+
+      <div class="image-grid two">
+        <img src="img/colorlendar_3.png" alt="Colorlendar data-to-color system" oncontextmenu="return false;">
+        <img src="img/colorlendar_4.png" alt="Colorlendar product personalization interface" oncontextmenu="return false;">
+      </div>
+      <img class="image-medium" src="img/colorlendar_7.png" alt="Climalendar long-term climate visualization" oncontextmenu="return false;">
+
+    </section>
+
+
+    <!-- CLIMATE VISUALIZATION -->
+    <section class="project-section">
+      <h3>Climate Visualization</h3>
+
+      <p>
+        Climalendar visualizes long-term temperature changes in Bremen from 1890 to 2022 through a calendar format, making climate trends more accessible and intuitive.
+      </p>
+
+      <img src="img/colorlendar_5.png" alt="Climalendar long-term climate visualization" oncontextmenu="return false;">
+    </section>
+
+
+    <!-- CONTRIBUTION -->
+    <section class="project-section">
+      <h3>Contribution</h3>
+
+      <p>
+        This was a group project with four members. I was responsible for the system that translates temperature data into RGB color values, the calendar-based visualization using climate data from 1890 to 2022, the interaction logic for exploring date-based data, and the image export feature for generated visuals.
+      </p>
+
+      <ul class="tools-list">
+        <li>Developed the system that translates temperature data into RGB color values</li>
+        <li>Implemented the calendar-based visualization using climate data from 1890 to 2022</li>
+        <li>Designed interaction logic for exploring date-based data</li>
+        <li>Built an image export feature for generated visuals</li>
+        <li>Contributed to defining the visual logic and color system</li>
+      </ul>
+
+      <img src="img/colorlendar_6.png" alt="Colorlendar generated export visual" oncontextmenu="return false;">
+    </section>
+
   </div>
 
 </body>

@@ -8,61 +8,128 @@
   <link rel="stylesheet" href="project.css" />
   <script defer src="https://cloud.umami.is/script.js" data-website-id="df811a2e-7bc7-4c27-9dee-b28f9c1caaf4"></script>
 </head>
-    <header id="header">
-        <div id="logo">
-            <a href="index.html"><img src="img/breadin_logo.png" class="site-logo">
-          </a>
-        </div>
-        <div class="menu-toggle" id="mobile-menu">&#9776;</div>
-  <div id="mobile-menu-overlay">
-    <div id="mobile-menu-close">&times;</div>
-    <ul>
-      <li><a href="works.html">/works/</a></li>
-      <li><a href="cv.html">/about(cv)/</a></li>
-      <li><a href="contact.html">/contact/</a></li>
-    </ul>
-  </div>
-        <nav id="head-center">
-          <ul>
-            <li class="menu"><a href="works.html"><span>/works/</span></a></li>
-            <li class="menu"><a href="cv.html"><span>/about(cv)/</span></a></li>
-            <li class="menu"><a href="contact.html"><span>/contact/</span></a></li>
-          </ul>
-        </nav>
-      </header>
 
-      <body>
+<body>
+  <header id="header">
+    <div id="logo">
+      <a href="index.html">
+        <img src="img/breadin_logo.png" class="site-logo" alt="breadin logo">
+      </a>
+    </div>
 
-        <script>
-           const menuToggle = document.getElementById("mobile-menu");
- const menuOverlay = document.getElementById("mobile-menu-overlay");
- const menuClose = document.getElementById("mobile-menu-close");
- menuToggle.addEventListener("click", () => {
-   menuOverlay.classList.add("active");
- });
- menuClose.addEventListener("click", () => {
-   menuOverlay.classList.remove("active");
- });
-        </script>
-  <!-- 뒤로 가기 -->
+    <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+
+    <div id="mobile-menu-overlay">
+      <div id="mobile-menu-close">&times;</div>
+      <ul>
+        <li><a href="works.html">/works/</a></li>
+        <li><a href="cv.html">/about(cv)/</a></li>
+        <li><a href="contact.html">/contact/</a></li>
+      </ul>
+    </div>
+
+    <nav id="head-center">
+      <ul>
+        <li class="menu"><a href="works.html"><span>/works/</span></a></li>
+        <li class="menu"><a href="cv.html"><span>/about(cv)/</span></a></li>
+        <li class="menu"><a href="contact.html"><span>/contact/</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <script>
+    const menuToggle = document.getElementById("mobile-menu");
+    const menuOverlay = document.getElementById("mobile-menu-overlay");
+    const menuClose = document.getElementById("mobile-menu-close");
+
+    menuToggle.addEventListener("click", () => {
+      menuOverlay.classList.add("active");
+    });
+
+    menuClose.addEventListener("click", () => {
+      menuOverlay.classList.remove("active");
+    });
+  </script>
+
   <a class="back" href="works.html">&lt; back</a>
 
   <!-- 프로젝트 상세 콘텐츠 -->
-  <div class="project-detail">
-    <h1>Blockware, 2023</h1>
-    <h2> Generative Visual / Creative Coding </h2>
-    <div style="text-align: center;">
-        <img src="img/ro_se_2.gif" alt="Project image 1" style="width: 300px; height: auto;" oncontextmenu="return false;">
-    <p>
-        This project visualizes the intersection of tradition and technology by reconstructing a Korean ceramic vessel using digital blocks. The shape is generated with pixel-like tiles, referencing both modular systems and visual distortion. The piece explores how digital media transforms the perception of familiar objects — blurring the line between realism and abstraction, heritage and reinterpretation
-    </p>
-    <img src="img/ro_se_1.gif" alt="Project image 1" style="width: 300px; height: auto;" oncontextmenu="return false;">
-<img src="img/ro_se_3.gif" alt="Project image 2" style="width: 300px; height: auto;" oncontextmenu="return false;">
-<p>
-  Blockware reinterprets traditional Korean ceramics as modular digital blocks. I used generative AI to create the base images, then wrote a custom script in Processing to transform them into pixelated tiles that scatter and disperse. Finalized in Premiere Pro, the work explores how digital media can deconstruct and re-imagine cultural heritage through a mix of technology and tradition.
-</p>
+  <div class="project-detail blockware">
 
-</div>
+    <!-- HERO -->
+    <section class="project-hero">
+      <h1>Blockware, 2023</h1>
+      <h2>Generative Visual / Creative Coding</h2>
+
+      <img class="image-medium" src="img/ro_se_2.gif" alt="Blockware animated ceramic vessel" oncontextmenu="return false;">
+
+      <p class="project-intro">
+        Blockware reinterprets traditional Korean ceramics as modular digital blocks, exploring how digital media transforms cultural objects through abstraction and motion.
+      </p>
+    </section>
+
+
+    <!-- PROJECT INFO -->
+    <section class="project-info">
+      <div>
+        <span>Role</span>
+        <p>Concept / Generative Visual Design / Creative Coding / Motion Editing</p>
+      </div>
+
+      <div>
+        <span>Medium</span>
+        <p>Generative Visual / Pixelated Tiles / Animated GIF / Digital Image</p>
+      </div>
+
+      <div>
+        <span>Tools</span>
+        <p>Processing / Generative AI / Premiere Pro</p>
+      </div>
+    </section>
+
+
+    <!-- CONCEPT -->
+    <section class="project-section">
+      <h3>Concept</h3>
+
+      <p>
+        This project visualizes the intersection of tradition and technology by reconstructing a Korean ceramic vessel through digital blocks.
+        The familiar form of pottery is transformed into pixel-like tiles, blurring the line between realism and abstraction, heritage and reinterpretation.
+      </p>
+    </section>
+
+    <div class="image-grid two">
+      <img src="img/bw_3.png" alt="Blockware pixelated ceramic animation 1" oncontextmenu="return false;">
+      <img src="img/bw_2.png" alt="Blockware pixelated ceramic animation 2" oncontextmenu="return false;">
+    </div>
+
+
+    <!-- PROCESS -->
+    <section class="project-section">
+      <h3>Process</h3>
+
+      <p>
+        Generative AI was used to create the base ceramic imagery. A custom script in Processing then transformed the images into modular pixelated tiles that scatter, disperse, and reassemble through motion.
+      </p>
+
+
+    </section>
+
+
+    <!-- VISUAL OUTCOME -->
+    <section class="project-section">
+      <h3>Visual Outcome</h3>
+
+      <p>
+        The final work deconstructs and reimagines cultural heritage through a digital material language, combining ceramic form, modular systems, and visual distortion.
+      </p>
+      <div class="image-grid two">
+        <img src="img/ro_se_1.gif" alt="Blockware pixelated ceramic animation 1" oncontextmenu="return false;">
+        <img src="img/ro_se_3.gif" alt="Blockware pixelated ceramic animation 2" oncontextmenu="return false;">
+      </div>
+
+    </section>
+
   </div>
 
 </body>

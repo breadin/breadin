@@ -8,65 +8,140 @@
   <link rel="stylesheet" href="project.css" />
   <script defer data-domain="breadin.me" src="https://plausible.io/js/script.js"></script>
 </head>
-    
-    <header id="header">
-        <div id="logo">
-            <a href="index.html"><img src="img/breadin_logo.png" class="site-logo">
-          </a>
-        </div>
-        <div class="menu-toggle" id="mobile-menu">&#9776;</div>
-        <div id="mobile-menu-overlay">
-          <div id="mobile-menu-close">&times;</div>
-          <ul>
-            <li><a href="works.html">/works/</a></li>
-            <li><a href="cv.html">/about(cv)/</a></li>
-            <li><a href="contact.html">/contact/</a></li>
-          </ul>
-        </div>
 
-        <nav id="head-center">
-          <ul>
-            <li class="menu"><a href="works.html"><span>/works/</span></a></li>
-            <li class="menu"><a href="cv.html"><span>/about(cv)/</span></a></li>
-            <li class="menu"><a href="contact.html"><span>/contact/</span></a></li>
-          </ul>
-        </nav>
-      </header>
+<body>
+  <header id="header">
+    <div id="logo">
+      <a href="index.html">
+        <img src="img/breadin_logo.png" class="site-logo" alt="breadin logo">
+      </a>
+    </div>
 
-      <body>
+    <div class="menu-toggle" id="mobile-menu">&#9776;</div>
 
-      <script>
-         const menuToggle = document.getElementById("mobile-menu");
- const menuOverlay = document.getElementById("mobile-menu-overlay");
- const menuClose = document.getElementById("mobile-menu-close");
- menuToggle.addEventListener("click", () => {
-   menuOverlay.classList.add("active");
- });
- menuClose.addEventListener("click", () => {
-   menuOverlay.classList.remove("active");
- });
-      </script>
-          
-  <!-- 뒤로 가기 -->
+    <div id="mobile-menu-overlay">
+      <div id="mobile-menu-close">&times;</div>
+      <ul>
+        <li><a href="works.html">/works/</a></li>
+        <li><a href="cv.html">/about(cv)/</a></li>
+        <li><a href="contact.html">/contact/</a></li>
+      </ul>
+    </div>
+
+    <nav id="head-center">
+      <ul>
+        <li class="menu"><a href="works.html"><span>/works/</span></a></li>
+        <li class="menu"><a href="cv.html"><span>/about(cv)/</span></a></li>
+        <li class="menu"><a href="contact.html"><span>/contact/</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <script>
+    const menuToggle = document.getElementById("mobile-menu");
+    const menuOverlay = document.getElementById("mobile-menu-overlay");
+    const menuClose = document.getElementById("mobile-menu-close");
+
+    menuToggle.addEventListener("click", () => {
+      menuOverlay.classList.add("active");
+    });
+
+    menuClose.addEventListener("click", () => {
+      menuOverlay.classList.remove("active");
+    });
+  </script>
+
   <a class="back" href="works.html">&lt; back</a>
 
   <!-- 프로젝트 상세 콘텐츠 -->
-  <div class="project-detail">
-    <h1>Into the dream, 2022</h1>
-    <h2> Installation </h2>
-    
-    <div class="vimeo-wrapper">
-        <iframe src="https://player.vimeo.com/video/1075276246?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="1920" height="1080" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="into the dream"></iframe>
-      </div>
-    <p>
-        ‘Into the Dream’ is an installation that deals with a moving blanket as a medium to connect reality and dreams. It allows viewers to experience the sensation of entering their own dream world.</p>
-        <p>  As conscious beings, we observe the moving blanket which is representing the preconscious and that links our consciousness and unconsciousness, while the shadows symbolize our unconsciousness, leading to the landscape of dreams. People can immerse themselves in their individual dream spaces and experience emotions from their subconscious mind.
-    </p>
-    <img src="img/itd_1.jpg" alt="Project image 1" oncontextmenu="return false;">
-    <img src="img/itd_2.jpg" alt="Project image 2" oncontextmenu="return false;">
-    <img src="img/itd_3.jpg" alt="Project image 3" oncontextmenu="return false;">
+  <div class="project-detail into-the-dream">
 
-    
+    <!-- HERO -->
+    <section class="project-hero">
+      <h1>Into the Dream, 2022</h1>
+      <h2>Installation / Moving Object / Shadow</h2>
+
+      <div class="vimeo-wrapper landscape">
+        <iframe 
+          src="https://player.vimeo.com/video/1075276246?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+          width="1920" 
+          height="1080" 
+          frameborder="0" 
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
+          title="Into the Dream">
+        </iframe>
+      </div>
+
+      <p class="project-intro">
+        Into the Dream is an installation that uses a moving blanket as a medium between reality and dreams, inviting viewers into an individual dream space.
+      </p>
+    </section>
+
+
+    <!-- PROJECT INFO -->
+    <section class="project-info">
+      <div>
+        <span>Role</span>
+        <p>Concept / Installation / Object Direction / Video Documentation</p>
+      </div>
+
+      <div>
+        <span>Medium</span>
+        <p>Installation / Moving Object / Shadow / Spatial Experience</p>
+      </div>
+
+      <div>
+        <span>Theme</span>
+        <p>Consciousness / Preconsciousness / Unconsciousness / Dream</p>
+      </div>
+    </section>
+
+
+    <!-- CONCEPT -->
+    <section class="project-section">
+      <h3>Concept</h3>
+
+      <p>
+        The work explores the boundary between consciousness and unconsciousness through a moving blanket.
+        The blanket functions as a preconscious medium, connecting the visible world of reality with the invisible landscape of dreams.
+      </p>
+
+      <p>
+        Shadows become a visual metaphor for the unconscious, allowing viewers to enter a personal dream space and experience emotions emerging from the subconscious mind.
+      </p>
+    </section>
+
+    <img class="image-medium" src="img/itd_proto.png" alt="Into the Dream prototype 1" oncontextmenu="return false;">
+
+
+
+    <!-- INSTALLATION -->
+    <section class="project-section">
+      <h3>Installation</h3>
+
+      <p>
+        The moving blanket creates a shifting relationship between object, light, and shadow.
+        Through this simple physical movement, the installation transforms an ordinary object into a threshold between waking perception and dream-like imagination.
+      </p>
+
+      <img src="img/itd_1.jpg" alt="Into the Dream installation view 1" oncontextmenu="return false;">
+    </section>
+
+
+    <!-- DOCUMENTATION -->
+    <section class="project-section">
+      <h3>Documentation</h3>
+
+      <p>
+        The installation was documented through still images and video, capturing how the blanket, shadow, and surrounding space form a quiet dream-like environment.
+      </p>
+
+      <div class="image-grid two">
+        <img src="img/itd_2.jpg" alt="Into the Dream installation detail 1" oncontextmenu="return false;">
+        <img src="img/itd_3.jpg" alt="Into the Dream installation detail 2" oncontextmenu="return false;">
+      </div>
+    </section>
+
   </div>
 
 </body>

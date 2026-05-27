@@ -3,67 +3,108 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>vlog_intros</title>
+  <title>Vlog Intro Collection</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="project.css" />
-
-
-<script defer data-domain="breadin.github.io/breadin" src="https://plausible.io/js/script.js"></script>
+  <script defer data-domain="breadin.github.io/breadin" src="https://plausible.io/js/script.js"></script>
 </head>
-    <header id="header">
-        <div id="logo">
-            <a href="index.html"><img src="img/breadin_logo.png" class="site-logo">
-          </a>
-        </div>
-        <div class="menu-toggle" id="mobile-menu">&#9776;</div>
-        <div id="mobile-menu-overlay">
-          <div id="mobile-menu-close">&times;</div>
-          <ul>
-            <li><a href="works.html">/works/</a></li>
-            <li><a href="cv.html">/about(cv)/</a></li>
-            <li><a href="contact.html">/contact/</a></li>
-          </ul>
-        </div>
-        <nav id="head-center">
-          <ul>
-            <li class="menu"><a href="works.html"><span>/works/</span></a></li>
-            <li class="menu"><a href="cv.html"><span>/about(cv)/</span></a></li>
-            <li class="menu"><a href="contact.html"><span>/contact/</span></a></li>
-          </ul>
-        </nav>
-      </header>
 
-      <body>
-        <script>
-           const menuToggle = document.getElementById("mobile-menu");
- const menuOverlay = document.getElementById("mobile-menu-overlay");
- const menuClose = document.getElementById("mobile-menu-close");
- menuToggle.addEventListener("click", () => {
-   menuOverlay.classList.add("active");
- });
- menuClose.addEventListener("click", () => {
-   menuOverlay.classList.remove("active");
- });
-        </script>
+<body>
+  <header id="header">
+    <div id="logo">
+      <a href="index.html">
+        <img src="img/breadin_logo.png" class="site-logo" alt="breadin logo">
+      </a>
+    </div>
 
-  <!-- 뒤로 가기 -->
+    <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+
+    <div id="mobile-menu-overlay">
+      <div id="mobile-menu-close">&times;</div>
+      <ul>
+        <li><a href="works.html">/works/</a></li>
+        <li><a href="cv.html">/about(cv)/</a></li>
+        <li><a href="contact.html">/contact/</a></li>
+      </ul>
+    </div>
+
+    <nav id="head-center">
+      <ul>
+        <li class="menu"><a href="works.html"><span>/works/</span></a></li>
+        <li class="menu"><a href="cv.html"><span>/about(cv)/</span></a></li>
+        <li class="menu"><a href="contact.html"><span>/contact/</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <script>
+    const menuToggle = document.getElementById("mobile-menu");
+    const menuOverlay = document.getElementById("mobile-menu-overlay");
+    const menuClose = document.getElementById("mobile-menu-close");
+
+    menuToggle.addEventListener("click", () => {
+      menuOverlay.classList.add("active");
+    });
+
+    menuClose.addEventListener("click", () => {
+      menuOverlay.classList.remove("active");
+    });
+  </script>
+
   <a class="back" href="works.html">&lt; back</a>
 
   <!-- 프로젝트 상세 콘텐츠 -->
-  <div class="project-detail">
-    <h1>Vlog Intro Collection</h1>
-    <video src="videos/intro_collection.mp4" controls controlsList="nodownload" oncontextmenu="return false;" preload="metadata"
-     style="width: 100%; border-radius: 6px;">
-  Your browser does not support the video tag.
-</video>
-    <p>
-        This video is a compilation of vlog intro designs and animated title sequences,
-        created as a personal exploration of motion graphics using Adobe After Effects and Processing.
-        Each piece was an experiment in balancing form, typography, and rhythm—
-        crafted with a range of imagined vlog styles in mind, from minimal aesthetics to hyperpop-inspired visuals.
-    </p>
+  <div class="project-detail vlog-intro">
 
-    
+    <!-- HERO -->
+    <section class="project-hero">
+      <h1>Vlog Intro Collection, 2023</h1>
+      <h2>Motion Graphics / Animated Title Sequences</h2>
+
+      <video 
+        src="videos/intro_collection.mp4" 
+        controls 
+        controlsList="nodownload" 
+        oncontextmenu="return false;" 
+        preload="metadata">
+        Your browser does not support the video tag.
+      </video>
+
+      <p class="project-intro">
+        A collection of animated vlog intro designs exploring typography, rhythm, and visual identity through motion.
+      </p>
+    </section>
+
+
+    <!-- PROJECT INFO -->
+    <section class="project-info">
+      <div>
+        <span>Role</span>
+        <p>Motion Design / Typography / Visual Direction / Editing</p>
+      </div>
+
+      <div>
+        <span>Medium</span>
+        <p>Animated Title Sequence / Motion Graphics / Video Compilation</p>
+      </div>
+
+      <div>
+        <span>Tools</span>
+        <p>After Effects / Processing / Video Editing</p>
+      </div>
+    </section>
+
+
+    <!-- OVERVIEW -->
+    <section class="project-section">
+      <h3>Overview</h3>
+
+      <p>
+        This video is a compilation of vlog intro designs and animated title sequences, created as a personal exploration of motion graphics.
+        Each piece experiments with the relationship between form, typography, and rhythm across different imagined vlog styles, from minimal aesthetics to hyperpop-inspired visuals.
+      </p>
+    </section>
+
   </div>
 
 </body>

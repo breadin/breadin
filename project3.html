@@ -3,74 +3,174 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>regenerative life</title>
+  <title>(re)generative life</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="project.css" />
   <script defer src="https://cloud.umami.is/script.js" data-website-id="df811a2e-7bc7-4c27-9dee-b28f9c1caaf4"></script>
-
 </head>
-<body>
-    <header id="header">
-        <div id="logo">
-            <a href="index.html"><img src="img/breadin_logo.png" class="site-logo">
-          </a>
-        </div>
-        <div class="menu-toggle" id="mobile-menu">&#9776;</div>
-        <div id="mobile-menu-overlay">
-          <div id="mobile-menu-close">&times;</div>
-          <ul>
-            <li><a href="works.html">/works/</a></li>
-            <li><a href="cv.html">/about(cv)/</a></li>
-            <li><a href="contact.html">/contact/</a></li>
-          </ul>
-        </div>
-        <nav id="head-center">
-          <ul>
-            <li class="menu"><a href="works.html"><span>/works/</span></a></li>
-            <li class="menu"><a href="cv.html"><span>/about(cv)/</span></a></li>
-            <li class="menu"><a href="contact.html"><span>/contact/</span></a></li>
-          </ul>
-        </nav>
-      </header>
-      <body>
-      <script>
-         const menuToggle = document.getElementById("mobile-menu");
- const menuOverlay = document.getElementById("mobile-menu-overlay");
- const menuClose = document.getElementById("mobile-menu-close");
- menuToggle.addEventListener("click", () => {
-   menuOverlay.classList.add("active");
- });
- menuClose.addEventListener("click", () => {
-   menuOverlay.classList.remove("active");
- });
-      </script>
 
-  <!-- 뒤로 가기 -->
+<body>
+  <header id="header">
+    <div id="logo">
+      <a href="index.html">
+        <img src="img/breadin_logo.png" class="site-logo" alt="breadin logo">
+      </a>
+    </div>
+
+    <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+
+    <div id="mobile-menu-overlay">
+      <div id="mobile-menu-close">&times;</div>
+      <ul>
+        <li><a href="works.html">/works/</a></li>
+        <li><a href="cv.html">/about(cv)/</a></li>
+        <li><a href="contact.html">/contact/</a></li>
+      </ul>
+    </div>
+
+    <nav id="head-center">
+      <ul>
+        <li class="menu"><a href="works.html"><span>/works/</span></a></li>
+        <li class="menu"><a href="cv.html"><span>/about(cv)/</span></a></li>
+        <li class="menu"><a href="contact.html"><span>/contact/</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <script>
+    const menuToggle = document.getElementById("mobile-menu");
+    const menuOverlay = document.getElementById("mobile-menu-overlay");
+    const menuClose = document.getElementById("mobile-menu-close");
+
+    menuToggle.addEventListener("click", () => {
+      menuOverlay.classList.add("active");
+    });
+
+    menuClose.addEventListener("click", () => {
+      menuOverlay.classList.remove("active");
+    });
+  </script>
+
   <a class="back" href="works.html">&lt; back</a>
 
   <!-- 프로젝트 상세 콘텐츠 -->
-  <div class="project-detail">
-    <h1>(re)generative life, 2024</h1>
-    <h2> Data-Driven AI Video </h2>
-    <div class="vimeo-wrapper landscape">
-        <iframe src="https://player.vimeo.com/video/1070862207?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="1920" height="1080" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="re-generative life"></iframe>
+  <div class="project-detail regenerative-life">
+
+    <!-- HERO -->
+    <section class="project-hero">
+      <h1>(re)generative life, 2024</h1>
+      <h2>Data-driven AI Video</h2>
+
+      <div class="vimeo-wrapper landscape">
+        <iframe 
+          src="https://player.vimeo.com/video/1070862207?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+          width="1920" 
+          height="1080" 
+          frameborder="0" 
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
+          title="(re)generative life">
+        </iframe>
       </div>
-    <p>
-        Sleep is seen as unproductive from a capitalist perspective. 20th-century economic and management theories framed rest as an obstacle to productivity, a problem to be managed, minimized, or eliminated entirely, and were obsessed with documenting and tracking rest, sleep, and fatigue. As tracking and sensortechnologies become more widespread, and  with the pursuit of greater efficiency, individuals increasingly engage in self-tracking as a form of self-optimization to manage and control their own behaviors. Using devices to track my sleep patterns, I collected data on not only the sleep itself but also my sleep quality and dreams. The data was processed through AI to generate a video out of my sleep patterns.</p>
-        <p> This fragmented video is a critique of our obsession with productivity while emphasizing the coexistence and balance between generation and regeneration. ‘(re)generative life’ is a call for resistance to endless productivity.
-        
-    </p>
-    <img src="img/img_regenerative_life_2.png" alt="Project image 1" oncontextmenu="return false;">
-    <img src="img/img_regenerative_life_1.png" alt="Project image 2" oncontextmenu="return false;">
 
-    <p>
-      (re)generative life is an experimental video that critiques the modern obsession with self-optimization and productivity. I processed original 3D renders and motion sequences through Stable Diffusion, using my personal sleep data to modulate the intensity of visual distortion. By layering additional effects in TouchDesigner and Max, I transformed rigid tracking data into a fragmented narrative that challenges the capitalist perspective on rest and efficiency.
-    </p>
-    <img src="img/img_regenerative_life_3.png" alt="Project image 3" oncontextmenu="return false;">
-    <img src="img/img_regenerative_life_4.png" alt="Project image 4" oncontextmenu="return false;">
-    <img src="img/RL_exhibition.png" alt="Project image 5" oncontextmenu="return false;">
+      <p class="project-intro">
+        (re)generative life is a data-driven AI video that uses personal sleep data to question productivity, self-optimization, and the value of rest.
+      </p>
+    </section>
 
+
+    <!-- PROJECT INFO -->
+    <section class="project-info">
+      <div>
+        <span>Role</span>
+        <p>Concept / Data Mapping / AI Video Direction / Visual Composition / Editing</p>
+      </div>
+
+      <div>
+        <span>Medium</span>
+        <p>AI Video / Sleep Data / 3D Renders / Generative Visuals / Exhibition</p>
+      </div>
+
+      <div>
+        <span>Tools</span>
+        <p>Stable Diffusion / TouchDesigner / Max / Video Editing / Sleep Tracking</p>
+      </div>
+    </section>
+
+
+    <!-- CONCEPT -->
+    <section class="project-section">
+      <h3>Concept</h3>
+      <img class="image-medium" src="img/RL_exhibition.png" alt="(re)generative life exhibition view" oncontextmenu="return false;">
+
+      <p>
+        Sleep is often treated as unproductive within systems of efficiency and self-optimization.
+        As tracking technologies become more widespread, rest becomes something to document, measure, and control.
+      </p>
+
+      <p>
+        This project uses personal sleep data to generate a fragmented video, questioning the modern obsession with productivity while emphasizing the balance between generation and regeneration.
+      </p>
+    </section>
+
+    <!-- Research -->
+    <section class="project-section">
+      <h3>Research Background</h3>
     
+      <p>
+        The project connects sleep, meditation, and Buddhist mindfulness practices as ways of entering states beyond ordinary conscious thought. This research informed the visual language of rest, regeneration, and subconscious experience.
+      </p>
+    
+      <img class="image-medium" src="img/regenerative_research_diagram.png" alt="Research diagram connecting sleep, Buddha, and meditation" oncontextmenu="return false;">
+    </section>
+
+
+    <!-- DATA / PROCESS -->
+    <section class="project-section">
+      <h3>Data / Process</h3>
+
+      <p>
+        Personal sleep patterns, sleep quality, and dream records were collected through tracking devices.
+        The data was used to modulate the intensity of visual distortion, translating rest into a moving image system.
+      </p>
+
+      <p>
+        Original 3D renders and motion sequences were processed through Stable Diffusion, then layered with additional effects in TouchDesigner and Max.
+      </p>
+
+      <div class="image-grid two">
+        <img src="img/img_regenerative_life_2.png" alt="(re)generative life process image 1" oncontextmenu="return false;">
+        <img src="img/img_regenerative_life_1.png" alt="(re)generative life process image 2" oncontextmenu="return false;">
+      </div>
+    </section>
+
+
+    <!-- VISUAL OUTCOME -->
+    <section class="project-section">
+      <h3>Visual Outcome</h3>
+
+      <p>
+        The resulting video transforms rigid tracking data into a fragmented visual narrative.
+        Rather than presenting sleep as passive inactivity, the work frames rest as a generative and regenerative state.
+      </p>
+
+      <div class="image-grid two">
+        <img src="img/img_regenerative_life_3.png" alt="(re)generative life video still 1" oncontextmenu="return false;">
+        <img src="img/img_regenerative_life_4.png" alt="(re)generative life video still 2" oncontextmenu="return false;">
+      </div>
+    </section>
+
+
+    <!-- EXHIBITION VIEW -->
+    <section class="project-section">
+      <h3>Exhibition View</h3>
+
+      <p>
+        The video was presented as a screen-based work, extending personal sleep data into a spatial viewing experience.
+      </p>
+      <img src="img/img_regenerative_life_exhibition.png" alt="(re)generative life exhibition" oncontextmenu="return false;">
+
+    </section>
+
   </div>
 
 </body>
