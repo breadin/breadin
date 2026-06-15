@@ -296,7 +296,7 @@ body.mode-list {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 180px;
+  width: 150px;
   height: 110px;
   flex-shrink: 0;
   overflow: hidden;
@@ -305,7 +305,7 @@ body.mode-list {
 }
 
 .view-list .mobile-image img {
-  width: 100%;
+  width: 80%;
   height: 100%;
   object-fit: contain;
   object-position: center center;
