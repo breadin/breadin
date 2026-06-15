@@ -1,9 +1,9 @@
 // Typewriter 효과
-const statement = `I am a media artist working primarily with video and installation. My work begins from personal questions and experiences, which I then expand into collective and societal contexts.
+const statement = `I am a multidisciplinary designer focused on visual direction, generative media, and AI-assisted image-making. My work translates personal questions and cultural observations into visual systems, moving images, spatial concepts, and interactive experiences.
 
-My practice is driven by a deep curiosity about how technological advancements influence individuals and society at large. I am particularly interested in the ways technology shapes perception, behavior, and decision-making processes.
+With a background in digital media and fashion studies, I approach design through conceptual research, visual experimentation, and emerging technologies. I am particularly interested in how AI and digital systems shape perception, identity, and behavior, and how these tools can be directed to create clear and emotionally engaging visual experiences.
 
-At the core of my work is an investigation into the interplay between human consciousness—both conscious and unconscious—and the technological systems that increasingly structure how we experience and understand the world.`;
+My practice combines image-making, motion, branding, interaction, creative technology, and AI-based workflows, aiming to create work that is experimental, thoughtful, and visually distinctive.`;
 
 let i = 0;
 const speed = 20;
