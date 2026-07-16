@@ -1,302 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Works</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="works.css" />
+  <title>Selected Works — Breadin</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="works.css">
   <script defer src="https://cloud.umami.is/script.js" data-website-id="df811a2e-7bc7-4c27-9dee-b28f9c1caaf4"></script>
 </head>
 <body>
   <header id="header">
-    <div id="logo">
-      <a href="index.html"><img src="img/breadin_logo.png" class="site-logo" alt="breadin logo"></a>
-    </div>
-
-    <div class="menu-toggle" id="mobile-menu">&#9776;</div>
-    <div id="mobile-menu-overlay">
-      <div id="mobile-menu-close">&times;</div>
+    <div id="logo"><a href="index.html"><img src="img/breadin_logo.png" class="site-logo" alt="Breadin home"></a></div>
+    <button class="menu-toggle" id="mobile-menu" type="button" aria-label="Open navigation menu" aria-controls="mobile-menu-overlay" aria-expanded="false">&#9776;</button>
+    <div id="mobile-menu-overlay" aria-hidden="true">
+      <button id="mobile-menu-close" type="button" aria-label="Close navigation menu">&times;</button>
       <ul>
-        <li><a href="works.html">/works/</a></li>
-        <li><a href="cv.html">/about(cv)/</a></li>
-        <li><a href="contact.html">/contact/</a></li>
+        <li><a href="works.html">/works/</a></li><li><a href="cv.html">/about(cv)/</a></li><li><a href="contact.html">/contact/</a></li>
       </ul>
     </div>
-
-    <nav id="head-center">
-      <ul>
-        <li class="menu"><a href="works.html"><span>/works/</span></a></li>
-        <li class="menu"><a href="cv.html"><span>/about(cv)/</span></a></li>
-        <li class="menu"><a href="contact.html"><span>/contact/</span></a></li>
-      </ul>
-    </nav>
+    <nav id="head-center" aria-label="Primary navigation"><ul>
+      <li class="menu"><a href="works.html"><span>/works/</span></a></li><li class="menu"><a href="cv.html"><span>/about(cv)/</span></a></li><li class="menu"><a href="contact.html"><span>/contact/</span></a></li>
+    </ul></nav>
   </header>
 
-  <script>
-    const menuToggle = document.getElementById("mobile-menu");
-    const menuOverlay = document.getElementById("mobile-menu-overlay");
-    const menuClose = document.getElementById("mobile-menu-close");
+  <main>
+    <section class="works-intro" aria-labelledby="works-title">
+      <p class="eyebrow">Selected Works</p>
+      <h1 id="works-title">Visual systems across AI, identity, interaction, and space.</h1>
+      <p class="intro-copy">A selection of projects combining AI-assisted image-making, brand systems, moving image, creative technology, and spatial experience.</p>
+    </section>
 
-    menuToggle.addEventListener("click", () => {
-      menuOverlay.classList.add("active");
-    });
-
-    menuClose.addEventListener("click", () => {
-      menuOverlay.classList.remove("active");
-    });
-  </script>
-
-  <!-- View Mode Toggle Bar -->
-  <div id="toggle-bar">
-    <div id="view-toggle">
-      <button class="toggle-btn" id="btn-grid" title="Grid view" onclick="setView('grid')">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="1" y="1" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
-          <rect x="10" y="1" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
-          <rect x="1" y="10" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
-          <rect x="10" y="10" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
-        </svg>
-      </button>
-      <button class="toggle-btn active" id="btn-full" title="Fullscreen view" onclick="setView('full')">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="1" y="2.5" width="16" height="3" rx="1" fill="currentColor"/>
-          <rect x="1" y="7.5" width="16" height="3" rx="1" fill="currentColor"/>
-          <rect x="1" y="12.5" width="16" height="3" rx="1" fill="currentColor"/>
-        </svg>
-      </button>
-      <button class="toggle-btn" id="btn-list" title="List view" onclick="setView('list')">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="3" cy="5" r="1.5" fill="currentColor"/>
-          <line x1="7" y1="5" x2="17" y2="5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          <circle cx="3" cy="9" r="1.5" fill="currentColor"/>
-          <line x1="7" y1="9" x2="17" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          <circle cx="3" cy="13" r="1.5" fill="currentColor"/>
-          <line x1="7" y1="13" x2="17" y2="13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </button>
+    <div class="works-controls">
+      <div class="filter-scroll" aria-label="Filter projects">
+        <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter-btn" type="button" data-filter="ai" aria-pressed="false">AI / Generative</button>
+        <button class="filter-btn" type="button" data-filter="identity" aria-pressed="false">Identity</button>
+        <button class="filter-btn" type="button" data-filter="interactive" aria-pressed="false">Interactive</button>
+        <button class="filter-btn" type="button" data-filter="spatial" aria-pressed="false">Spatial</button>
+        <button class="filter-btn" type="button" data-filter="web" aria-pressed="false">Web / Systems</button>
+      </div>
+      <div id="view-toggle" aria-label="Change project view">
+        <button class="toggle-btn" id="btn-grid" type="button" title="Grid view" aria-label="Grid view" aria-pressed="false" data-view="grid">
+          <svg aria-hidden="true" viewBox="0 0 20 20"><rect x="2" y="2" width="6" height="6"/><rect x="12" y="2" width="6" height="6"/><rect x="2" y="12" width="6" height="6"/><rect x="12" y="12" width="6" height="6"/></svg>
+        </button>
+        <button class="toggle-btn" id="btn-full" type="button" title="Full view" aria-label="Full view" aria-pressed="true" data-view="full">
+          <svg aria-hidden="true" viewBox="0 0 20 20"><rect x="2" y="3" width="16" height="14"/></svg>
+        </button>
+        <button class="toggle-btn" id="btn-list" type="button" title="List view" aria-label="List view" aria-pressed="false" data-view="list">
+          <svg aria-hidden="true" viewBox="0 0 20 20"><line x1="2" y1="4" x2="18" y2="4"/><line x1="2" y1="10" x2="18" y2="10"/><line x1="2" y1="16" x2="18" y2="16"/></svg>
+        </button>
+      </div>
     </div>
-  </div>
 
-  <!-- Projects Container -->
-  <div id="projects-container" class="view-full">
-
-    <a href="aftertone.html" class="project-link">
-      <section class="project-section" style="background-image: url('img/AT_g1.png');">
-        <div class="mobile-image">
-          <img src="img/AT_g1.png" alt="Aftertone project image" loading="lazy">
-        </div>
-        <div class="overlay">
-          <h1>Aftertone</h1>
-          <p>Speculative Emotional Recorder + AI Media System</p>
-        </div>
-        <div class="list-info">
-          <span class="list-title">Aftertone</span>
-          <span class="list-desc">Speculative Emotional Recorder + AI Media System</span>
-        </div>
-      </section>
-    </a>
-
-    <a href="IOA.html" class="project-link">
-      <section class="project-section" style="background-image: url('img/IOA_thumb.png');">
-        <div class="mobile-image">
-          <img src="img/IOA_thumb.png" alt="Project image" loading="lazy">
-        </div>
-        <div class="overlay">
-          <h1>Intervals of Awareness</h1>
-          <p>Interactive data based Installation + AI video</p>
-        </div>
-        <div class="list-info">
-          <span class="list-title">Intervals of Awareness</span>
-          <span class="list-desc">Interactive data based Installation + AI video</span>
-        </div>
-      </section>
-    </a>
-
-
-    <a href="washwav.html" class="project-link">
-      <section class="project-section" style="background-image: url('img/wm_lp.png');">
-        <div class="mobile-image">
-          <img src="img/wm_lp.png" alt="Project image" loading="lazy">
-        </div>
-        <div class="overlay">
-          <h1>wash.wav</h1>
-          <p>Brand Identity + Spatial Listening Experience</p>
-        </div>
-        <div class="list-info">
-          <span class="list-title">wash.wav</span>
-          <span class="list-desc">Brand Identity + Spatial Listening Experience</span>
-        </div>
-      </section>
-    </a>
-
-
-    <a href="project1.html" class="project-link">
-      <section class="project-section" style="background-image: url('img/divergital_thumbnail.png');">
-        <div class="mobile-image">
-          <img src="img/divergital_thumbnail.png" alt="Project image" loading="lazy">
-        </div>
-        <div class="overlay">
-          <h1>Divergital</h1>
-          <p>experimental AI music video</p>
-        </div>
-        <div class="list-info">
-          <span class="list-title">Divergital</span>
-          <span class="list-desc">experimental AI music video</span>
-        </div>
-      </section>
-    </a>
-
-    <a href="project2.html" class="project-link">
-      <section class="project-section" style="background-image: url('img/noise_2.png');">
-        <div class="mobile-image">
-          <img src="img/noise_2.png" alt="Project image" loading="lazy">
-        </div>
-        <div class="overlay">
-          <h1>Rhythm Perception</h1>
-          <p>Data based audiovisual Installation</p>
-        </div>
-        <div class="list-info">
-          <span class="list-title">Rhythm Perception</span>
-          <span class="list-desc">Data based audiovisual Installation</span>
-        </div>
-      </section>
-    </a>
-
-    <a href="project3.html" class="project-link">
-      <section class="project-section" style="background-image: url('img/re_life_1.png');">
-        <div class="mobile-image">
-          <img src="img/re_life_1.png" alt="Project image" loading="lazy">
-        </div>
-        <div class="overlay">
-          <h1>(re)generative life</h1>
-          <p>Data based AI visualization</p>
-        </div>
-        <div class="list-info">
-          <span class="list-title">(re)generative life</span>
-          <span class="list-desc">Data based AI visualization</span>
-        </div>
-      </section>
-    </a>
-
-    <a href="project5.html" class="project-link">
-      <section class="project-section" style="background-image: url('img/pottery_2.png');">
-        <div class="mobile-image">
-          <img src="img/pottery_2.png" alt="Project image" loading="lazy">
-        </div>
-        <div class="overlay">
-          <h1>Blockware</h1>
-          <p>Generative Visual + Creative Coding</p>
-        </div>
-        <div class="list-info">
-          <span class="list-title">Blockware</span>
-          <span class="list-desc">Generative Visual + Creative Coding</span>
-        </div>
-      </section>
-    </a>
-
-    <a href="itd.html" class="project-link">
-      <section class="project-section" style="background-image: url('img/itd_2.jpg');">
-        <div class="mobile-image">
-          <img src="img/itd_2.jpg" alt="Project image" loading="lazy">
-        </div>
-        <div class="overlay">
-          <h1>Into the dream</h1>
-          <p>Installation</p>
-        </div>
-        <div class="list-info">
-          <span class="list-title">Into the dream</span>
-          <span class="list-desc">Installation</span>
-        </div>
-      </section>
-    </a>
-
-    <a href="project4.html" class="project-link">
-      <section class="project-section" style="background-image: url('img/web_1.png');">
-        <div class="mobile-image">
-          <img src="img/web_1.png" alt="Project image" loading="lazy">
-        </div>
-        <div class="overlay">
-          <h1>Personal website</h1>
-          <p>Custom-built portfolio site</p>
-        </div>
-        <div class="list-info">
-          <span class="list-title">Personal website</span>
-          <span class="list-desc">Custom-built portfolio site</span>
-        </div>
-      </section>
-    </a>
-
-    <a href="project8.html" class="project-link">
-      <section class="project-section" style="background-image: url('img/pm.png');">
-        <div class="mobile-image">
-          <img src="img/pm.png" alt="Project image" loading="lazy">
-        </div>
-        <div class="overlay">
-          <h1>PuzzleMaster</h1>
-          <p>Interactive Web Application + Puzzle Game System</p>
-        </div>
-        <div class="list-info">
-          <span class="list-title">PuzzleMaster</span>
-          <span class="list-desc">Interactive Web Application + Puzzle Game System</span>
-        </div>
-      </section>
-    </a>
-
-    <a href="vlog_intro.html" class="project-link">
-      <section class="project-section" style="background-image: url('img/intro_collection.png');">
-        <div class="mobile-image">
-          <img src="img/intro_collection.png" alt="Project image" loading="lazy">
-        </div>
-        <div class="overlay">
-          <h1>Vlog Intro Collection</h1>
-          <p>Motion graphic + typography experiments</p>
-        </div>
-        <div class="list-info">
-          <span class="list-title">Vlog Intro Collection</span>
-          <span class="list-desc">Motion graphic + typography experiments</span>
-        </div>
-      </section>
-    </a>
-
-    <a href="project7.html" class="project-link">
-      <section class="project-section" style="background-image: url('img/climalender.png');">
-        <div class="mobile-image">
-          <img src="img/climalender.png" alt="Project image" loading="lazy">
-        </div>
-        <div class="overlay">
-          <h1>colorlender/climalender</h1>
-          <p>Data-driven Web Experience</p>
-        </div>
-        <div class="list-info">
-          <span class="list-title">colorlender/climalender</span>
-          <span class="list-desc">Data-driven Web Experience</span>
-        </div>
-      </section>
-    </a>
-
-  </div>
+    <div id="projects-container" class="view-full">
+      <a href="aftertone.html" class="project-link" data-category="ai interactive">
+        <article class="project-section" style="--image:url('img/AT_g1.png')"><img src="img/AT_g1.png" alt="Aftertone project" loading="lazy"><div class="project-meta"><p class="project-index">01</p><div><h2>Aftertone</h2><p class="subtitle">AI Media System · Speculative Interaction</p><div class="tags"><span>AI</span><span>Interactive</span><span>Research</span></div></div></div></article>
+      </a>
+      <a href="IOA.html" class="project-link" data-category="ai interactive spatial">
+        <article class="project-section" style="--image:url('img/IOA_thumb.png')"><img src="img/IOA_thumb.png" alt="Intervals of Awareness project" loading="lazy"><div class="project-meta"><p class="project-index">02</p><div><h2>Intervals of Awareness</h2><p class="subtitle">Interactive Installation · Data-driven AI Video</p><div class="tags"><span>Interactive</span><span>Spatial</span><span>AI</span></div></div></div></article>
+      </a>
+      <a href="washwav.html" class="project-link" data-category="identity spatial">
+        <article class="project-section" style="--image:url('img/wm_lp.png')"><img src="img/wm_lp.png" alt="wash.wav project" loading="lazy"><div class="project-meta"><p class="project-index">03</p><div><h2>wash.wav</h2><p class="subtitle">Brand Identity · Spatial Listening Experience</p><div class="tags"><span>Identity</span><span>Spatial</span><span>Motion</span></div></div></div></article>
+      </a>
+      <a href="project1.html" class="project-link" data-category="ai">
+        <article class="project-section" style="--image:url('img/divergital_thumbnail.png')"><img src="img/divergital_thumbnail.png" alt="Divergital project" loading="lazy"><div class="project-meta"><p class="project-index">04</p><div><h2>Divergital</h2><p class="subtitle">AI Video Direction · 3D Visual Development</p><div class="tags"><span>AI</span><span>Motion</span><span>Visual Direction</span></div></div></div></article>
+      </a>
+      <a href="project2.html" class="project-link" data-category="interactive spatial">
+        <article class="project-section" style="--image:url('img/noise_2.png')"><img src="img/noise_2.png" alt="Rhythm Perception project" loading="lazy"><div class="project-meta"><p class="project-index">05</p><div><h2>Rhythm Perception</h2><p class="subtitle">Audiovisual Data System · Interactive Installation</p><div class="tags"><span>Data</span><span>Interactive</span><span>Spatial</span></div></div></div></article>
+      </a>
+      <a href="project3.html" class="project-link" data-category="ai">
+        <article class="project-section" style="--image:url('img/re_life_1.png')"><img src="img/re_life_1.png" alt="Regenerative Life project" loading="lazy"><div class="project-meta"><p class="project-index">06</p><div><h2>(re)generative life</h2><p class="subtitle">Data-driven AI Video · Generative Visual Research</p><div class="tags"><span>AI</span><span>Data</span><span>Motion</span></div></div></div></article>
+      </a>
+      <a href="project5.html" class="project-link" data-category="ai web">
+        <article class="project-section" style="--image:url('img/pottery_2.png')"><img src="img/pottery_2.png" alt="Blockware project" loading="lazy"><div class="project-meta"><p class="project-index">07</p><div><h2>Blockware</h2><p class="subtitle">Generative Visual · Creative Coding</p><div class="tags"><span>Generative</span><span>Code</span><span>Visual System</span></div></div></div></article>
+      </a>
+      <a href="itd.html" class="project-link" data-category="spatial interactive">
+        <article class="project-section" style="--image:url('img/itd_2.jpg')"><img src="img/itd_2.jpg" alt="Into the dream project" loading="lazy"><div class="project-meta"><p class="project-index">08</p><div><h2>Into the dream</h2><p class="subtitle">Kinetic Installation · Moving Object and Shadow</p><div class="tags"><span>Spatial</span><span>Installation</span><span>Motion</span></div></div></div></article>
+      </a>
+      <a href="project4.html" class="project-link" data-category="web interactive">
+        <article class="project-section" style="--image:url('img/web_1.png')"><img src="img/web_1.png" alt="Personal website project" loading="lazy"><div class="project-meta"><p class="project-index">09</p><div><h2>Personal website</h2><p class="subtitle">Portfolio System · Web and Interaction Design</p><div class="tags"><span>Web</span><span>Interaction</span><span>System</span></div></div></div></article>
+      </a>
+      <a href="project8.html" class="project-link" data-category="web interactive">
+        <article class="project-section" style="--image:url('img/pm.png')"><img src="img/pm.png" alt="PuzzleMaster project" loading="lazy"><div class="project-meta"><p class="project-index">10</p><div><h2>PuzzleMaster</h2><p class="subtitle">Interactive Web App · Puzzle Game System</p><div class="tags"><span>Web</span><span>Interactive</span><span>Database</span></div></div></div></article>
+      </a>
+      <a href="vlog_intro.html" class="project-link" data-category="identity">
+        <article class="project-section" style="--image:url('img/intro_collection.png')"><img src="img/intro_collection.png" alt="Vlog Intro Collection project" loading="lazy"><div class="project-meta"><p class="project-index">11</p><div><h2>Vlog Intro Collection</h2><p class="subtitle">Motion Graphics · Animated Title Sequences</p><div class="tags"><span>Motion</span><span>Typography</span><span>Visual Identity</span></div></div></div></article>
+      </a>
+      <a href="project7.html" class="project-link" data-category="web interactive">
+        <article class="project-section" style="--image:url('img/climalender.png')"><img src="img/climalender.png" alt="Colorlender and Climalender project" loading="lazy"><div class="project-meta"><p class="project-index">12</p><div><h2>colorlender/climalender</h2><p class="subtitle">Climate Data Visualization · Web Experience</p><div class="tags"><span>Data</span><span>Web</span><span>Interaction</span></div></div></div></article>
+      </a>
+    </div>
+  </main>
 
   <script>
+    const container = document.getElementById('projects-container');
+    const viewButtons = document.querySelectorAll('.toggle-btn');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const menuToggle = document.getElementById('mobile-menu');
+    const menuOverlay = document.getElementById('mobile-menu-overlay');
+    const menuClose = document.getElementById('mobile-menu-close');
+
     function setView(mode) {
-      const container = document.getElementById('projects-container');
-      container.className = 'view-' + mode;
-
-      document.querySelectorAll('.toggle-btn').forEach(btn => btn.classList.remove('active'));
-      document.getElementById('btn-' + mode).classList.add('active');
-
-      // body에 현재 뷰 모드 클래스 적용 (CSS 타겟팅용)
-      document.body.className = document.body.className
-        .replace(/\bmode-\w+\b/g, '').trim();
-      document.body.classList.add('mode-' + mode);
-
+      if (!['grid', 'full', 'list'].includes(mode)) mode = 'full';
+      container.className = `view-${mode}`;
+      document.body.classList.remove('mode-grid', 'mode-full', 'mode-list');
+      document.body.classList.add(`mode-${mode}`);
+      viewButtons.forEach(button => {
+        const active = button.dataset.view === mode;
+        button.classList.toggle('active', active);
+        button.setAttribute('aria-pressed', active);
+      });
       localStorage.setItem('worksView', mode);
     }
 
-    const saved = localStorage.getItem('worksView');
-    if (saved) setView(saved);
-    else setView('full');
-  </script>
+    function setFilter(filter) {
+      document.querySelectorAll('.project-link').forEach(project => {
+        project.hidden = filter !== 'all' && !project.dataset.category.split(' ').includes(filter);
+      });
+      filterButtons.forEach(button => {
+        const active = button.dataset.filter === filter;
+        button.classList.toggle('active', active);
+        button.setAttribute('aria-pressed', active);
+      });
+    }
 
+    function setMenu(open) {
+      menuOverlay.classList.toggle('active', open);
+      menuOverlay.setAttribute('aria-hidden', !open);
+      menuToggle.setAttribute('aria-expanded', open);
+      document.body.classList.toggle('menu-open', open);
+      if (open) menuClose.focus();
+    }
+
+    viewButtons.forEach(button => button.addEventListener('click', () => setView(button.dataset.view)));
+    filterButtons.forEach(button => button.addEventListener('click', () => setFilter(button.dataset.filter)));
+    menuToggle.addEventListener('click', () => setMenu(true));
+    menuClose.addEventListener('click', () => setMenu(false));
+    menuOverlay.addEventListener('click', event => { if (event.target === menuOverlay) setMenu(false); });
+    document.addEventListener('keydown', event => { if (event.key === 'Escape') setMenu(false); });
+    setView(localStorage.getItem('worksView') || 'full');
+  </script>
 </body>
 </html>

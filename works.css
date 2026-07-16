@@ -1,507 +1,103 @@
-/* ===== HEADER ===== */
-#header {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: transparent !important;
-  z-index: 9999;
-  margin: 0 !important;
-}
+:root { --paper: #f3f0e8; --ink: #11110f; --muted: #686760; --line: rgba(17,17,15,.18); }
+html { background: var(--paper); }
+body { margin: 0 !important; padding: 0 !important; background: var(--paper); color: var(--ink); }
+body.menu-open { overflow: hidden; }
+#header { position: absolute !important; inset: 0 0 auto; width: 100%; z-index: 100; margin: 0 !important; background: transparent !important; }
+#header img { margin-top: 15px; }
+main { width: 100%; }
 
-html, body {
-  margin: 0 !important;
-  padding: 0 !important;
-}
+.works-intro { min-height: 72vh; padding: 160px 4vw 70px; display: grid; grid-template-columns: repeat(12, 1fr); align-content: end; column-gap: 20px; border-bottom: 1px solid var(--line); }
+.works-intro .eyebrow { grid-column: 1 / 4; align-self: start; margin: 0; font-size: 12px; line-height: 1; letter-spacing: .12em; text-transform: uppercase; }
+.works-intro h1 { grid-column: 1 / 12; max-width: 1250px; margin: 38px 0 0; font-size: clamp(52px, 7.4vw, 124px); font-weight: 500; line-height: 1.01; letter-spacing: -.06em; }
+.works-intro .intro-copy { grid-column: 8 / 13; margin: 46px 0 0; max-width: 580px; font-size: clamp(16px, 1.35vw, 22px); line-height: 1.4; color: var(--muted); }
 
-/* ===== VIEW TOGGLE BAR ===== */
-/* ===== VIEW TOGGLE BAR ===== */
-#toggle-bar {
-  position: sticky;
-  top: 72px;
-  z-index: 10050;
-  display: flex;
-  justify-content: center;
-  padding: 14px 0;
-  pointer-events: none;
-}
+.works-controls { position: sticky; top: 0; z-index: 90; min-height: 72px; padding: 14px 4vw; display: flex; justify-content: space-between; align-items: center; gap: 20px; background: rgba(243,240,232,.92); border-bottom: 1px solid var(--line); backdrop-filter: blur(14px); }
+.filter-scroll { display: flex; gap: 7px; overflow-x: auto; scrollbar-width: none; }
+.filter-scroll::-webkit-scrollbar { display: none; }
+.filter-btn, .toggle-btn { font: inherit; color: var(--ink); cursor: pointer; border: 1px solid var(--line); background: transparent; }
+.filter-btn { flex: 0 0 auto; padding: 9px 14px 8px; border-radius: 100px; font-size: 11px; letter-spacing: .02em; }
+.filter-btn:hover, .filter-btn.active { color: var(--paper); background: var(--ink); border-color: var(--ink); }
+#view-toggle { flex: 0 0 auto; display: flex; gap: 1px; padding: 3px; border: 1px solid var(--line); border-radius: 6px; }
+.toggle-btn { position: relative; width: 36px; height: 32px; display: grid; place-items: center; border: 0; border-radius: 3px; color: var(--muted); }
+.toggle-btn svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.4; }
+.toggle-btn:hover { color: var(--ink); background: rgba(17,17,15,.06); }
+.toggle-btn.active { color: var(--ink); background: transparent; }
+.toggle-btn.active::after { content: ''; position: absolute; right: 7px; bottom: 2px; left: 7px; height: 1.5px; background: currentColor; }
 
-#view-toggle {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  background: rgba(20, 20, 20, 0.72);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 12px;
-  padding: 5px 6px;
-  pointer-events: auto;
-  position: relative;
-  z-index: 10060;
-}
+#projects-container { margin: 0; }
+#projects-container.view-full { padding: 0; }
+.project-link { display: block; color: inherit; text-decoration: none; }
+.project-link[hidden] { display: none !important; }
+.project-section { margin: 0; padding: 0; }
+.project-section > img { display: block; margin: 0; width: 100%; object-fit: cover; }
+.project-meta h2, .project-meta p { margin: 0; }
+.project-meta h2 { font-weight: 400; letter-spacing: -.035em; }
+.subtitle { color: var(--muted); }
+.tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.tags span { display: inline-block; padding: 6px 9px 5px; border: 1px solid currentColor; border-radius: 100px; font-size: 10px; line-height: 1; letter-spacing: .035em; text-transform: uppercase; }
+.project-index { font-size: 11px; font-variant-numeric: tabular-nums; }
 
-body.mode-grid #toggle-bar,
-body.mode-list #toggle-bar,
-body.mode-full #toggle-bar {
-  position: sticky;
-  top: 72px;
-  z-index: 10050;
-}
+.view-full .project-section { position: relative; height: min(86vh, 920px); background: var(--image) center/cover no-repeat; overflow: hidden; }
+.view-full .project-section > img { display: none; }
+.view-full .project-section::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top,rgba(0,0,0,.78) 0%,rgba(0,0,0,.45) 26%,rgba(0,0,0,.08) 58%,transparent 75%); pointer-events: none; }
+.view-full .project-meta { position: absolute; z-index: 1; inset: auto 4vw 36px; display: grid; grid-template-columns: 52px 1fr; color: #fff; text-shadow: 0 1px 16px rgba(0,0,0,.28); }
+.view-full .project-meta h2 { font-size: clamp(38px,5vw,80px); line-height: 1; color: #fff; transform: translateY(-5px); }
+.view-full .project-index { color: rgba(255,255,255,.78); }
+.view-full .subtitle { margin-top: 12px; font-size: 15px; color: rgba(255,255,255,.82); }
+.view-full .tags { margin-top: 20px; }
+.view-full .tags span { color: #fff; border-color: rgba(255,255,255,.58); background: rgba(0,0,0,.22); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); text-shadow: none; }
 
-.toggle-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border: none;
-  border-radius: 8px;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.5);
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
-}
+.view-grid { padding: 3vw 4vw 5vw; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 4vw 18px; }
+.view-grid .project-section > img { aspect-ratio: 4/3; transition: opacity .2s ease; }
+.view-grid .project-link:hover img { opacity: .84; }
+.view-grid .project-meta { padding-top: 14px; display: grid; grid-template-columns: 34px 1fr; }
+.view-grid .project-meta h2 { font-size: clamp(24px,2.6vw,44px); line-height: 1; }
+.view-grid .subtitle { margin-top: 8px; font-size: 13px; }
+.view-grid .tags { margin-top: 16px; }
 
-.toggle-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.85);
-}
+.view-list { padding: 0 4vw 7vw; }
+.view-list .project-link { border-bottom: 1px solid var(--line); }
+.view-list .project-link:first-child { border-top: 1px solid var(--line); }
+.view-list .project-section { min-height: 136px; padding: 18px 0; display: grid; grid-template-columns: 52px minmax(220px,1fr) 2fr; align-items: center; gap: 20px; }
+.view-list .project-section > img { grid-column: 3; grid-row: 1; justify-self: end; width: 170px; height: 100px; }
+.view-list .project-meta { display: contents; }
+.view-list .project-index { grid-column: 1; grid-row: 1; }
+.view-list .project-meta > div { grid-column: 2; grid-row: 1; }
+.view-list .project-meta h2 { font-size: clamp(25px,3vw,48px); line-height: 1; }
+.view-list .subtitle { margin-top: 8px; font-size: 13px; }
+.view-list .tags { margin-top: 14px; }
+.view-list .project-link:hover { background: rgba(17,17,15,.035); }
 
-.toggle-btn.active {
-  background: rgba(255, 255, 255, 0.18);
-  color: #ffffff;
-}
-
-/* ===== FULLSCREEN VIEW (default) ===== */
-#projects-container {
-  margin: 0;
-  padding: 0;
-}
-
-/* full 뷰: 콘텐츠를 toggle-bar 높이만큼 위로 당겨서 이미지가 toggle 뒤로 겹침 */
-body.mode-full #projects-container {
-  margin-top: 68px;
-}
-
-/* full view: toggle-bar도 sticky로 통일 — grid/list와 동일한 구조 */
-body.mode-full #toggle-bar #projects-container {
-  position: sticky;
-  top: 20px;
-  background: transparent;
-  /* 아래 콘텐츠를 toggle-bar 높이(68px)만큼 위로 당겨서 이미지가 뒤로 겹치게 */
- 
-}
-
-/* full view padding-top 제거 */
-body.mode-full {
-  padding-top: 0 !important;
-}
-
-
-/* ===== view-full: 기존 풀스크린 스타일 ===== */
-.view-full .project-link {
-  display: block;
-}
-
-.view-full .project-section {
-  position: relative;
-  top: 0;
-  width: 100%;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-}
-
-.view-full .mobile-image {
-  display: none;
-}
-
-.view-full .list-info {
-  display: none;
-}
-
-.view-full .overlay {
-  position: absolute;
-  top: 0; bottom: 0; left: 0; right: 0;
-  background-color: rgba(0, 0, 0, 0.3);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.view-full .project-section:hover .overlay {
-  opacity: 1;
-}
-
-.view-full .overlay h1 {
-  font-size: 48px;
-  margin: 0 0 10px;
-  transform: scale(1.5);
-  opacity: 0;
-  color: white;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
-.view-full .overlay p {
-  font-size: 18px;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.4s ease;
-  color: white;
-}
-
-.view-full .project-section:hover .overlay h1,
-.view-full .project-section:hover .overlay p {
-  transform: scale(1);
-  opacity: 1;
-}
-
-
-/* grid/list: body에 헤더 높이만큼 패딩 */
-body.mode-grid,
-body.mode-list {
-  padding-top: 60px !important;
-}
-
-/* ===== view-grid: 2열 그리드 ===== */
-.view-grid {
-  padding-top: 20px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 3px;
-  background: #fff;
-}
-
-.view-grid .project-link {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  overflow: hidden;
-}
-
-.view-grid .project-section {
-  position: relative;
-  width: 100%;
-  height: 50vw;
-  max-height: 56vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-  top: 0;
-  transition: transform 0.3s ease;
-}
-
-.view-grid .project-link:hover .project-section {
-  transform: scale(1.02);
-}
-
-.view-grid .mobile-image {
-  display: none;
-}
-
-.view-grid .list-info {
-  display: none;
-}
-
-.view-grid .overlay {
-  position: absolute;
-  top: 0; bottom: 0; left: 0; right: 0;
-  background-color: rgba(0, 0, 0, 0.45);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  opacity: 0;
-  transition: opacity 0.35s ease;
-  padding: 20px;
-  text-align: center;
-}
-
-.view-grid .project-section:hover .overlay {
-  opacity: 1;
-}
-
-.view-grid .overlay h1 {
-  font-size: 22px;
-  margin: 0 0 8px;
-  color: white;
-  transform: translateY(8px);
-  opacity: 0;
-  transition: transform 0.35s ease, opacity 0.35s ease;
-}
-
-.view-grid .overlay p {
-  font-size: 14px;
-  color: rgba(255,255,255,0.8);
-  margin: 0;
-  opacity: 0;
-  transform: translateY(6px);
-  transition: transform 0.35s ease 0.05s, opacity 0.35s ease 0.05s;
-}
-
-.view-grid .project-section:hover .overlay h1,
-.view-grid .project-section:hover .overlay p {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-
-/* ===== view-list: 리스트 형태 ===== */
-.view-list {
-  padding-top: 20px;
-  background: #fff;
-}
-
-.view-list .project-link {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  transition: background 0.2s ease;
-}
-
-.view-list .project-link:first-child .project-section {
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.view-list .project-link:hover {
-  background: rgba(0, 0, 0, 0.03);
-}
-
-.view-list .project-section {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  padding: 18px 60px;
-  height: auto;
-  top: 0;
-  background-image: none !important;
-  background: transparent;
-  overflow: hidden;
-}
-
-.view-list .mobile-image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 150px;
-  height: 110px;
-  flex-shrink: 0;
-  overflow: hidden;
-  border-radius: 0;
-  background: transparent;
-}
-
-.view-list .mobile-image img {
-  width: 80%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center center;
-  display: block;
-}
-
-.view-list .overlay {
-  display: none;
-}
-
-.view-list .list-info {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.view-list .list-title {
-  font-size: 18px;
-  font-weight: 500;
-  color: rgba(0, 0, 0, 0.85);
-  transition: color 0.2s ease;
-}
-
-.view-list .list-desc {
-  font-size: 13px;
-  color: rgba(0, 0, 0, 0.4);
-}
-
-.view-list .project-link:hover .list-title {
-  color: #000000;
-}
-
-/* 리스트 뷰 번호 표시 */
-.view-list .project-section::before {
-  content: counter(project-counter, decimal-leading-zero);
-  counter-increment: project-counter;
-  font-size: 12px;
-  color: rgba(0, 0, 0, 0.2);
-  min-width: 28px;
-  font-variant-numeric: tabular-nums;
-}
-
-.view-list {
-  counter-reset: project-counter;
-}
-
-/* ===== .project-link 공통 ===== */
-.project-link {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-}
-
-/* ===== 모바일 ===== */
 @media (max-width: 768px) {
-  #toggle-bar {
-    top: 50px;
-    padding: 10px 0;
-  }
- 
-  body.mode-full #toggle-bar {
-    top: 50px;
-  }
- 
-  body.mode-grid #toggle-bar,
-  body.mode-list #toggle-bar {
-    top: 50px;
-  }
- 
-  body.mode-grid,
-  body.mode-list,
-  body.mode-full {
-    padding-top: 50px !important;
-  }
- 
-  ul {
-    flex-direction: column;
-    align-items: flex-end;
-  }
- 
-  .menu a {
-    padding: 6px 15px;
-    font-size: 14px;
-  }
- 
-  /* 모바일: grid view */
-  .view-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2px;
-    padding-top: 10px;
-  }
- 
-  .view-grid .project-section {
-    height: 48vw;
-    max-height: none;
-  }
- 
-  .view-grid .overlay {
-    opacity: 1;
-    background-color: rgba(0, 0, 0, 0.4);
-  }
- 
-  .view-grid .overlay h1 {
-    font-size: 13px;
-    transform: none;
-    opacity: 1;
-  }
- 
-  .view-grid .overlay p {
-    font-size: 11px;
-    opacity: 1;
-    transform: none;
-  }
- 
-  /* 모바일: full view */
-  body.mode-full #projects-container {
-    margin-top: 0; /* 데스크탑의 -68px 오버라이드 — 모바일은 toggle-bar가 흐름에 있으므로 불필요 */
-  }
- 
-  .view-full .project-section {
-    position: relative;
-    height: auto;
-    background: none !important;
-    margin-bottom: 3px;
-    padding: 0;
-    top: 0;
-  }
- 
-  .view-full .mobile-image {
-    display: block;
-    width: 100%;
-    overflow: hidden;
-    font-size: 0; /* inline gap 제거 */
-    line-height: 0;
-  }
- 
-  .view-full .mobile-image img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    display: block;
-    margin: 0;
-    padding: 0;
-  }
- 
-  .view-full .overlay {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    opacity: 1;
-    background-color: rgba(0, 0, 0, 0.4);
-    padding: 20px;
-    text-align: center;
-  }
- 
-  .view-full .overlay h1 {
-    font-size: 22px;
-    transform: scale(1);
-    opacity: 1;
-    margin: 0 0 6px;
-  }
- 
-  .view-full .overlay p {
-    font-size: 13px;
-    opacity: 1;
-    transform: none;
-  }
- 
-  /* 모바일: list view 이미지 크게 */
-    .view-list .project-section {
-      padding: 14px 16px;
-      gap: 14px;
-    }
-  
-    .view-list .mobile-image {
-      width: 100px;
-      height: 72px;
-      background: transparent;
-      border-radius: 0;
-    }
-  
-    .view-list .mobile-image img {
-      object-fit: contain;
-      object-position: center center;
-    }
-
- 
-  .view-list .list-title {
-    font-size: 15px;
-  }
- 
-  .view-list .list-desc {
-    font-size: 12px;
-  }
- 
-  .view-list .project-section::before {
-    min-width: 20px;
-    font-size: 11px;
-  }
+  #header img { margin-top: 10px; }
+  .menu-toggle { margin: 0; padding: 0; border: 0; background: transparent; color: var(--ink); }
+  #mobile-menu-close { position: absolute; top: 18px; right: 20px; padding: 0; border: 0; background: transparent; font-size: 38px; cursor: pointer; }
+  .works-intro { min-height: 74vh; padding: 125px 18px 44px; display: block; }
+  .works-intro .eyebrow { font-size: 10px; }
+  .works-intro h1 { margin-top: 90px; font-size: clamp(46px,14vw,70px); line-height: 1.02; }
+  .works-intro .intro-copy { margin-top: 32px; max-width: 94%; font-size: 15px; }
+  .works-controls { min-height: 60px; padding: 10px 14px; gap: 10px; }
+  .filter-btn { padding: 8px 11px 7px; font-size: 10px; }
+  #view-toggle { padding: 2px; }
+  .toggle-btn { width: 31px; height: 28px; }
+  .view-full .project-section { height: 72vh; min-height: 500px; }
+  .view-full .project-meta { inset: auto 18px 22px; grid-template-columns: 30px 1fr; }
+  .view-full .project-meta h2 { font-size: clamp(34px,11vw,55px); }
+  .view-full .subtitle { max-width: 90%; font-size: 12px; }
+  .view-full .tags span:nth-child(n+3) { display: none; }
+  .view-grid { padding: 18px 20px 50px; gap: 30px 10px; }
+  .view-grid .project-section > img { aspect-ratio: 1/1; }
+  .view-grid .project-meta { grid-template-columns: 1fr; padding-top: 9px; }
+  .view-grid .project-index { display: none; }
+  .view-grid .project-meta h2 { font-size: 18px; line-height: 1.05; }
+  .view-grid .subtitle { margin-top: 6px; font-size: 10px; line-height: 1.35; }
+  .view-grid .tags { display: none; }
+  .view-list { padding: 0 20px 50px; }
+  .view-list .project-section { min-height: 110px; padding: 14px 0; grid-template-columns: 24px 1fr 86px; gap: 8px; }
+  .view-list .project-section > img { width: 78px; height: 72px; }
+  .view-list .project-meta h2 { font-size: 21px; }
+  .view-list .subtitle { margin-top: 5px; font-size: 10px; line-height: 1.35; }
+  .view-list .tags { display: none; }
 }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
