@@ -9,7 +9,7 @@
   <script defer src="https://cloud.umami.is/script.js" data-website-id="df811a2e-7bc7-4c27-9dee-b28f9c1caaf4"></script>
 </head>
 
-<body>
+<body class="aftertone-page">
   <header id="header">
     <div id="logo">
       <a href="index.html">
@@ -17,10 +17,10 @@
       </a>
     </div>
 
-    <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+    <button class="menu-toggle" id="mobile-menu" type="button" aria-label="Open navigation menu" aria-controls="mobile-menu-overlay" aria-expanded="false">&#9776;</button>
 
-    <div id="mobile-menu-overlay">
-      <div id="mobile-menu-close">&times;</div>
+    <div id="mobile-menu-overlay" aria-hidden="true">
+      <button id="mobile-menu-close" type="button" aria-label="Close navigation menu">&times;</button>
       <ul>
         <li><a href="works.html">/works/</a></li>
         <li><a href="cv.html">/about(cv)/</a></li>
@@ -28,7 +28,7 @@
       </ul>
     </div>
 
-    <nav id="head-center">
+    <nav id="head-center" aria-label="Primary navigation">
       <ul>
         <li class="menu"><a href="works.html"><span>/works/</span></a></li>
         <li class="menu"><a href="cv.html"><span>/about(cv)/</span></a></li>
@@ -42,156 +42,141 @@
     const menuOverlay = document.getElementById("mobile-menu-overlay");
     const menuClose = document.getElementById("mobile-menu-close");
 
-    menuToggle.addEventListener("click", () => {
-      menuOverlay.classList.add("active");
-    });
+    function setMenu(open) {
+      menuOverlay.classList.toggle("active", open);
+      menuOverlay.setAttribute("aria-hidden", !open);
+      menuToggle.setAttribute("aria-expanded", open);
+      document.body.classList.toggle("menu-open", open);
+      if (open) menuClose.focus();
+    }
 
-    menuClose.addEventListener("click", () => {
-      menuOverlay.classList.remove("active");
+    menuToggle.addEventListener("click", () => setMenu(true));
+    menuClose.addEventListener("click", () => setMenu(false));
+    menuOverlay.addEventListener("click", event => {
+      if (event.target === menuOverlay) setMenu(false);
+    });
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") setMenu(false);
     });
   </script>
 
   <a class="back" href="works.html">&lt; back</a>
 
-  <!-- 프로젝트 상세 콘텐츠 -->
-  <div class="project-detail aftertone">
-
-    <!-- HERO -->
+  <main class="project-detail aftertone">
     <section class="project-hero">
       <h1>Aftertone, 2026(-ing)</h1>
-      <h2>Speculative Emotional Recorder / AI Media System / In Progress</h2>
+      <h2>Design Research / Moving Image / Speculative Object / In Progress</h2>
 
-      <img src="img/AT_g1.png" alt="Aftertone main image" oncontextmenu="return false;">
+      <img src="img/AT_g1.png" alt="Aftertone visual research study" oncontextmenu="return false;">
 
       <p class="project-intro">
-        Aftertone is an ongoing speculative project that explores how spoken reflections can become abstract visual films, sound experiences, and possible emotional vocabularies.
+        Aftertone is an ongoing design research project exploring how ambiguous and layered feelings can become perceptible before they are clearly understood or named.
       </p>
     </section>
 
+    <section class="project-section aftertone-manifesto">
+      <h3>Manifesto</h3>
+      <div class="manifesto-copy">
+        <p>Not everything we feel has a name.</p>
+        <p>Some experiences are sensed before they can be clearly explained.</p>
+        <p>Aftertone begins in that uncertain space.</p>
+        <p>Rather than asking what a feeling is, the project explores how it might first become noticeable through atmosphere, movement, sound, density, tension, and change.</p>
+        <p>It is an ongoing exploration of emotional awareness before clear definition.</p>
+      </div>
+    </section>
 
-    <!-- PROJECT INFO -->
-    <section class="project-info">
+    <section class="project-info" aria-label="Project information">
       <div>
         <span>Role</span>
-        <p>Concept / Product Scenario / Emotional Interface / Visual System</p>
+        <p>Concept / Design Research / Interaction Direction / Visual System / Speculative Object</p>
       </div>
-
       <div>
         <span>Medium</span>
-        <p>Speculative Device / AI-generated Visuals / Sound Experience / Emotional Archive</p>
+        <p>Moving Image / Sound / Speculative Device / AI-assisted Visual Studies</p>
       </div>
-
       <div>
         <span>Status</span>
-        <p>In Progress / Concept Development / Prototype Planning</p>
+        <p>In Progress / Ongoing Research / Prototype Development</p>
       </div>
     </section>
 
-
-    <!-- CONCEPT -->
     <section class="project-section">
-      <h3>Concept</h3>
-
-      <p>
-        Many mood trackers ask users to choose a feeling they already understand.
-        Aftertone begins from a different state: moments when a feeling is present, but still unclear, layered, or difficult to name.
-      </p>
-
-      <p>
-        The project imagines a small emotional recording device.
-        Instead of diagnosing the user, it listens to a spoken memory and translates its atmosphere into sensory reflections.
-      </p>
+      <h3>Research Question</h3>
+      <p class="research-question">How might we create space for people to notice layered or ambiguous feelings before they become clearly understood or named?</p>
+      <p>Aftertone is less interested in identifying emotion than in the moment before identification, when something is already present but still uncertain.</p>
     </section>
 
-
-    <!-- EXPERIENCE FLOW -->
     <section class="project-section">
-      <h3>Experience Flow</h3>
-
-      <p>
-        The user speaks about a situation that stayed in their mind.
-        The system interprets emotional cues such as repetition, distance, tension, contradiction, fatigue, or relief.
-        These cues are not returned as a score, but translated into a short mood film and a sound-based listening experience.
-      </p>
-
-      <p>
-        If the user wants, Aftertone can reveal possible emotional vocabulary.
-        The words are offered as suggestions rather than answers, allowing the user to decide what feels close to their experience.
-      </p>
+      <h3>Approach</h3>
+      <p>Aftertone does not treat emotion as a fixed label to be detected.</p>
+      <p>Instead, the project explores emotional experience through sensory qualities such as intensity, density, tension, ambiguity, movement, distance, warmth, and persistence.</p>
+      <p>Within this design framework, these qualities can become visual and sonic behaviors rather than emotional categories. The aim is not to tell the user what they feel, but to create a sensory reflection that can be observed.</p>
     </section>
 
-
-    <!-- DESIGN QUESTION -->
     <section class="project-section">
-      <h3>Design Question</h3>
-
-      <p>
-        How might we help people recognize emotions they cannot yet name by translating spoken memories into visual and sonic atmospheres?
-      </p>
+      <h3>Experience</h3>
+      <ol class="experience-sequence" aria-label="Aftertone experience sequence">
+        <li>Speak</li>
+        <li>Listen</li>
+        <li>Transform</li>
+        <li>Observe</li>
+        <li>Reflect</li>
+      </ol>
+      <p>A person speaks about a memory, situation, or experience that has stayed with them.</p>
+      <p>Instead of returning an emotional score or diagnosis, the system translates aspects of the spoken atmosphere into a short sensory response. The response may take the form of moving image, sound, or an abstract visual behavior.</p>
+      <p>It is not intended as an answer. It becomes a surface for observation.</p>
     </section>
 
-
-    <!-- CURRENT DIRECTION -->
     <section class="project-section">
-      <h3>Current Direction</h3>
-
-      <p>
-        The project is currently being developed as a compact object inspired by portable tape players and early MP3 players.
-        It combines analog controls with a seamless display, where abstract emotional films appear only when the device is active.
-      </p>
-
-      <img  src="img/AT_3.png" alt="Aftertone device concept image" oncontextmenu="return false;">
+      <h3>Device Prototype</h3>
+      <p>The current prototype explores Aftertone as a dedicated reflection device.</p>
+      <p>The object is designed as a quiet, single-purpose interface rather than a conventional media player or smartphone. A spoken memory is recorded through a minimal interaction, while the display acts less like an information screen and more like an observation window for the resulting sensory reflection.</p>
+      <p>The device is one manifestation of the broader Aftertone research, rather than the project itself.</p>
+      <figure class="project-figure">
+        <img src="img/AT_3.png" alt="Aftertone speculative device prototype" oncontextmenu="return false;">
+        <figcaption>Current speculative device prototype.</figcaption>
+      </figure>
     </section>
 
-
-    <!-- EMOTIONAL FILM STUDIES -->
     <section class="project-section">
-      <h3>Emotional Film Studies</h3>
-
-      <p>
-        As an early study, three emotional states are being translated into abstract image and video languages.
-        These examples are not literal illustrations of events, but visual atmospheres for feelings that are difficult to name.
-      </p>
-
-      <div class="emotion-study-grid">
-        <figure>
-          <img src="img/AT_occhi.png" alt="Occhiolism emotional film study" oncontextmenu="return false;">
-          <figcaption>
-            <span>Occhiolism</span>
-            The feeling of realizing how small one's own perspective is.
-          </figcaption>
-        </figure>
-
-        <figure>
-          <img src="img/AT_ironic.png" alt="Ironic Validation Fatigue emotional film study" oncontextmenu="return false;">
-          <figcaption>
-            <span>Ironic Validation Fatigue</span>
-            A state that feels funny because it is relatable, yet emotionally tiring.
-          </figcaption>
-        </figure>
-
-        <figure>
-          <img src="img/AT_social.png" alt="Social distance emotional film study" oncontextmenu="return false;">
-          <figcaption>
-            <span>Social Distance</span>
-            Being among friends or people, while feeling quietly detached from the group.
-          </figcaption>
-        </figure>
-      </div>
+      <h3>Visual Studies</h3>
+      <p>Alongside the device, Aftertone develops an ongoing series of moving-image studies.</p>
+      <p>These works do not represent specific emotions. They explore different conditions in which a feeling may become perceptible: unnamed, barely noticeable, lingering, diffuse, suspended, or slowly dissolving.</p>
+      <p>The visual language is intentionally abstract. Form, material, movement, atmosphere, and time are used as ways of thinking about emotional presence.</p>
     </section>
 
+    <section class="project-section unnamed-study">
+      <h3>Study 01 — The Unnamed</h3>
+      <p class="study-subheading"><em>A study of feelings before clear definition.</em></p>
+      <p>The Unnamed begins with a simple condition:</p>
+      <p class="study-condition">something is already present,<br>but we do not yet know what to call it.</p>
+      <p>The study explores an uncertain felt presence through a translucent membrane and an unstable internal form.</p>
+      <p>The form is not sadness, anxiety, joy, or any other emotional category. It remains deliberately unresolved.</p>
+      <p>Its surface tension, internal pressure, subtle movement, and shifting density become ways of visualizing a feeling before it settles into a name.</p>
+      <!-- TODO: Insert The Unnamed moving-image study here -->
+    </section>
 
-    <!-- ETHICAL POSITION -->
     <section class="project-section">
+      <h3>Ongoing Studies</h3>
+      <p>Aftertone is structured as an expanding visual research archive.</p>
+      <p>Future studies will continue to explore different modes of emotional presence.</p>
+      <dl class="ongoing-studies">
+        <dt>Quiet Signals <span>In development</span></dt>
+        <dd>how a feeling first appears through subtle, local signals</dd>
+        <dt>Inner Weather <span>In development</span></dt>
+        <dd>how a feeling can be experienced as atmosphere rather than object</dd>
+        <dt>Echo <span>In development</span></dt>
+        <dd>what remains after the immediate feeling has passed</dd>
+      </dl>
+    </section>
+
+    <section class="project-section aftertone-position">
       <h3>Position</h3>
-
-      <p>
-        Aftertone does not diagnose emotions.
-        It offers sensory reflections and possible emotional vocabularies to help users recognize what they might be feeling.
-      </p>
+      <p>Aftertone does not diagnose emotion.</p>
+      <p>It does not classify the user or decide what they feel. The project is not presented as a therapeutic or clinical system.</p>
+      <p>Its purpose is exploratory: to investigate how sensory reflection might create a small distance between having an experience and immediately defining or reacting to it.</p>
+      <p>The resulting images, sounds, and objects are interpretations, not measurements.</p>
     </section>
-
-  </div>
-
+  </main>
 </body>
 </html>

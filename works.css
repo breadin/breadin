@@ -1,4 +1,4 @@
-:root { --paper: #f3f0e8; --ink: #11110f; --muted: #686760; --line: rgba(17,17,15,.18); }
+:root { --paper: #fff; --ink: #11110f; --muted: #686760; --line: rgba(17,17,15,.18); }
 html { background: var(--paper); }
 body { margin: 0 !important; padding: 0 !important; background: var(--paper); color: var(--ink); }
 body.menu-open { overflow: hidden; }
@@ -11,7 +11,7 @@ main { width: 100%; }
 .works-intro h1 { grid-column: 1 / 12; max-width: 1250px; margin: 38px 0 0; font-size: clamp(52px, 7.4vw, 124px); font-weight: 500; line-height: 1.01; letter-spacing: -.06em; }
 .works-intro .intro-copy { grid-column: 8 / 13; margin: 46px 0 0; max-width: 580px; font-size: clamp(16px, 1.35vw, 22px); line-height: 1.4; color: var(--muted); }
 
-.works-controls { position: sticky; top: 0; z-index: 90; min-height: 72px; padding: 14px 4vw; display: flex; justify-content: space-between; align-items: center; gap: 20px; background: rgba(243,240,232,.92); border-bottom: 1px solid var(--line); backdrop-filter: blur(14px); }
+.works-controls { position: sticky; top: 0; z-index: 90; min-height: 72px; padding: 14px 4vw; display: flex; justify-content: space-between; align-items: center; gap: 20px; background: rgba(255,255,255,.92); border-bottom: 1px solid var(--line); backdrop-filter: blur(14px); }
 .filter-scroll { display: flex; gap: 7px; overflow-x: auto; scrollbar-width: none; }
 .filter-scroll::-webkit-scrollbar { display: none; }
 .filter-btn, .toggle-btn { font: inherit; color: var(--ink); cursor: pointer; border: 1px solid var(--line); background: transparent; }
