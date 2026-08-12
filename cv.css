@@ -1,6 +1,6 @@
 
 main {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Inter', sans-serif;
     margin-left: 40px;
     margin-right: 40px;
 
@@ -43,7 +43,7 @@ main {
   .intro {
     text-align: center;
     padding: 20px;
-    font-family: 'Space Grotesk', monospace;
+    font-family: 'Inter', sans-serif;
   }
   
   .info-line {

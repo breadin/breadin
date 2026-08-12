@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
 html, body, div, span, iframe,
 h1, p,a, img, header, nav, section {
   margin-bottom: 5px;
@@ -5,7 +7,7 @@ h1, p,a, img, header, nav, section {
   padding: 0;
   border: 0;
   font-size: 115%;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Inter', sans-serif;
   vertical-align: baseline;
   color : black;
   text-decoration: none;
@@ -237,7 +239,7 @@ ol, ul {
   text-decoration: none;
   font-size: 24px;
   color: black;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Inter', sans-serif;
   text-align: center;
 }
 

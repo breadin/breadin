@@ -14,8 +14,10 @@ body {
   }
 
   .project-detail h1 {
+    font-family: "scotch-display", Georgia, serif;
     font-size: clamp(38px, 4.5vw, 64px);
-    font-weight: 500;
+    font-style: normal;
+    font-weight: 600;
     line-height: 1.02;
     letter-spacing: -0.045em;
     margin-bottom: 14px;
@@ -348,7 +350,6 @@ body {
   grid-column: 1 / 12;
   margin: 0;
   font-size: clamp(42px, 5.2vw, 68px);
-  font-weight: 500;
   line-height: 0.98;
   letter-spacing: -0.06em;
 }
@@ -565,6 +566,177 @@ border-radius: 6px;
     gap: 30px;
   }
 }
+
+/* Shared editorial rhythm for project content (project-info intentionally excluded). */
+.project-detail .project-intro {
+  width: 100%;
+  max-width: none;
+  margin: 32px 0 72px;
+  color: #555;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+.project-detail .project-section {
+  margin-bottom: 64px;
+}
+
+.project-detail .project-section h3 {
+  margin: 0 0 18px;
+  color: #11110f;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-detail .project-section p {
+  width: 100%;
+  max-width: none;
+  margin: 0 0 14px;
+  color: #20201e;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+.project-detail .project-section p:last-child {
+  margin-bottom: 0;
+}
+
+.project-detail .project-section > img,
+.project-detail .project-section > video,
+.project-detail .project-section > .image-grid,
+.project-detail .project-section > .video-row,
+.project-detail .project-section > .vimeo-wrapper,
+.project-detail .project-section > .chakra-grid,
+.project-detail .project-section > figure {
+  margin-top: 28px;
+}
+
+.project-detail .project-section > img,
+.project-detail .project-section > video {
+  margin-right: auto;
+  margin-bottom: 24px;
+  margin-left: auto;
+}
+
+.project-detail .image-grid.two {
+  gap: 10px;
+}
+
+.project-detail .project-section .tools-list {
+  display: grid;
+  gap: 0;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+}
+
+.project-detail .project-section .tools-list li {
+  position: relative;
+  margin: 0;
+  padding: 10px 0 10px 18px;
+  border-top: 1px solid rgba(17, 17, 15, 0.14);
+  line-height: 1.55;
+}
+
+.project-detail .project-section .tools-list li:last-child {
+  border-bottom: 1px solid rgba(17, 17, 15, 0.14);
+}
+
+.project-detail .project-section .tools-list li::before {
+  content: '\2014';
+  position: absolute;
+  left: 0;
+  color: #777;
+}
+
+.project-detail .project-section figcaption {
+  color: #686760;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.aftertone .experience-sequence {
+  margin: 22px 0 30px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+}
+
+.aftertone .project-section,
+.aftertone .aftertone-manifesto {
+  margin-bottom: 64px;
+}
+
+.aftertone .project-section p,
+.aftertone-manifesto .manifesto-copy p,
+.aftertone .research-question,
+.aftertone .study-condition {
+  max-width: none;
+  font-size: 14px;
+  line-height: 1.65;
+  letter-spacing: 0;
+}
+
+@media (max-width: 768px) {
+  .project-detail .project-intro {
+    margin: 26px 0 54px;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  .project-detail .project-section,
+  .aftertone .project-section,
+  .aftertone .aftertone-manifesto {
+    margin-bottom: 50px;
+  }
+
+  .project-detail .project-section h3 {
+    margin-bottom: 14px;
+    font-size: 17px;
+    text-align: left;
+  }
+
+  .project-detail .project-section p {
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  .project-detail .project-section > img,
+  .project-detail .project-section > video,
+  .project-detail .project-section > .image-grid,
+  .project-detail .project-section > .video-row,
+  .project-detail .project-section > .vimeo-wrapper,
+  .project-detail .project-section > .chakra-grid,
+  .project-detail .project-section > figure {
+    margin-top: 22px;
+  }
+
+  .project-detail .project-section > img,
+  .project-detail .project-section > video {
+    width: 100%;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .project-detail .project-section .tools-list {
+    align-items: stretch;
+    margin-top: 20px;
+    text-align: left;
+  }
+
+  .project-detail .project-section .tools-list li {
+    width: 100%;
+  }
+}
 /* 기본 PC용 스타일 */
 
 /* 모바일 화면용 스타일 (최대 768px) */
@@ -639,6 +811,13 @@ img {
 .image-grid.two {
   grid-template-columns: 1fr;
   gap: 20px;
+  width: 100%;
+}
+
+.project-detail .image-grid.two img {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
   .chakra-grid {
@@ -840,7 +1019,6 @@ img {
 .aftertone .project-hero h1 {
   margin: 0 0 14px;
   font-size: clamp(38px, 4.5vw, 64px);
-  font-weight: 500;
   line-height: 1.02;
   letter-spacing: -0.045em;
 }
@@ -1000,5 +1178,155 @@ img {
   .aftertone .aftertone-position {
     margin: 0;
     padding-top: 28px;
+  }
+}
+
+/* Final shared project-content rules. Keep these after project-specific overrides. */
+.project-detail .project-intro {
+  width: 100%;
+  max-width: none;
+  margin: 32px 0 72px;
+  color: #555;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.project-detail .project-section,
+.aftertone .project-section,
+.aftertone .aftertone-manifesto {
+  margin-bottom: 64px;
+}
+
+.project-detail .project-section h3,
+.aftertone .project-section h3 {
+  margin: 0 0 18px;
+  color: #11110f;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-detail .project-section p,
+.aftertone .project-section p,
+.aftertone-manifesto .manifesto-copy p,
+.aftertone .research-question,
+.aftertone .study-condition {
+  width: 100%;
+  max-width: none;
+  margin-bottom: 14px;
+  color: #20201e;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: 0;
+}
+
+.project-detail .project-section > img,
+.project-detail .project-section > video,
+.project-detail .project-section > .image-grid,
+.project-detail .project-section > .video-row,
+.project-detail .project-section > .vimeo-wrapper,
+.project-detail .project-section > .chakra-grid,
+.project-detail .project-section > figure {
+  margin-top: 28px;
+}
+
+.aftertone .experience-sequence {
+  margin: 22px 0 30px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .project-detail .project-intro {
+    margin: 26px 0 54px;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  .project-detail .project-section,
+  .aftertone .project-section,
+  .aftertone .aftertone-manifesto {
+    margin-bottom: 50px;
+  }
+
+  .project-detail .project-section h3,
+  .aftertone .project-section h3 {
+    margin-bottom: 14px;
+    font-size: 17px;
+    text-align: left;
+  }
+
+  .project-detail .project-section p {
+    line-height: 1.6;
+    text-align: left;
+  }
+}
+
+/* Aftertone media slots use the same image rhythm as other project pages. */
+.aftertone .aftertone-hero-studies {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  width: min(100%, 760px);
+  margin: 0 auto;
+}
+
+.aftertone .portrait-study,
+.aftertone .video-placeholder {
+  margin: 0;
+}
+
+.aftertone .portrait-study img,
+.aftertone .video-placeholder video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 9 / 16;
+  margin: 0;
+  object-fit: cover;
+}
+
+.aftertone .video-placeholder {
+  width: min(38%, 360px);
+  margin: 28px auto 0;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+}
+
+.aftertone .video-placeholder video {
+  transform: scale(1.006);
+  transform-origin: center;
+}
+
+.aftertone .project-figure {
+  width: min(76%, 760px);
+  margin: 28px auto 0;
+}
+
+.aftertone .project-figure img {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 9px;
+}
+
+@media (max-width: 768px) {
+  .aftertone .aftertone-hero-studies {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .aftertone .video-placeholder {
+    width: min(68%, 280px);
+    margin: 22px auto 0;
+  }
+
+  .aftertone .project-figure {
+    width: min(88%, 520px);
+    margin: 22px auto 0;
   }
 }
